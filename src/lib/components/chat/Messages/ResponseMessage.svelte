@@ -24,6 +24,7 @@
 		TTSWorker,
 		user
 	} from '$lib/stores';
+	import { theme } from '$lib/stores/theme';
 	import { synthesizeOpenAISpeech } from '$lib/apis/audio';
 	import { imageGenerations } from '$lib/apis/images';
 	import {
@@ -169,6 +170,11 @@
 
 	let model = null;
 	$: model = $models.find((m) => m.id === message.model);
+
+	$: mascotSrc = $theme === 'dark'
+		? '/assets/mascots/plana.svg'
+		: '/assets/mascots/arona.svg';
+	$: characterName = $theme === 'dark' ? '普拉纳' : '阿罗纳';
 
 	$: statusEntries = message?.statusHistory ?? [...(message?.status ? [message?.status] : [])];
 	$: hasVisibleStatus =
@@ -659,9 +665,10 @@
 		style="scroll-margin-top: 3rem;"
 	>
 		<div class={`shrink-0 ltr:mr-3 rtl:ml-3 hidden @lg:flex mt-1 `}>
-			<ProfileImage
-				src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model?.id}&lang=${$i18n.language}`}
-				className={'size-8 assistant-message-profile-image'}
+			<img
+				src={mascotSrc}
+				alt={characterName}
+				class="w-20 h-auto assistant-message-mascot"
 			/>
 		</div>
 
