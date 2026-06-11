@@ -351,7 +351,7 @@
 	};
 
 	const hasHermesContent = (content: string): boolean => {
-		return content.includes('<think>') || content.includes('<tool_call>') || content.includes('<tool_response>');
+		return content.includes('<think>') || content.includes('<reasoning>') || content.includes('<tool_call>') || content.includes('<tool_response>');
 	};
 
 	let preprocessedDetailsCache = [];

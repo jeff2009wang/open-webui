@@ -2504,11 +2504,8 @@ async def process_chat_payload(request, form_data, user, metadata, model):
     variables = form_data.pop('variables', None)
     payload_tools = form_data.get('tools', None)  # snapshot before filters
 
-    # Process the form_data through the pipeline
-    try:
-        form_data = await process_pipeline_inlet_filter(request, form_data, user, models)
-    except Exception as e:
-        raise e
+    # Pipeline inlet filters removed with pipelines router
+    # form_data = await process_pipeline_inlet_filter(request, form_data, user, models)
 
     try:
         filter_ids = await get_sorted_filter_ids(request, model, metadata.get('filter_ids', []))
@@ -3333,12 +3330,8 @@ async def outlet_filter_handler(ctx):
             'id': message_id,
         }
 
-        # Pipeline outlet filters
-        models = request.app.state.MODELS
-        try:
-            outlet_data = await process_pipeline_outlet_filter(request, outlet_data, user, models)
-        except Exception as e:
-            log.debug(f'Pipeline outlet filter error: {e}')
+        # Pipeline outlet filters removed with pipelines router
+        # outlet_data = await process_pipeline_outlet_filter(request, outlet_data, user, models)
 
         # Function outlet filters
         extra_params = {

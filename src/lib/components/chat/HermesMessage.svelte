@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onDestroy } from 'svelte';
+  import DOMPurify from 'dompurify';
   import { HermesParser, type HermesSegment } from '$lib/utils/hermes-parser';
   import ThinkPanel from './ThinkPanel.svelte';
   import ToolCallCard from './ToolCallCard.svelte';
@@ -11,12 +12,23 @@
   const parser = new HermesParser();
   let segments: HermesSegment[] = [];
   let partial: HermesSegment | null = null;
+  let lastProcessedContent = '';
 
   // Re-parse when content changes (for streaming)
+  // Only feed the delta (new content since last update) to avoid duplication
   $: {
-    if (content) {
-      const newSegments = parser.feed(content);
-      segments = [...segments, ...newSegments];
+    if (content !== lastProcessedContent) {
+      // If content was reset or replaced (doesn't start with previous), reset parser
+      if (lastProcessedContent !== '' && !content.startsWith(lastProcessedContent)) {
+        segments = [];
+        parser.flush();
+      }
+      const delta = content.slice(lastProcessedContent.length);
+      lastProcessedContent = content;
+      if (delta) {
+        const newSegments = parser.feed(delta);
+        segments = [...segments, ...newSegments];
+      }
     }
   }
 
@@ -28,9 +40,11 @@
   }
 
   // On final message, flush any remaining content
-  $: if (!streaming && content) {
+  $: if (!streaming && content !== undefined) {
     const flushed = parser.flush();
-    segments = [...segments, ...flushed];
+    if (flushed.length > 0) {
+      segments = [...segments, ...flushed];
+    }
   }
 
   onDestroy(() => {
@@ -39,10 +53,10 @@
 </script>
 
 <div class="hermes-message">
-  {#each segments as segment (segment.type + segment.content.slice(0, 20))}
+  {#each segments as segment, index (`${segment.type}-${index}`)}
     {#if segment.type === 'text'}
       <div class="prose prose-sm max-w-none text-[var(--ba-text-primary)]">
-        {@html segment.content}
+        {@html DOMPurify.sanitize(segment.content)}
       </div>
 
     {:else if segment.type === 'think' || segment.type === 'reasoning'}

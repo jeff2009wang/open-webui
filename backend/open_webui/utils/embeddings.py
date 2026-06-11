@@ -2,7 +2,7 @@ import logging
 import random
 import sys
 
-from fastapi import Request
+from fastapi import HTTPException, Request, status
 from open_webui.env import BYPASS_MODEL_ACCESS_CONTROL, GLOBAL_LOG_LEVEL
 from open_webui.models.models import Models
 from open_webui.models.users import UserModel
@@ -71,4 +71,7 @@ async def generate_embeddings(
             await check_model_access(user, model)
 
     # Ollama/OpenAI backends removed in this build
-    raise Exception('Embedding generation is not supported in this build')
+    raise HTTPException(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        detail='Embedding generation is not supported in this build.'
+    )

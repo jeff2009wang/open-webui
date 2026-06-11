@@ -264,7 +264,10 @@ async def generate_chat_completion(
         if model.get('pipe'):
             # Below does not require bypass_filter because this is the only route the uses this function and it is already bypassing the filter
             return await generate_function_chat_completion(request, form_data, user=user, models=models)
-        raise Exception('Only pipe models are supported in this build')
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail='Only function-based (pipe) models are supported in this build. Please configure a function model.'
+        )
 
 
 chat_completion = generate_chat_completion

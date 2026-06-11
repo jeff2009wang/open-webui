@@ -19,11 +19,13 @@
   >
     <span>{icon}</span>
     <span class="font-medium text-[var(--ba-text-secondary)]">{label}</span>
-    {#if isThinking}
-      <span class="ml-auto animate-pulse text-[var(--ba-accent-primary)]">●</span>
-    {/if}
-    <span class="ml-auto text-[var(--ba-text-secondary)]">
-      {expanded ? '▲' : '▼'}
+    <span class="ml-auto flex items-center gap-2">
+      {#if isThinking}
+        <span class="animate-pulse text-[var(--ba-accent-primary)]">●</span>
+      {/if}
+      <span class="text-[var(--ba-text-secondary)]">
+        {expanded ? '▲' : '▼'}
+      </span>
     </span>
   </button>
 
