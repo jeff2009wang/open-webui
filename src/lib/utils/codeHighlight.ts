@@ -173,16 +173,6 @@ export function isCodeFile(path: string | null): boolean {
  * async, callers are completely unaffected by the change.
  */
 export async function highlightCode(code: string, filePath: string): Promise<string> {
-	const ext = filePath.split('.').pop()?.toLowerCase() ?? '';
-	const lang = extToLang(ext) ?? 'text';
-
-	const { codeToHtml } = await import('shiki');
-	return await codeToHtml(code, {
-		lang,
-		themes: {
-			light: 'github-light',
-			dark: 'github-dark'
-		},
-		defaultColor: 'light'
-	});
+	// Shiki is not available; return plain text wrapped in pre/code
+	return `<pre class="hljs"><code>${code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`;
 }

@@ -99,24 +99,6 @@
 			}
 		}
 
-		// --- Chart.js detection & injection ---
-		const chartJsDirectives = ['new Chart(', 'Chart.'];
-		const hasChartJsDirectives = chartJsDirectives.some((dir) => html.includes(dir));
-		if (hasChartJsDirectives) {
-			try {
-				// import chartUrl from 'chart.js/auto?url';
-				const { default: Chart } = await import('chart.js/auto');
-				(window as any).Chart = Chart;
-
-				const chartTag = `<script>
-window.Chart = parent.Chart; // Chart previously assigned on parent
-<\/script>`;
-				scriptTags.push(chartTag);
-			} catch (error) {
-				console.error('Error processing Chart.js for iframe:', error);
-			}
-		}
-
 		// If nothing to inject, return original HTML
 		if (scriptTags.length === 0) return html;
 

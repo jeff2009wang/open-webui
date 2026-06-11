@@ -5,7 +5,6 @@
 	import { settings, config } from '$lib/stores';
 	import { injectCsp } from '$lib/utils/csp';
 	import { isCodeFile } from '$lib/utils/codeHighlight';
-	import { initMermaid, renderMermaidDiagram } from '$lib/utils';
 	import Spinner from '../../common/Spinner.svelte';
 	import PDFViewer from '../../common/PDFViewer.svelte';
 	import PanzoomContainer from '../../common/PanzoomContainer.svelte';
@@ -117,39 +116,6 @@
 			: '';
 
 	let markdownEl: HTMLDivElement;
-	let mermaidInstance: any = null;
-
-	const renderMermaidBlocks = async (el: HTMLDivElement) => {
-		if (!el) return;
-		const codeEls = el.querySelectorAll('code.language-mermaid');
-		if (codeEls.length === 0) return;
-
-		if (!mermaidInstance) {
-			mermaidInstance = await initMermaid();
-		}
-
-		for (const codeEl of codeEls) {
-			const pre = codeEl.parentElement;
-			if (!pre || pre.tagName !== 'PRE' || pre.dataset.mermaidRendered) continue;
-			pre.dataset.mermaidRendered = 'true';
-
-			try {
-				const svg = await renderMermaidDiagram(mermaidInstance, codeEl.textContent ?? '');
-				if (svg) {
-					const wrapper = document.createElement('div');
-					wrapper.className = 'mermaid-diagram flex justify-center py-2';
-					wrapper.innerHTML = svg;
-					pre.replaceWith(wrapper);
-				}
-			} catch (e) {
-				console.error('Mermaid render error:', e);
-			}
-		}
-	};
-
-	$: if (renderedHtml && markdownEl) {
-		tick().then(() => renderMermaidBlocks(markdownEl));
-	}
 
 	// Simple CSV parser that handles quoted fields
 	const parseCsv = (text: string, delimiter: string): string[][] => {
@@ -196,25 +162,9 @@
 
 	// ── Shiki code highlighting (SVG only) ──────────────────────────────
 	let highlightedHtml: string | null = null;
-	let highlightingFile: string | null = null;
 
-	$: if (isSvg && fileContent !== null && selectedFile) {
-		const currentFile = selectedFile;
-		highlightingFile = currentFile;
-		import('shiki')
-			.then(({ codeToHtml }) =>
-				codeToHtml(fileContent!, {
-					lang: 'xml',
-					themes: { light: 'github-light', dark: 'github-dark' },
-					defaultColor: 'light'
-				})
-			)
-			.then((html) => {
-				if (highlightingFile === currentFile) highlightedHtml = html;
-			})
-			.catch(() => {
-				if (highlightingFile === currentFile) highlightedHtml = null;
-			});
+	$: if (isSvg && fileContent !== null) {
+		highlightedHtml = fileContent;
 	} else {
 		highlightedHtml = null;
 	}
@@ -499,8 +449,8 @@
 				/>
 			</div>
 		{:else if isSvg && highlightedHtml && !showRaw}
-			<div class="shiki-preview overflow-auto h-full text-xs">
-				{@html highlightedHtml}
+			<div class=" overflow-auto h-full text-xs">
+				<pre class="text-xs font-mono text-gray-800 dark:text-gray-200 whitespace-pre-wrap break-all leading-relaxed p-3">{highlightedHtml}</pre>
 			</div>
 		{:else if editing}
 			<textarea
@@ -697,46 +647,5 @@
 	:global(.office-preview ol) {
 		padding-left: 1.5em;
 		margin: 0.5em 0;
-	}
-	/* ── Shiki code highlighting ─────────────────────────────────── */
-	.shiki-preview :global(pre.shiki) {
-		margin: 0;
-		padding: 0.75rem 1rem;
-		font-size: 0.75rem;
-		line-height: 1.6;
-		border-radius: 0;
-		overflow-x: auto;
-		min-height: 100%;
-	}
-	.shiki-preview :global(pre.shiki code) {
-		counter-reset: line;
-	}
-	.shiki-preview :global(pre.shiki code > .line) {
-		counter-increment: line;
-		display: inline-block;
-		width: 100%;
-		white-space: pre;
-	}
-	.shiki-preview :global(pre.shiki code > .line::before) {
-		content: counter(line);
-		display: inline-block;
-		width: 2.5em;
-		text-align: right;
-		margin-right: 1em;
-		color: #9ca3af;
-		user-select: none;
-		font-size: 0.65rem;
-	}
-	:global(.dark) .shiki-preview :global(pre.shiki code > .line::before) {
-		color: #4b5563;
-	}
-	/* Shiki dual-theme: swap CSS variables in dark mode */
-	:global(.dark) .shiki-preview :global(.shiki),
-	:global(.dark) .shiki-preview :global(.shiki span) {
-		color: var(--shiki-dark) !important;
-		background-color: var(--shiki-dark-bg) !important;
-		font-style: var(--shiki-dark-font-style) !important;
-		font-weight: var(--shiki-dark-font-weight) !important;
-		text-decoration: var(--shiki-dark-text-decoration) !important;
 	}
 </style>

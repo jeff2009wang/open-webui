@@ -48,26 +48,11 @@
 	// ── Syntax highlighting ──────────────────────────────────────────────
 	let highlightedCells: Record<number, string> = {};
 
-	const highlightCell = async (index: number, code: string, language: string) => {
-		try {
-			const { codeToHtml } = await import('shiki');
-			const html = await codeToHtml(code, {
-				lang: language,
-				themes: { light: 'github-light', dark: 'github-dark' },
-				defaultColor: 'light'
-			});
-			highlightedCells[index] = html;
-			highlightedCells = highlightedCells;
-		} catch {
-			// fallback handled in template
-		}
-	};
-
 	$: {
 		highlightedCells = {};
 		cells.forEach((cell, i) => {
 			if (cell.cell_type === 'code' && !editingCell[i]) {
-				highlightCell(i, toStr(cell.source), lang);
+				highlightedCells[i] = toStr(cell.source);
 			}
 		});
 	}
@@ -355,9 +340,7 @@
 								on:dblclick={() => startEditing(i)}
 							>
 								{#if highlightedCells[i]}
-									<div class="nb-code-source shiki-preview">
-										{@html highlightedCells[i]}
-									</div>
+									<pre class="nb-code-source-raw">{highlightedCells[i]}</pre>
 								{:else}
 									<pre class="nb-code-source-raw">{toStr(cell.source)}</pre>
 								{/if}
@@ -516,16 +499,6 @@
 	.nb-code-source-clickable {
 		cursor: text;
 	}
-	.nb-code-source :global(pre.shiki) {
-		margin: 0;
-		padding: 0.5rem 0.75rem;
-		font-size: 0.75rem;
-		line-height: 1.5;
-		border-radius: 0;
-	}
-	.nb-code-source :global(pre.shiki code > .line::before) {
-		display: none;
-	}
 	.nb-code-source-raw {
 		margin: 0;
 		padding: 0.5rem 0.75rem;
@@ -633,13 +606,5 @@
 		font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 		color: #6b7280;
 		white-space: pre-wrap;
-	}
-	:global(.dark) .nb-code-source :global(.shiki),
-	:global(.dark) .nb-code-source :global(.shiki span) {
-		color: var(--shiki-dark) !important;
-		background-color: var(--shiki-dark-bg) !important;
-		font-style: var(--shiki-dark-font-style) !important;
-		font-weight: var(--shiki-dark-font-weight) !important;
-		text-decoration: var(--shiki-dark-text-decoration) !important;
 	}
 </style>

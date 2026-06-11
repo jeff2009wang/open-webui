@@ -37,37 +37,23 @@
 	let playbackRate = 1;
 
 	const getVoices = async () => {
-		if (TTSEngine === 'browser-kokoro') {
-			if (!TTSModel) {
-				await loadKokoro();
-			}
+		if ($config.audio.tts.engine === '') {
+			const getVoicesLoop = setInterval(async () => {
+				voices = await speechSynthesis.getVoices();
 
-			voices = Object.entries(TTSModel.voices).map(([key, value]) => {
-				return {
-					id: key,
-					name: value.name,
-					localService: false
-				};
-			});
-		} else {
-			if ($config.audio.tts.engine === '') {
-				const getVoicesLoop = setInterval(async () => {
-					voices = await speechSynthesis.getVoices();
-
-					// do your loop
-					if (voices.length > 0) {
-						clearInterval(getVoicesLoop);
-					}
-				}, 100);
-			} else {
-				const res = await _getVoices(localStorage.token).catch((e) => {
-					toast.error(`${e}`);
-				});
-
-				if (res) {
-					console.log(res);
-					voices = res.voices;
+				// do your loop
+				if (voices.length > 0) {
+					clearInterval(getVoicesLoop);
 				}
+			}, 100);
+		} else {
+			const res = await _getVoices(localStorage.token).catch((e) => {
+				toast.error(`${e}`);
+			});
+
+			if (res) {
+				console.log(res);
+				voices = res.voices;
 			}
 		}
 	};
@@ -109,46 +95,10 @@
 		onTTSEngineChange();
 	}
 
-	const onTTSEngineChange = async () => {
-		if (TTSEngine === 'browser-kokoro') {
-			await loadKokoro();
-		}
-	};
+	const onTTSEngineChange = async () => {};
 
 	const loadKokoro = async () => {
-		if (TTSEngine === 'browser-kokoro') {
-			voices = [];
-
-			if (TTSEngineConfig?.dtype) {
-				TTSModel = null;
-				TTSModelProgress = null;
-				TTSModelLoading = true;
-
-				const model_id = 'onnx-community/Kokoro-82M-v1.0-ONNX';
-
-				const { KokoroTTS } = await import('kokoro-js');
-				TTSModel = await KokoroTTS.from_pretrained(model_id, {
-					dtype: TTSEngineConfig.dtype, // Options: "fp32", "fp16", "q8", "q4", "q4f16"
-					device: !!navigator?.gpu ? 'webgpu' : 'wasm', // Detect WebGPU
-					progress_callback: (e) => {
-						TTSModelProgress = e;
-						console.log(e);
-					}
-				});
-
-				await getVoices();
-
-				// const rawAudio = await tts.generate(inputText, {
-				// 	// Use `tts.list_voices()` to list all available voices
-				// 	voice: voice
-				// });
-
-				// const blobUrl = URL.createObjectURL(await rawAudio.toBlob());
-				// const audio = new Audio(blobUrl);
-
-				// audio.play();
-			}
-		}
+		// Kokoro.js TTS is not available
 	};
 </script>
 
@@ -253,30 +203,9 @@
 						placeholder={$i18n.t('Select an engine')}
 					>
 						<option value="">{$i18n.t('Default')}</option>
-						<option value="browser-kokoro">{$i18n.t('Kokoro.js (Browser)')}</option>
 					</select>
 				</div>
 			</div>
-
-			{#if TTSEngine === 'browser-kokoro'}
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">{$i18n.t('Kokoro.js Dtype')}</div>
-					<div class="flex items-center relative">
-						<select
-							class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
-							bind:value={TTSEngineConfig.dtype}
-							aria-label={$i18n.t('Kokoro.js Dtype')}
-							placeholder={$i18n.t('Select dtype')}
-						>
-							<option value="" disabled selected>{$i18n.t('Select dtype')}</option>
-							<option value="fp32">fp32</option>
-							<option value="fp16">fp16</option>
-							<option value="q8">q8</option>
-							<option value="q4">q4</option>
-						</select>
-					</div>
-				</div>
-			{/if}
 
 			<div class=" py-0.5 flex w-full justify-between">
 				<div class=" self-center text-xs font-medium">{$i18n.t('Auto-playback response')}</div>
@@ -317,47 +246,7 @@
 
 		<hr class=" border-gray-100/30 dark:border-gray-850/30" />
 
-		{#if TTSEngine === 'browser-kokoro'}
-			{#if TTSModel}
-				<div>
-					<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set Voice')}</div>
-					<div class="flex w-full">
-						<div class="flex-1">
-							<input
-								list="voice-list"
-								class="w-full text-sm bg-transparent dark:text-gray-300 outline-hidden"
-								bind:value={voice}
-								aria-label={$i18n.t('Voice')}
-								placeholder={$i18n.t('Select a voice')}
-							/>
-
-							<datalist id="voice-list">
-								{#each voices as voice}
-									<option value={voice.id}>{voice.name}</option>
-								{/each}
-							</datalist>
-						</div>
-					</div>
-				</div>
-			{:else}
-				<div>
-					<div class=" mb-2.5 text-sm font-medium flex gap-2 items-center">
-						<Spinner className="size-4" />
-
-						<div class=" text-sm font-medium shimmer">
-							{$i18n.t('Loading Kokoro.js...')}
-							{TTSModelProgress && TTSModelProgress.status === 'progress'
-								? `(${Math.round(TTSModelProgress.progress * 10) / 10}%)`
-								: ''}
-						</div>
-					</div>
-
-					<div class="text-xs text-gray-500">
-						{$i18n.t('Please do not close the settings page while loading the model.')}
-					</div>
-				</div>
-			{/if}
-		{:else if $config.audio.tts.engine === ''}
+			{#if $config.audio.tts.engine === ''}
 			<div>
 				<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set Voice')}</div>
 				<div class="flex w-full">
@@ -388,7 +277,7 @@
 					</div>
 				</div>
 			</div>
-		{:else if $config.audio.tts.engine !== ''}
+		{:else}
 			<div>
 				<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set Voice')}</div>
 				<div class="flex w-full">
