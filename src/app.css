@@ -1,5 +1,7 @@
 @reference "./tailwind.css";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+
 @font-face {
 	font-family: 'Inter';
 	src: url('/assets/fonts/Inter-Variable.ttf');
@@ -30,15 +32,71 @@
 	font-display: swap;
 }
 
-/* --app-text-scale is updated via the UI Scale slider (Interface.svelte) */
-:root {
-	--app-text-scale: 1;
-}
+@layer base {
+  :root {
+    /* Blue Archive Light Mode (Arona) */
+    --ba-bg-primary: #F0F4F8;
+    --ba-bg-card: #FFFFFF;
+    --ba-bg-chat-user: linear-gradient(135deg, #00A8E8 0%, #4FC3F7 100%);
+    --ba-bg-chat-ai: #FFFFFF;
+    --ba-accent-primary: #00A8E8;
+    --ba-accent-secondary: #4FC3F7;
+    --ba-accent-pink: #FF6B9D;
+    --ba-success: #4ADE80;
+    --ba-warning: #FBBF24;
+    --ba-error: #F87171;
+    --ba-text-primary: #1E293B;
+    --ba-text-secondary: #64748B;
+    --ba-text-inverse: #FFFFFF;
+    --ba-border: #E2E8F0;
+    --ba-border-chat-ai: rgba(0, 168, 232, 0.2);
+    --ba-think-bg: rgba(100, 116, 139, 0.08);
+    --ba-tool-call-bg: rgba(0, 168, 232, 0.05);
+    --ba-tool-call-border: rgba(0, 168, 232, 0.3);
+    --ba-tool-response-bg: rgba(74, 222, 128, 0.05);
+    --ba-tool-response-border: rgba(74, 222, 128, 0.3);
+    --ba-mascot: 'arona';
 
-html {
-	word-break: break-word;
-	/* font-size scales the entire document via the same UI control */
-	font-size: calc(1rem * var(--app-text-scale, 1));
+    /* --app-text-scale is updated via the UI Scale slider (Interface.svelte) */
+    --app-text-scale: 1;
+  }
+
+  [data-theme="dark"] {
+    /* Blue Archive Dark Mode (Plana) */
+    --ba-bg-primary: #0F172A;
+    --ba-bg-card: #1E293B;
+    --ba-bg-chat-user: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);
+    --ba-bg-chat-ai: #1E293B;
+    --ba-accent-primary: #38BDF8;
+    --ba-accent-secondary: #7DD3FC;
+    --ba-accent-pink: #F472B6;
+    --ba-success: #4ADE80;
+    --ba-warning: #FBBF24;
+    --ba-error: #F87171;
+    --ba-text-primary: #F1F5F9;
+    --ba-text-secondary: #94A3B8;
+    --ba-text-inverse: #FFFFFF;
+    --ba-border: #334155;
+    --ba-border-chat-ai: rgba(56, 189, 248, 0.2);
+    --ba-think-bg: rgba(148, 163, 184, 0.08);
+    --ba-tool-call-bg: rgba(56, 189, 248, 0.05);
+    --ba-tool-call-border: rgba(56, 189, 248, 0.3);
+    --ba-tool-response-bg: rgba(74, 222, 128, 0.05);
+    --ba-tool-response-border: rgba(74, 222, 128, 0.3);
+    --ba-mascot: 'plana';
+  }
+
+  html {
+    word-break: break-word;
+    /* font-size scales the entire document via the same UI control */
+    font-size: calc(1rem * var(--app-text-scale, 1));
+    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: var(--ba-bg-primary);
+    color: var(--ba-text-primary);
+  }
 }
 
 #sidebar-chat-item {
@@ -715,16 +773,6 @@ input[type='number'] {
 	padding-left: 2px;
 	padding-right: 2px;
 	white-space: nowrap;
-}
-
-body {
-	background: #fff;
-	color: #000;
-}
-
-.dark body {
-	background: #171717;
-	color: #eee;
 }
 
 /* Position the handle relative to each LI */
