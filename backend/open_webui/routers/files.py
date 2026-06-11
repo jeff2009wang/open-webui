@@ -38,8 +38,7 @@ from open_webui.models.groups import Groups
 from open_webui.models.knowledge import Knowledges
 from open_webui.models.users import Users
 from open_webui.retrieval.vector.async_client import ASYNC_VECTOR_DB_CLIENT
-from open_webui.routers.audio import transcribe
-from open_webui.routers.retrieval import ProcessFileForm, process_file
+# from open_webui.routers.retrieval import ProcessFileForm, process_file  # retrieval router removed
 from open_webui.storage.provider import Storage
 from open_webui.utils.auth import get_admin_user, get_verified_user
 from open_webui.utils.misc import strict_match_mime_type
@@ -126,18 +125,11 @@ async def process_uploaded_file(
             stt_supported = getattr(request.app.state.config, 'STT_SUPPORTED_CONTENT_TYPES', [])
 
             if content_type and strict_match_mime_type(stt_supported, content_type):
-                # Audio / STT-supported files → transcribe then index
-                file_path_processed = await asyncio.to_thread(Storage.get_file, file_path)
-                result = await transcribe(
-                    request,
-                    file_path_processed,
-                    file_metadata,
-                    user,
-                )
-                await process_file(
-                    request,
-                    ProcessFileForm(file_id=file_item.id, content=result.get('text', '')),
-                    user=user,
+                # Audio / STT-supported files → skip transcribe (audio router deleted)
+                log.info(f'Audio/STT file detected ({content_type}), skipping transcription (audio router removed)')
+                await Files.update_file_data_by_id(
+                    file_item.id,
+                    {'status': 'completed'},
                     db=db_session,
                 )
 
@@ -165,10 +157,10 @@ async def process_uploaded_file(
                 # Documents, or any file when an external engine is configured
                 if not content_type:
                     log.info(f'File type {file.content_type} is not provided, but trying to process anyway')
-                await process_file(
-                    request,
-                    ProcessFileForm(file_id=file_item.id),
-                    user=user,
+                # process_file removed with retrieval router — mark as completed
+                await Files.update_file_data_by_id(
+                    file_item.id,
+                    {'status': 'completed'},
                     db=db_session,
                 )
 
@@ -183,12 +175,6 @@ async def process_uploaded_file(
                         file_id=file_item.id,
                         user_id=user.id,
                         directory_id=file_metadata.get('directory_id'),
-                    )
-                    await process_file(
-                        request,
-                        ProcessFileForm(file_id=file_item.id, collection_name=knowledge_id),
-                        user=user,
-                        db=db_session,
                     )
                     log.info(f'Linked file {file_item.id} to knowledge {knowledge_id}')
                 except Exception as e:

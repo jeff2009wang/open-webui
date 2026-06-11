@@ -25,23 +25,23 @@ from open_webui.models.notes import Notes
 from open_webui.models.users import UserModel
 from open_webui.retrieval.utils import get_content_from_url
 from open_webui.retrieval.vector.async_client import ASYNC_VECTOR_DB_CLIENT
-from open_webui.routers.images import (
-    CreateImageForm,
-    EditImageForm,
-    image_edits,
-    image_generations,
-)
-from open_webui.routers.memories import (
-    AddMemoryForm,
-    MemoryUpdateModel,
-    QueryMemoryForm,
-    query_memory,
-    update_memory_by_id,
-)
-from open_webui.routers.memories import (
-    add_memory as _add_memory,
-)
-from open_webui.routers.retrieval import search_web as _search_web
+# from open_webui.routers.images import (
+#     CreateImageForm,
+#     EditImageForm,
+#     image_edits,
+#     image_generations,
+# )
+# from open_webui.routers.memories import (
+#     AddMemoryForm,
+#     MemoryUpdateModel,
+#     QueryMemoryForm,
+#     query_memory,
+#     update_memory_by_id,
+# )
+# from open_webui.routers.memories import (
+#     add_memory as _add_memory,
+# )
+# from open_webui.routers.retrieval import search_web as _search_web
 from open_webui.utils.sanitize import sanitize_code
 
 log = logging.getLogger(__name__)

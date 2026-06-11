@@ -46,28 +46,6 @@ from open_webui.models.models import Models
 from open_webui.models.oauth_sessions import OAuthSessions
 from open_webui.models.users import UserModel, Users
 from open_webui.retrieval.utils import get_sources_from_items
-from open_webui.routers.images import (
-    CreateImageForm,
-    EditImageForm,
-    image_edits,
-    image_generations,
-)
-from open_webui.routers.memories import QueryMemoryForm, query_memory
-from open_webui.routers.pipelines import (
-    process_pipeline_inlet_filter,
-    process_pipeline_outlet_filter,
-)
-from open_webui.routers.retrieval import (
-    SearchForm,
-    process_web_search,
-)
-from open_webui.routers.tasks import (
-    generate_chat_tags,
-    generate_follow_ups,
-    generate_image_prompt,
-    generate_queries,
-    generate_title,
-)
 from open_webui.socket.main import (
     get_event_call,
     get_event_emitter,
