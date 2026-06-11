@@ -56,6 +56,7 @@
 	import Citations from './Citations.svelte';
 	import CodeExecutions from './CodeExecutions.svelte';
 	import ContentRenderer from './ContentRenderer.svelte';
+	import HermesMessage from '../HermesMessage.svelte';
 	import { KokoroWorker } from '$lib/workers/KokoroWorker';
 	import FileItem from '$lib/components/common/FileItem.svelte';
 	import FollowUps from './ResponseMessage/FollowUps.svelte';
@@ -347,6 +348,10 @@
 				}
 			}
 		}
+	};
+
+	const hasHermesContent = (content: string): boolean => {
+		return content.includes('<think>') || content.includes('<tool_call>') || content.includes('<tool_response>');
 	};
 
 	let preprocessedDetailsCache = [];
@@ -838,42 +843,49 @@
 							{:else if message.content && message.error !== true}
 								<!-- always show message contents even if there's an error -->
 								<!-- unless message.error === true which is legacy error handling, where the error message is stored in message.content -->
-								<ContentRenderer
-									id={`${chatId}-${message.id}`}
-									content={message.content}
-									sources={message.sources}
-									floatingButtons={message?.done &&
-										!readOnly &&
-										($settings?.showFloatingActionButtons ?? true)}
-									save={!readOnly}
-									preview={!readOnly}
-									{editCodeBlock}
-									{topPadding}
-									done={($settings?.chatFadeStreamingText ?? true)
-										? (message?.done ?? false)
-										: true}
-									{model}
-									onTaskClick={async (e) => {
-										console.log(e);
-									}}
-									onSourceClick={async (id) => {
-										console.log(id);
+								{#if hasHermesContent(message.content)}
+									<HermesMessage
+										content={message.content}
+										streaming={!message.done}
+									/>
+								{:else}
+									<ContentRenderer
+										id={`${chatId}-${message.id}`}
+										content={message.content}
+										sources={message.sources}
+										floatingButtons={message?.done &&
+											!readOnly &&
+											($settings?.showFloatingActionButtons ?? true)}
+										save={!readOnly}
+										preview={!readOnly}
+										{editCodeBlock}
+										{topPadding}
+										done={($settings?.chatFadeStreamingText ?? true)
+											? (message?.done ?? false)
+											: true}
+										{model}
+										onTaskClick={async (e) => {
+											console.log(e);
+										}}
+										onSourceClick={async (id) => {
+											console.log(id);
 
-										if (citationsElement) {
-											citationsElement?.showSourceModal(id);
-										}
-									}}
-									onSetInputText={(text) => {
-										setInputText(text);
-									}}
-									onSave={({ raw, oldContent, newContent }) => {
-										history.messages[message.id].content = history.messages[
-											message.id
-										].content.replace(raw, raw.replace(oldContent, newContent));
+											if (citationsElement) {
+												citationsElement?.showSourceModal(id);
+											}
+										}}
+										onSetInputText={(text) => {
+											setInputText(text);
+										}}
+										onSave={({ raw, oldContent, newContent }) => {
+											history.messages[message.id].content = history.messages[
+												message.id
+											].content.replace(raw, raw.replace(oldContent, newContent));
 
-										updateChat();
-									}}
-								/>
+											updateChat();
+										}}
+									/>
+								{/if}
 							{/if}
 
 							{#if message?.error}

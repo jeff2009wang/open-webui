@@ -2,7 +2,7 @@
   import { slide } from 'svelte/transition';
 
   export let name: string;
-  export let arguments: string = '';
+  export let args: string = '';
   export let status: 'running' | 'success' | 'error' = 'running';
 
   let expanded = false;
@@ -25,10 +25,10 @@
     <span class="ml-1 text-[var(--ba-text-secondary)]">{expanded ? '▲' : '▼'}</span>
   </button>
 
-  {#if expanded && arguments}
+  {#if expanded && args}
     <div class="px-3 pb-3" transition:slide={{ duration: 200 }}>
       <pre class="text-xs text-[var(--ba-text-secondary)] whitespace-pre-wrap font-mono leading-relaxed bg-black/5 dark:bg-white/5 p-2 rounded">
-{arguments}
+{args}
       </pre>
     </div>
   {/if}
