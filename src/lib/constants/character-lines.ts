@@ -68,3 +68,10 @@ export const MULTI_STEP: CharacterLines = {
   light: '🔄 还有一步！马上好~',
   dark: '🔄 继续下一步分析。',
 };
+
+import { theme } from '$lib/stores/theme';
+import { get } from 'svelte/store';
+
+export function getLine(lines: CharacterLines): string {
+  return get(theme) === 'dark' ? lines.dark : lines.light;
+}

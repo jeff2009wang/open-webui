@@ -22,6 +22,9 @@
 
 	import { generateInitialsImage, canvasPixelTest, getUserTimezone } from '$lib/utils';
 
+	import { LOGIN_WELCOME } from '$lib/constants/character-lines';
+	import { theme } from '$lib/stores/theme';
+
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import OnBoarding from '$lib/components/OnBoarding.svelte';
 	import SensitiveInput from '$lib/components/common/SensitiveInput.svelte';
@@ -41,6 +44,8 @@
 	let confirmPassword = '';
 
 	let ldapUsername = '';
+
+	$: welcomeText = $theme === 'dark' ? LOGIN_WELCOME.dark : LOGIN_WELCOME.light;
 
 	const setSessionUser = async (sessionUser, redirectPath: string | null = null) => {
 		if (sessionUser) {
@@ -282,7 +287,7 @@
 										{:else if mode === 'ldap'}
 											{$i18n.t(`Sign in to {{WEBUI_NAME}} with LDAP`, { WEBUI_NAME: $WEBUI_NAME })}
 										{:else if mode === 'signin'}
-											{$i18n.t(`Sign in to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+											{welcomeText}
 										{:else}
 											{$i18n.t(`Sign up to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
 										{/if}

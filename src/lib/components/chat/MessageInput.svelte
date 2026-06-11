@@ -62,6 +62,8 @@
 	import { getSkills } from '$lib/apis/skills';
 
 	import { WEBUI_BASE_URL, WEBUI_API_BASE_URL, PASTED_TEXT_CHARACTER_LIMIT } from '$lib/constants';
+	import { INPUT_PLACEHOLDER } from '$lib/constants/character-lines';
+	import { theme } from '$lib/stores/theme';
 	import { getOAuthClientAuthorizationUrl } from '$lib/apis/configs';
 
 	import { getSuggestionRenderer } from '../common/RichTextInput/suggestions';
@@ -468,6 +470,8 @@
 
 	let user = null;
 	export let placeholder = '';
+
+	$: placeholder = $theme === 'dark' ? INPUT_PLACEHOLDER.dark : INPUT_PLACEHOLDER.light;
 
 	let visionCapableModels = [];
 	$: visionCapableModels = (atSelectedModel?.id ? [atSelectedModel.id] : selectedModels).filter(
