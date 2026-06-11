@@ -6,9 +6,6 @@
 	import XMark from '$lib/components/icons/XMark.svelte';
 	import Spinner from '$lib/components/common/Spinner.svelte';
 
-	import ScheduleDropdown from '$lib/components/automations/ScheduleDropdown.svelte';
-	import ModelDropdown from '$lib/components/automations/ModelDropdown.svelte';
-
 	import {
 		createAutomation,
 		updateAutomationById,
@@ -29,20 +26,10 @@
 
 	let loading = false;
 
-	// Schedule dropdown ref
-	let scheduleDropdown: ScheduleDropdown;
-
 	const submitHandler = async () => {
 		if (!name.trim() || !prompt.trim() || !model_id.trim()) {
 			toast.error($i18n.t('Name, prompt, and model are required'));
 			return;
-		}
-		if (scheduleDropdown?.frequency === 'ONCE') {
-			const scheduled = new Date(`${scheduleDropdown.onceDate}T${scheduleDropdown.onceTime}`);
-			if (scheduled <= new Date()) {
-				toast.error($i18n.t('Scheduled time must be in the future'));
-				return;
-			}
 		}
 		loading = true;
 		try {
@@ -51,7 +38,7 @@
 				data: {
 					prompt: prompt.trim(),
 					model_id: model_id.trim(),
-					rrule: scheduleDropdown.buildRrule()
+					rrule: ''
 				},
 				is_active
 			};
@@ -80,9 +67,6 @@
 			prompt = automation.data.prompt;
 			model_id = automation.data.model_id;
 			is_active = automation.is_active;
-			if (scheduleDropdown) {
-				scheduleDropdown.parseRrule(automation.data.rrule);
-			}
 		} else {
 			name = '';
 			prompt = '';
@@ -129,9 +113,12 @@
 		<!-- Bottom toolbar -->
 		<div class="flex items-center justify-between px-4 pb-3.5 pt-1 gap-2">
 			<div class="flex items-center gap-0.5 flex-wrap flex-1 min-w-0">
-				<ScheduleDropdown bind:this={scheduleDropdown} side="top" align="start" />
-
-				<ModelDropdown bind:model_id side="top" align="start" />
+				<input
+					class="w-full text-sm bg-transparent outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700"
+					type="text"
+					bind:value={model_id}
+					placeholder={$i18n.t('Model ID')}
+				/>
 			</div>
 
 			<div class="flex items-center gap-2 shrink-0">

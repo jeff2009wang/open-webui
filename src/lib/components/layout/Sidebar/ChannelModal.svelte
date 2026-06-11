@@ -11,13 +11,9 @@
 
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import Modal from '$lib/components/common/Modal.svelte';
-	import AccessControl from '$lib/components/workspace/common/AccessControl.svelte';
 	import DeleteConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
-	import MemberSelector from '$lib/components/workspace/common/MemberSelector.svelte';
-	import Visibility from '$lib/components/workspace/common/Visibility.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
-	import WebhooksModal from '$lib/components/channel/WebhooksModal.svelte';
 
 	export let show = false;
 	export let onSubmit: Function = () => {};
@@ -102,7 +98,6 @@
 	}
 
 	let showDeleteConfirmDialog = false;
-	let showWebhooksModal = false;
 
 	const deleteHandler = async () => {
 		showDeleteConfirmDialog = false;
@@ -233,48 +228,6 @@
 						</div>
 					</div>
 
-					{#if type !== 'dm'}
-						<div class="-mx-2 mb-1 mt-2.5 px-2">
-							{#if type === ''}
-								<AccessControl bind:accessGrants accessRoles={['read', 'write']} />
-							{:else if type === 'group'}
-								<Visibility
-									state={isPrivate ? 'private' : 'public'}
-									onChange={(value: string) => {
-										if (value === 'private') {
-											isPrivate = true;
-										} else {
-											isPrivate = false;
-										}
-										console.log(value, isPrivate);
-									}}
-								/>
-							{/if}
-						</div>
-					{/if}
-
-					{#if ['dm'].includes(type)}
-						<div class="">
-							<MemberSelector bind:userIds includeGroups={false} />
-						</div>
-					{/if}
-
-					{#if edit}
-						<div class="flex w-full mt-2 items-center justify-between">
-							<div class="text-xs text-gray-500">{$i18n.t('Webhooks')}</div>
-
-							<button
-								class="text-xs bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden text-left"
-								type="button"
-								on:click={() => {
-									showWebhooksModal = true;
-								}}
-							>
-								{$i18n.t('Manage')}
-							</button>
-						</div>
-					{/if}
-
 					<div class="flex justify-end pt-3 text-sm font-medium gap-1.5">
 						{#if edit}
 							<button
@@ -322,5 +275,3 @@
 		deleteHandler();
 	}}
 />
-
-<WebhooksModal bind:show={showWebhooksModal} {channel} />

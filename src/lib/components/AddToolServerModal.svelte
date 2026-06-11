@@ -19,7 +19,6 @@
 	import Tags from './common/Tags.svelte';
 	import { getToolServerData } from '$lib/apis';
 	import { verifyToolServerConnection, registerOAuthClient } from '$lib/apis/configs';
-	import AccessControlModal from '$lib/components/workspace/common/AccessControlModal.svelte';
 	import LockClosed from '$lib/components/icons/LockClosed.svelte';
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
@@ -65,7 +64,6 @@
 	let enable = true;
 	let loading = false;
 	let showAdvanced = false;
-	let showAccessControlModal = false;
 	let showDeleteConfirmDialog = false;
 
 	const registerOAuthClientHandler = async () => {
@@ -786,7 +784,7 @@
 									class="bg-gray-50 hover:bg-gray-100 text-black dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white transition px-2 py-1 object-cover rounded-full flex gap-1 items-center mt-2"
 									type="button"
 									on:click={() => {
-										showAccessControlModal = true;
+										toast.info($i18n.t('Access control temporarily unavailable'));
 									}}
 								>
 									<LockClosed strokeWidth="2.5" className="size-3.5 shrink-0" />
@@ -982,7 +980,6 @@
 	</div>
 </Modal>
 
-<AccessControlModal bind:show={showAccessControlModal} bind:accessGrants />
 
 <ConfirmDialog
 	bind:show={showDeleteConfirmDialog}

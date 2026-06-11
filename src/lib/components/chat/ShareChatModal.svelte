@@ -15,7 +15,6 @@
 	import Modal from '../common/Modal.svelte';
 	import Link from '../icons/Link.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
-	import AccessControl from '$lib/components/workspace/common/AccessControl.svelte';
 
 	export let chatId;
 

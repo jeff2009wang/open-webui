@@ -11,7 +11,6 @@
 	import { user, config } from '$lib/stores';
 
 	import Textarea from '$lib/components/common/Textarea.svelte';
-	import Knowledge from '$lib/components/workspace/Models/Knowledge.svelte';
 	import { getFolderById } from '$lib/apis/folders';
 	const i18n = getContext('i18n');
 
@@ -229,15 +228,8 @@
 					{/if}
 
 					<div class="my-2">
-						<Knowledge bind:selectedItems={data.files}>
-							<div slot="label">
-								<div class="flex w-full justify-between">
-									<div class=" mb-2 text-xs text-gray-500">
-										{$i18n.t('Knowledge')}
-									</div>
-								</div>
-							</div>
-						</Knowledge>
+						<div class="mb-2 text-xs text-gray-500">{$i18n.t('Knowledge')}</div>
+						<div class="text-xs text-gray-400">{$i18n.t('Knowledge selection temporarily unavailable.')}</div>
 					</div>
 
 					<div class="flex justify-end pt-3 text-sm font-medium gap-1.5">

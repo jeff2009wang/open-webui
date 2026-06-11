@@ -8,7 +8,6 @@
 	import Modal from '$lib/components/common/Modal.svelte';
 	import SensitiveInput from '$lib/components/common/SensitiveInput.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
-	import AccessControlModal from '$lib/components/workspace/common/AccessControlModal.svelte';
 	import LockClosed from '$lib/components/icons/LockClosed.svelte';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import ConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
@@ -35,7 +34,6 @@
 	let path = '/openapi.json';
 	let enabled = false;
 	let showAdvanced = false;
-	let showAccessControlModal = false;
 	let showDeleteConfirmDialog = false;
 	let accessGrants: any[] = [];
 
@@ -594,7 +592,7 @@
 									class="bg-gray-50 hover:bg-gray-100 text-black dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white transition px-2 py-1 object-cover rounded-full flex gap-1 items-center mt-2"
 									type="button"
 									on:click={() => {
-										showAccessControlModal = true;
+										toast.info($i18n.t('Access control temporarily unavailable'));
 									}}
 								>
 									<LockClosed strokeWidth="2.5" className="size-3.5 shrink-0" />
@@ -738,7 +736,6 @@
 	</div>
 </Modal>
 
-<AccessControlModal bind:show={showAccessControlModal} bind:accessGrants />
 
 <ConfirmDialog
 	bind:show={showDeleteConfirmDialog}
