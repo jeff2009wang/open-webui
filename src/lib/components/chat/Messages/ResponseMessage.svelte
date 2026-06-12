@@ -867,6 +867,7 @@
 											<HermesMessage
 												content={message.content}
 												streaming={!message.done}
+												showAvatar={false}
 											/>
 										{:else}
 											<ContentRenderer

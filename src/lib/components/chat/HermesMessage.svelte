@@ -11,6 +11,7 @@
 
   export let content: string = '';
   export let streaming = false;
+  export let showAvatar = true;
 
   const parser = new HermesParser();
   let segments: HermesSegment[] = [];
@@ -63,12 +64,14 @@
 </script>
 
 <div class="hermes-message flex items-start gap-2">
-  <img
-    src={getMascotImagePath($theme, 'icon')}
-    alt="AI"
-    class="w-6 h-6 rounded-full object-cover flex-shrink-0 mt-1"
-    on:error={(e) => { e.currentTarget.style.display = 'none'; }}
-  />
+  {#if showAvatar}
+    <img
+      src={getMascotImagePath($theme, 'icon')}
+      alt="AI"
+      class="w-6 h-6 rounded-full object-cover flex-shrink-0 mt-1"
+      on:error={(e) => { e.currentTarget.style.display = 'none'; }}
+    />
+  {/if}
   <div class="flex-1">
     {#each segments as segment, index (`${segment.type}-${index}`)}
     {#if segment.type === 'text'}
