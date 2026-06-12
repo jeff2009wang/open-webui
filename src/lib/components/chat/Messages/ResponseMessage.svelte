@@ -680,11 +680,7 @@
 		style="scroll-margin-top: 3rem;"
 	>
 		<div class={`shrink-0 ltr:mr-3 rtl:ml-3 hidden @lg:flex mt-1 `}>
-			<img
-				src={mascotSrc}
-				alt={characterName}
-				class="w-20 h-auto assistant-message-mascot"
-			/>
+			<img src={mascotSrc} alt={characterName} class="w-20 h-auto assistant-message-mascot" />
 		</div>
 
 		<div class="flex-auto w-0 pl-1 relative">
@@ -721,7 +717,9 @@
 							src={getMascotImagePath($theme, 'icon')}
 							alt="AI"
 							class="w-8 h-8 rounded-full object-cover flex-shrink-0 mt-1 ring-1 ring-[var(--ba-border)]"
-							on:error={(e) => { e.currentTarget.style.display = 'none'; }}
+							on:error={(e) => {
+								e.currentTarget.style.display = 'none';
+							}}
 						/>
 					{/if}
 					<div class="flex-1">
@@ -812,7 +810,7 @@
 														document.getElementById('confirm-edit-message-button')?.click();
 													}
 												}}
-											/>
+											></textarea>
 										{/if}
 
 										<div class=" mt-2 mb-1 flex justify-between text-sm font-medium">
@@ -926,11 +924,11 @@
 									{#if message.code_executions}
 										<CodeExecutions codeExecutions={message.code_executions} />
 									{/if}
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
 				{#if !edit}
 					<div
@@ -1349,6 +1347,7 @@
 											<button
 												type="button"
 												class="hidden regenerate-response-button"
+												aria-label={$i18n.t('Regenerate')}
 												on:click={() => {
 													showRateComment = false;
 													regenerateResponse(message);
@@ -1365,7 +1364,7 @@
 														});
 													});
 												}}
-											/>
+											></button>
 
 											<RegenerateMenu
 												onRegenerate={(prompt = null) => {

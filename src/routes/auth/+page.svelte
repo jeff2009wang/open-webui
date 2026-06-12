@@ -238,14 +238,17 @@
 <div class="w-full h-screen max-h-[100dvh] text-white relative" id="auth-page">
 	<div
 		class="w-full h-full absolute top-0 left-0 bg-gray-50 dark:bg-gray-950"
-		style="background-image: url({getMascotImagePath($theme, 'portrait')}); background-size: cover; background-position: top center;"
+		style="background-image: url({getMascotImagePath(
+			$theme,
+			'portrait'
+		)}); background-size: cover; background-position: top center;"
 	>
 		<div
 			class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white/85 via-white/50 to-white/20 dark:from-black/80 dark:via-black/50 dark:to-black/30"
 		></div>
 	</div>
 
-	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
+	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region"></div>
 
 	{#if loaded}
 		<div
