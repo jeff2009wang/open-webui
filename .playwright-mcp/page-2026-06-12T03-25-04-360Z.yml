@@ -1,0 +1,2372 @@
+- generic [ref=e4]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - button "展开侧边栏 新对话 搜索 笔记 工作空间" [ref=e9]:
+        - button "展开侧边栏" [ref=e12]
+        - generic [ref=e14]:
+          - link "新对话" [ref=e17] [cursor=pointer]:
+            - /url: /
+            - img [ref=e19]
+          - button "搜索" [ref=e23] [cursor=pointer]:
+            - img [ref=e25]
+          - link "笔记" [ref=e29] [cursor=pointer]:
+            - /url: /notes
+            - img [ref=e31]
+          - link "工作空间" [ref=e35] [cursor=pointer]:
+            - /url: /workspace
+            - img [ref=e37]
+      - button "用户菜单" [ref=e42] [cursor=pointer]:
+        - button "用户菜单" [ref=e43]:
+          - img "打开个人资料菜单" [ref=e45]
+    - generic [ref=e52]:
+      - navigation [ref=e53]:
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e59]:
+              - button "已选择：HermesPipe" [ref=e63] [cursor=pointer]:
+                - generic [ref=e64]:
+                  - text: HermesPipe
+                  - img [ref=e65]
+              - button "Add Model" [ref=e69] [cursor=pointer]:
+                - img [ref=e70]
+            - button "设为默认" [ref=e73] [cursor=pointer]
+          - generic [ref=e74]:
+            - button [ref=e76] [cursor=pointer]:
+              - img [ref=e78]
+            - button "Controls" [ref=e81] [cursor=pointer]:
+              - img [ref=e83]
+            - button "用户菜单" [ref=e85] [cursor=pointer]:
+              - button "用户菜单" [ref=e86]
+      - generic [ref=e90]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - button [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+            - generic [ref=e101]: HermesPipe
+          - generic [ref=e108]:
+            - paragraph [ref=e113]: Sensei，请在这里输入~
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - button "更多" [ref=e116] [cursor=pointer]:
+                  - button "更多" [ref=e118]:
+                    - img [ref=e119]
+                - button "扩展功能" [ref=e122] [cursor=pointer]:
+                  - button "扩展功能" [ref=e124]:
+                    - img [ref=e125]
+              - generic [ref=e130]:
+                - button "Voice Input" [ref=e132] [cursor=pointer]:
+                  - img [ref=e133]
+                - button "语音模式" [ref=e138] [cursor=pointer]:
+                  - img [ref=e139]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - text: 建议
+          - list [ref=e146]:
+            - listitem [ref=e147] [cursor=pointer]:
+              - generic [ref=e148]:
+                - generic [ref=e149]: Give me ideas
+                - generic [ref=e150]: for what to do with my kids' art
+            - listitem [ref=e151] [cursor=pointer]:
+              - generic [ref=e152]:
+                - generic [ref=e153]: Tell me a fun fact
+                - generic [ref=e154]: about the Roman Empire
+            - listitem [ref=e155] [cursor=pointer]:
+              - generic [ref=e156]:
+                - generic [ref=e157]: Overcome procrastination
+                - generic [ref=e158]: give me tips
+            - listitem [ref=e159] [cursor=pointer]:
+              - generic [ref=e160]:
+                - generic [ref=e161]: Explain options trading
+                - generic [ref=e162]: if I'm familiar with buying and selling stocks
+            - listitem [ref=e163] [cursor=pointer]:
+              - generic [ref=e164]:
+                - generic [ref=e165]: Help me study
+                - generic [ref=e166]: vocabulary for a college entrance exam
+            - listitem [ref=e167] [cursor=pointer]:
+              - generic [ref=e168]:
+                - generic [ref=e169]: Show me a code snippet
+                - generic [ref=e170]: of a website's sticky header
+  - dialog [ref=e172]:
+    - generic [ref=e173]:
+      - generic [ref=e174]:
+        - generic [ref=e175]:
+          - heading "最近更新内容于 Open WebUI" [level=2] [ref=e176]
+          - button "关闭" [active] [ref=e177] [cursor=pointer]:
+            - img [ref=e178]
+        - generic [ref=e180]:
+          - generic [ref=e181]: 更新日志
+          - generic [ref=e183]: v0.9.6
+      - generic [ref=e184]:
+        - generic [ref=e186]:
+          - generic [ref=e187]:
+            - heading "v0.9.6 - 2026-06-01" [level=3] [ref=e188]
+            - separator [ref=e189]
+            - generic [ref=e190]:
+              - generic [ref=e191]: added
+              - generic [ref=e192]:
+                - listitem [ref=e194]:
+                  - text: 📦
+                  - strong [ref=e195]: Official knowledge base sync tool.
+                  - text: A new companion tool from Open WebUI, oikb, keeps a knowledge base in sync with a local directory, GitHub repo, S3 bucket, Confluence space, or any of more than 40 other sources, uploading only new and changed files using the incremental sync support added in this release.
+                  - link "oikb" [ref=e196] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/oikb
+                - listitem [ref=e198]:
+                  - text: 📂
+                  - strong [ref=e199]: Smart directory sync for knowledge bases.
+                  - text: "Local directories can now be synced into a knowledge base in one action: file checksums are compared against what's already stored, and only added or modified files are uploaded while removed files and orphaned subdirectories are cleaned up, with the directory structure mirrored automatically and per-file progress shown throughout."
+                  - link "#19190" [ref=e200] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/19190
+                  - text: ","
+                  - link "#19394" [ref=e201] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/19394
+                  - text: ","
+                  - link "Commit" [ref=e202] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/60c9db1cb81d021589cb49bee8744a799b51211f
+                  - text: ","
+                  - link "Commit" [ref=e203] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/73bdf86766d3f44467cdec436786fe089481baf3
+                  - text: ","
+                  - link "Commit" [ref=e204] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9835b3f1dd7aa9c92ff08a634a0f97cc2a046e42
+                  - text: ","
+                  - link "Commit" [ref=e205] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/97252fa609440573251d8e75090f347ed1e51e1d
+                  - text: ","
+                  - link "Commit" [ref=e206] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/8f2d346e10c47b57bf6b5a6aa02d453488a88b89
+                  - text: ","
+                  - link "Commit" [ref=e207] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1527eb6e01d441225c979d12d78b7625edf1086f
+                - listitem [ref=e209]:
+                  - text: 🗂️
+                  - strong [ref=e210]: Knowledge base folders.
+                  - text: Files inside a knowledge base can now be organized into nested folders, with breadcrumb navigation that makes it much easier to manage and find content in large collections.
+                  - link "Commit" [ref=e211] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c2cbc47ca76ebfa21e1d36279dbd859283cbbfb1
+                  - text: ","
+                  - link "Commit" [ref=e212] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ab0ee858b73738c5b77d1d455e66e66bc61df1c4
+                  - text: ","
+                  - link "Commit" [ref=e213] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/2ad327a4dce64a8eedf5eb41c73b8520344fdd82
+                  - text: ","
+                  - link "Commit" [ref=e214] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/171150c1e12b5713f77a5ea0dd19c6581c7bef2e
+                  - text: ","
+                  - link "Commit" [ref=e215] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/e7d2ddbb1d14c03a52797751d24a98132aac0cd8
+                  - text: ","
+                  - link "Commit" [ref=e216] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/32a417bbf66ed28a5ca8a759ad3a87b2a2aa358a
+                - listitem [ref=e218]:
+                  - text: 🧰
+                  - strong [ref=e219]: Filesystem tool for knowledge bases.
+                  - text: A new built-in tool, enabled via the "ENABLE_KB_EXEC" environment variable, lets AI models browse and search knowledge base contents using familiar filesystem commands such as 'ls', 'cat', 'grep', 'find', 'head', 'tail', and 'sed', including pipes between them.
+                  - link "Commit" [ref=e220] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/5b125c24d4eae925d3287efa626595bab29d5c33
+                  - text: ","
+                  - link "Commit" [ref=e221] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ecec86dd32aa396dd5a383e9be5b0f16c4346c48
+                  - text: ","
+                  - link "Commit" [ref=e222] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9ef579ce4be5b82f9281b085a621fed5b04e0d26
+                  - text: ","
+                  - link "Commit" [ref=e223] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/2f642754ac6b8c430228a7fc289357a6c6652235
+                  - text: ","
+                  - link "Commit" [ref=e224] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/3b00e5721a60518ea317c4fd61a6d0d182961a2f
+                  - text: ","
+                  - link "Commit" [ref=e225] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/4e78b355efe0611f27fddef591c69f7c1259a9f6
+                  - text: ","
+                  - link "Commit" [ref=e226] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/74f95a9b0d6b89b241701422170d54e21e701baa
+                  - text: ","
+                  - link "Commit" [ref=e227] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/cc16e06c32de48bdf464db5814483a49f3527b63
+                  - text: ","
+                  - link "Commit" [ref=e228] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1ea54c3217f487990b6a4c0f0d8ea675a479b6e1
+                - listitem [ref=e230]:
+                  - text: ✏️
+                  - strong [ref=e231]: File renaming in knowledge bases.
+                  - text: Files inside a knowledge base can now be renamed directly from the workspace, with the new name reflected wherever the file is referenced.
+                  - link "Commit" [ref=e232] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/3127f1b46255626ea92eb0b598e45078287303f1
+                - listitem [ref=e234]:
+                  - text: 😀
+                  - strong [ref=e235]: Emoji picker in message input.
+                  - text: A new emoji button in the rich text formatting toolbar lets you browse and insert emojis directly into your messages.
+                  - link "#24704" [ref=e236] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24704
+                - listitem [ref=e238]:
+                  - text: 🪄
+                  - strong [ref=e239]: Per-chat skills toggle.
+                  - text: Skills can now be turned on or off for a conversation directly from the chat Integrations menu, the same way tools and capabilities already work, instead of only through the model preset.
+                  - link "#25036" [ref=e240] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25036
+                  - text: ","
+                  - link "#25037" [ref=e241] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25037
+                - listitem [ref=e243]:
+                  - text: 🔎
+                  - strong [ref=e244]: Access preview for users and groups.
+                  - text: Administrators can now preview exactly which models, knowledge bases, and tools a given user or group can access, making it easier to audit and verify permission setups.
+                  - link "Commit" [ref=e245] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9c14740ffb009d550dcbd5d6c599dac57053f112
+                - listitem [ref=e247]:
+                  - text: 📄
+                  - strong [ref=e248]: Configurable knowledge base file page size.
+                  - text: Administrators can now request a larger page size when listing a knowledge base's files through the API, reducing the number of requests needed to retrieve large collections instead of paging through fixed increments of 30.
+                  - link "#25148" [ref=e249] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25148
+                  - text: ","
+                  - link "Commit" [ref=e250] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/a4d1b3e9378a61a11dd9822a8dbb525f39753081
+                - listitem [ref=e252]:
+                  - text: 🔃
+                  - strong [ref=e253]: Persistent processing indicator for knowledge files.
+                  - text: Files still being processed in a knowledge base now keep showing a processing indicator across page reloads, so you can tell what's still ingesting after navigating away and back.
+                  - link "#25031" [ref=e254] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25031
+                  - text: ","
+                  - link "Commit" [ref=e255] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ad9f2eeb15a448147d5e47e6a391cabb9aefd0ea
+                - listitem [ref=e257]:
+                  - text: 📑
+                  - strong [ref=e258]: MinerU file type configuration.
+                  - text: Administrators can now configure which file types are processed by the MinerU document loader, via the new "MINERU_FILE_EXTENSIONS" setting, extending it beyond PDF to formats like DOCX, PPTX, and XLSX.
+                  - link "Commit" [ref=e259] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/d4030a8aa5d48c2a1cb06c461566844aca2530ab
+                - listitem [ref=e261]:
+                  - text: 📃
+                  - strong [ref=e262]: Legacy Word document support.
+                  - text: Older ".doc" Word files can now have their text extracted by the default document extraction engine, in addition to the modern ".docx" format.
+                  - link "Commit" [ref=e263] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9e3e24e304f8ff210494380b46f614a2984cafb3
+                - listitem [ref=e265]:
+                  - text: 📁
+                  - strong [ref=e266]: Create subfolders from the folder header.
+                  - text: Chat folders can now have subfolders created directly from the folder header in the chat view, not just from the sidebar.
+                  - link "Commit" [ref=e267] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1f0948bcbef2af73b155535ea27762c522260afc
+                - listitem [ref=e269]:
+                  - text: ⚡
+                  - strong [ref=e270]: Faster initial page loads.
+                  - text: The configuration endpoint that loads on every page visit no longer runs an unnecessary user-count query, making the initial application load lighter on the database, especially on instances with many users.
+                  - link "Commit" [ref=e271] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/0adc090dcbe636c9c9645d8ec7f6b89ea514870b
+                - listitem [ref=e273]:
+                  - text: 🚀
+                  - strong [ref=e274]: Faster tool-enabled chat completions.
+                  - text: Chat completions that use multiple tools now start faster because the tools they reference are fetched from the database in a single batch query instead of one query per tool.
+                  - link "#24808" [ref=e275] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24808
+                  - text: ","
+                  - link "Commit" [ref=e276] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/cc94a90b4d4d690bc7cb9f7124f2d6e552973970
+                - listitem [ref=e278]:
+                  - text: 🏎️
+                  - strong [ref=e279]: More responsive web search under load.
+                  - text: Web search through SearXNG, Google PSE, Brave, Serper, and Serpstack now uses non-blocking network calls, so the server stays responsive to other users while a search is in flight, and concurrent multi-query searches complete faster.
+                  - link "Commit" [ref=e280] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/b94245d2ee191e8ef118bf9de1ff7539503bfec9
+                - listitem [ref=e282]:
+                  - text: 🐎
+                  - strong [ref=e283]: Lighter Ollama backend connections.
+                  - text: Requests to Ollama backends now reuse a shared connection pool instead of opening a fresh session each time, reducing TCP and TLS handshake overhead for installs that poll Ollama frequently or have multiple backends configured.
+                  - link "Commit" [ref=e284] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/5d9a09a88a9094ebfcd249340be3aaee544b34d0
+                - listitem [ref=e286]:
+                  - text: 💽
+                  - strong [ref=e287]: Fewer redundant model-list writes.
+                  - text: On multi-instance deployments backed by Redis, the model list is no longer rewritten when it hasn't changed, cutting a major source of redundant writes.
+                  - link "#25469" [ref=e288] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25469
+                  - text: ","
+                  - link "#25474" [ref=e289] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25474
+                  - text: ","
+                  - link "Commit" [ref=e290] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/fd76b51ab2ad4c4192f2c98153e47888712c2009
+                - listitem [ref=e292]:
+                  - text: 📉
+                  - strong [ref=e293]: Faster websocket disconnect cleanup.
+                  - text: Disconnecting from a collaborative session no longer triggers a scan across the entire Redis keyspace, using a per-session index instead, which keeps disconnects cheap on large deployments.
+                  - link "#25466" [ref=e294] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25466
+                  - text: ","
+                  - link "Commit" [ref=e295] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c7de057a4a54cc80f366ad949417e78fae756d4c
+                - listitem [ref=e297]:
+                  - text: 📝
+                  - strong [ref=e298]: Frontmatter auto-fill for tools, functions, and skills.
+                  - text: Opening a tool, function, or skill editor now auto-fills the name, id, and description fields from the file's frontmatter, saving you from re-entering metadata already declared in the source.
+                  - link "#24649" [ref=e299] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24649
+                  - text: ","
+                  - link "Commit" [ref=e300] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ef975649b26d3e7cd589c49be2fc77cee80fad8f
+                - listitem [ref=e302]:
+                  - text: 🪪
+                  - strong [ref=e303]: More user placeholders in custom headers.
+                  - text: "Custom-header templates for direct connections and tool servers now support \"{{USER_EMAIL}}\" and \"{{USER_ROLE}}\" alongside the existing user and session placeholders."
+                  - link "Commit" [ref=e304] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ed73ef3d8df988b0e9646b82df5b1a453202ef8d
+                - listitem [ref=e306]:
+                  - text: ⏱️
+                  - strong [ref=e307]: Configurable MCP connection timeout.
+                  - text: The timeout for the initial handshake with an MCP tool server is now configurable via the new "MCP_INITIALIZE_TIMEOUT" setting, so servers that are slow to start or expose many tools can finish connecting instead of timing out.
+                  - link "#25011" [ref=e308] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25011
+                  - text: ","
+                  - link "Commit" [ref=e309] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/4297c02b121180e239a61c483ac8477cc557d4ef
+                - listitem [ref=e311]:
+                  - text: 📐
+                  - strong [ref=e312]: Profile image size limit.
+                  - text: Administrators can now cap the size of inline profile images via the new "PROFILE_IMAGE_MAX_DATA_URI_SIZE" setting, bounding how much database and cache space inline avatars and model icons can consume.
+                  - link "#25468" [ref=e313] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25468
+                  - text: ","
+                  - link "#25476" [ref=e314] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25476
+                - listitem [ref=e316]:
+                  - text: 🎫
+                  - strong [ref=e317]: Wildcard OAuth role mapping.
+                  - text: Administrators can now set "*" in the allowed OAuth roles to grant the user role to any authenticated OAuth user, instead of having to enumerate every accepted role.
+                  - link "#25062" [ref=e318] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25062
+                  - text: ","
+                  - link "Commit" [ref=e319] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/07cbc91a8eba3a9a3b39588b2ae5de916930af70
+                - listitem [ref=e321]:
+                  - text: 📊
+                  - strong [ref=e322]: Paginated feedback history.
+                  - text: The feedback and evaluation history list is now paginated, keeping it responsive for instances that have accumulated large numbers of feedback entries.
+                  - link "Commit" [ref=e323] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/160a6694e4bd66fc42e6361947516e8e15414ef3
+                - listitem [ref=e325]:
+                  - text: 🔘
+                  - strong [ref=e326]: Bulk enable or disable automations.
+                  - text: Automations can now be enabled or disabled in bulk from an actions menu on the automations page, instead of toggling each one individually.
+                  - link "Commit" [ref=e327] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/675e9bee5af8b9fb390fcb235a6c2c4766e78c75
+                - listitem [ref=e329]:
+                  - text: ➡️
+                  - strong [ref=e330]: Optional auto-redirect to single sign-on.
+                  - text: Administrators can now enable "OAUTH_AUTO_REDIRECT" so that, on deployments with a single sign-on provider and no other login methods, users are sent straight to the provider instead of seeing a login page first.
+                  - link "#25067" [ref=e331] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25067
+                  - text: ","
+                  - link "Commit" [ref=e332] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/d64ef1803d2f5cedb7b3a308151d08ff2cd2b8e1
+                - listitem [ref=e334]:
+                  - text: ☁️
+                  - strong [ref=e335]: Azure AI Foundry v1 with Entra ID.
+                  - text: Open WebUI now supports Azure AI Foundry's OpenAI v1 endpoint together with Microsoft Entra ID authentication, so these connections work without manual workarounds.
+                  - link "#24761" [ref=e336] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24761
+                  - text: ","
+                  - link "#24985" [ref=e337] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24985
+                  - text: ","
+                  - link "Commit" [ref=e338] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/eb4eebc3ce1042cb0d393bf890c1895db6e08b19
+                - listitem [ref=e340]:
+                  - text: 🌎
+                  - strong [ref=e341]: Linkup web search provider.
+                  - text: Administrators can now select Linkup as the web search provider from the admin settings, with options to configure the API key and search depth.
+                  - link "#24752" [ref=e342] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24752
+                  - text: ","
+                  - link "Commit" [ref=e343] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/56c0d00e13c74d665124ec9f1cae78e83ca60b6a
+                - listitem [ref=e345]:
+                  - text: 🧊
+                  - strong [ref=e346]: Valkey vector database support.
+                  - text: Valkey can now be used as the vector database backend, configurable through new "VALKEY_URL" and related settings including index type, distance metric, and HNSW tuning.
+                  - link "#24769" [ref=e347] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24769
+                  - text: ","
+                  - link "Commit" [ref=e348] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c0f1aa291938bbef62db8d4013dbc498b0abea15
+                - listitem [ref=e350]:
+                  - text: 🔄
+                  - strong [ref=e351]: General improvements.
+                  - text: Various improvements were implemented across the application to enhance performance, stability, and security.
+                - listitem [ref=e353]:
+                  - text: 🌐
+                  - strong [ref=e354]: Translation updates.
+                  - text: Translations for Spanish (Spain), Swedish, German, Korean, Catalan, Russian, Irish, Simplified Chinese, Traditional Chinese, Finnish, Polish, Turkish, and Malay were enhanced and expanded.
+            - generic [ref=e355]:
+              - generic [ref=e356]: fixed
+              - generic [ref=e357]:
+                - listitem [ref=e359]:
+                  - text: 🛡️
+                  - strong [ref=e360]: Security Advisory
+                  - text: ": This release includes security and access-control fixes. We recommend updating production deployments at your earliest convenience. Not all security fixes in this version may be enumerated in the fixed section — some may be withheld for a short time to give administrators time to upgrade."
+                  - link "Advisories" [ref=e361] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/security
+                - listitem [ref=e363]:
+                  - text: 🛡️
+                  - strong [ref=e364]: Tool server permission enforcement.
+                  - text: The per-user permission for inline tool servers is now enforced on chat-completion requests, so users without that permission can no longer bypass the admin setting by supplying tool servers directly in their requests.
+                  - link "Commit" [ref=e365] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/5cc1eb517094e3507915664817285f1e6e37a16d
+                - listitem [ref=e367]:
+                  - text: 🔒
+                  - strong [ref=e368]: Knowledge base access check in search tool.
+                  - text: The built-in knowledge search tool now verifies that the caller can access a knowledge base before searching it by id, preventing users from reading the contents of knowledge bases they have not been granted access to.
+                  - link "#25113" [ref=e369] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25113
+                - listitem [ref=e371]:
+                  - text: 🗄️
+                  - strong [ref=e372]: Cross-user access to retrieval collections.
+                  - text: Resolving the documents used for retrieval now verifies the caller's access to each referenced file and rejects client-supplied collection names, preventing a crafted request from pulling another user's files or vector collections into its context.
+                  - link "Commit" [ref=e373] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ee47c9c833f8889f3abe99d2266c56e8f8d40230
+                - listitem [ref=e375]:
+                  - text: 🔣
+                  - strong [ref=e376]: Collection name validation.
+                  - text: Vector collection names are now rejected unless they contain only safe characters, preventing malformed names from reaching the vector store or breaking out of a database query expression.
+                  - link "#24982" [ref=e377] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24982
+                - listitem [ref=e379]:
+                  - text: 🚫
+                  - strong [ref=e380]: Unscoped retrieval collections denied by default.
+                  - text: Retrieval requests for collection names that don't correspond to a known file, memory, web-search, or knowledge base are now denied for non-admins by default, with a new "ENABLE_RETRIEVAL_UNSCOPED_COLLECTIONS" setting to restore the previous behavior if needed.
+                  - link "Commit" [ref=e381] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c93f071700520a60833b7f9616c292b11f210880
+                - listitem [ref=e383]:
+                  - text: 📜
+                  - strong [ref=e384]: Prompt history authorization.
+                  - text: Comparing, deleting, and restoring prompt versions now verify the history entry belongs to the prompt you're authorized for, preventing access to or modification of another prompt's version history.
+                  - link "#25056" [ref=e385] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25056
+                - listitem [ref=e387]:
+                  - text: 🚦
+                  - strong [ref=e388]: Code interpreter permission on the legacy path.
+                  - text: The legacy code-execution path now enforces the same permission and capability checks as the current one, so users without the code interpreter permission can no longer trigger code execution through it.
+                  - link "#24724" [ref=e389] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24724
+                - listitem [ref=e391]:
+                  - text: 🧱
+                  - strong [ref=e392]: API key endpoint restriction bypass.
+                  - text: The endpoint allow-list that limits which paths an API key may reach is now matched against the routed request path directly, preventing a crafted request from slipping past the restriction.
+                  - link "#25123" [ref=e393] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25123
+                - listitem [ref=e395]:
+                  - text: 🚧
+                  - strong [ref=e396]: System prompt bypass via request parameter.
+                  - text: The flag that skips a model's configured system prompt can no longer be set by external clients through a request parameter, so admin-configured system prompts can't be bypassed from the API.
+                  - link "#25156" [ref=e397] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25156
+                - listitem [ref=e399]:
+                  - text: 🚪
+                  - strong [ref=e400]: Terminal proxy path traversal.
+                  - text: The terminal proxy now fully decodes request paths before validating them, blocking multi-encoded payloads that could otherwise escape the intended path.
+                  - link "#25157" [ref=e401] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25157
+                - listitem [ref=e403]:
+                  - text: 🪤
+                  - strong [ref=e404]: Cache file path traversal.
+                  - text: The cache file server now requires an exact directory boundary match, closing a gap where a sibling directory whose name began with the cache directory's name could be used to serve files from outside it.
+                  - link "#25086" [ref=e405] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25086
+                - listitem [ref=e407]:
+                  - text: 🔀
+                  - strong [ref=e408]: Ollama backend selection access check.
+                  - text: Requests can no longer target an arbitrary Ollama backend by index; a caller-supplied backend selector is now verified against the backends that actually serve the requested model.
+                  - link "Commit" [ref=e409] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/7139797be04030b9d1016782f1dbb251c5fe68bb
+                - listitem [ref=e411]:
+                  - text: 🔓
+                  - strong [ref=e412]: Cross-user file exfiltration via image URLs.
+                  - text: When a chat message references a file by id in an "image_url" field, the server now resolves that file only for its owner, an administrator, or a user with an explicit read grant, preventing other authenticated users from extracting a file's contents by routing it through the model.
+                  - link "#24625" [ref=e413] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24625
+                  - text: ","
+                  - link "Commit" [ref=e414] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c75fe8e74b72617c51282cc3ea0a2e8d9cdd9140
+                - listitem [ref=e416]:
+                  - text: 📌
+                  - strong [ref=e417]: Chat file attachment access checks.
+                  - text: Attaching files to a chat now links only files the caller can read, preventing a user from associating another user's file with their chat to access its contents.
+                  - link "#25054" [ref=e418] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25054
+                - listitem [ref=e420]:
+                  - text: 🧾
+                  - strong [ref=e421]: Model knowledge file ownership checks.
+                  - text: Creating or updating a model now verifies that any knowledge files attached to it are files the editor can access, preventing another user's files from being attached to a model.
+                  - link "#25055" [ref=e422] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25055
+                  - text: ","
+                  - link "Commit" [ref=e423] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/27fb20c13a4bf8501f7a485abe0654eb5880980d
+                - listitem [ref=e425]:
+                  - text: 📅
+                  - strong [ref=e426]: Calendar event move authorization.
+                  - text: Updating a calendar event to move it into a different calendar now requires write access on the destination calendar, preventing users from injecting events into calendars they cannot write to.
+                  - link "#24764" [ref=e427] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24764
+                - listitem [ref=e429]:
+                  - text: 📣
+                  - strong [ref=e430]: Channel chat access control.
+                  - text: Generating a response in a channel context now verifies the caller's access to that channel and scopes the included messages, preventing access to channels or messages the user isn't permitted to see.
+                  - link "#24725" [ref=e431] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24725
+                - listitem [ref=e433]:
+                  - text: 🕸️
+                  - strong [ref=e434]: Web loader SSRF gating with Playwright.
+                  - text: When the Playwright-based web loader is in use, page navigations and redirects are now validated the same way as the default loader, closing a gap where the Playwright path could reach internal or otherwise blocked URLs.
+                  - link "#24756" [ref=e435] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24756
+                - listitem [ref=e437]:
+                  - text: 🛂
+                  - strong [ref=e438]: DNS rebinding protection for URL fetches.
+                  - text: The IP address validated for an outbound URL fetch is now the same one used for the actual connection, closing a DNS rebinding window where an attacker-controlled hostname could resolve to a public IP during the safety check and then to a private IP when the connection was opened.
+                  - link "#24759" [ref=e439] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24759
+                - listitem [ref=e441]:
+                  - text: 🪞
+                  - strong [ref=e442]: OAuth profile picture redirect handling.
+                  - text: The OAuth profile picture fetch now follows redirects only when administrators have explicitly allowed it, closing a window where a redirect from an externally validated URL could be used to reach internal addresses.
+                  - link "#24809" [ref=e443] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24809
+                - listitem [ref=e445]:
+                  - text: 🧼
+                  - strong [ref=e446]: Model profile image script injection.
+                  - text: Model profile images are now validated on save and only served inline when they are a known-safe image type, preventing a crafted SVG profile image from running scripts in other users' browsers, while existing legacy images that fail validation are cleared gracefully instead of breaking the model list.
+                  - link "#25060" [ref=e447] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25060
+                  - text: ","
+                  - link "#25173" [ref=e448] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25173
+                - listitem [ref=e450]:
+                  - text: 🧯
+                  - strong [ref=e451]: Diagram rendering script injection.
+                  - text: Mermaid diagrams rendered in chat are now sanitized before display, preventing a crafted diagram from running scripts in the viewer's browser.
+                  - link "#25219" [ref=e452] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25219
+                - listitem [ref=e454]:
+                  - text: 🔐
+                  - strong [ref=e455]: Shared-chat file write protection.
+                  - text: Access to a file through a shared chat now only grants read access, so users who can read a shared chat can no longer modify or delete files attached to it.
+                  - link "#24755" [ref=e456] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24755
+                - listitem [ref=e458]:
+                  - text: 🔏
+                  - strong [ref=e459]: Cross-origin embed prompt control.
+                  - text: When Open WebUI is embedded in an iframe on a different origin, the embedding page can now only drive the chat input or submit prompts if the user has explicitly opted in via the "iframe Sandbox Allow Same Origin" setting, preventing untrusted host pages from triggering confirmation dialogs or controlling the chat.
+                  - link "#24767" [ref=e460] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24767
+                  - text: ","
+                  - link "Commit" [ref=e461] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/eb3076c1b02d90c2ce6e6d3beb08a37987c740ec
+                - listitem [ref=e463]:
+                  - text: 🗂️
+                  - strong [ref=e464]: Chat folder ownership checks.
+                  - text: Creating a chat or updating a chat's folder now verifies the referenced folder belongs to the current user, preventing chats from being associated with folders owned by other people.
+                  - link "#24588" [ref=e465] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24588
+                - listitem [ref=e467]:
+                  - text: 🧩
+                  - strong [ref=e468]: Chat recovery from corrupted history.
+                  - text: Chats whose internal message graph was left in a malformed state by a failed regeneration now open and load correctly, with missing roles, parent references, and current-message pointers reconstructed automatically instead of breaking the chat.
+                  - link "#24424" [ref=e469] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24424
+                  - text: ","
+                  - link "#24157" [ref=e470] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24157
+                  - text: ","
+                  - link "#20474" [ref=e471] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/20474
+                  - text: ","
+                  - link "#24799" [ref=e472] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24799
+                  - text: ","
+                  - link "Commit" [ref=e473] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/d310a0777c4c48ec772bdc9a510005d5e91b09c7
+                - listitem [ref=e475]:
+                  - text: 📨
+                  - strong [ref=e476]: Imported chats with folders appear correctly.
+                  - text: Importing grouped chats no longer leaves them invisible when a referenced folder is missing; such chats now appear in the chat list instead of being silently orphaned.
+                  - link "#24910" [ref=e477] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24910
+                  - text: ","
+                  - link "Commit" [ref=e478] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/7f7cd210186cb6a67e028c17974eb210fc7ba9fd
+                - listitem [ref=e480]:
+                  - text: 🎟️
+                  - strong [ref=e481]: MCP tool server sessions stay connected.
+                  - text: OAuth-authenticated MCP tool server sessions are no longer mistakenly refreshed and deleted by the single sign-on session handler, so those connections stay active.
+                  - link "#24618" [ref=e482] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24618
+                  - text: ","
+                  - link "Commit" [ref=e483] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c8eb8edca4174ec68fabd071d6b08c0bc07f8117
+                - listitem [ref=e485]:
+                  - text: 🤝
+                  - strong [ref=e486]: MCP OAuth scope discovery.
+                  - text: The OAuth flow for MCP tool servers now reads the scopes a server advertises through its Protected Resource Metadata, so connecting to servers that declare their own scopes succeeds.
+                  - link "#24730" [ref=e487] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24730
+                  - text: ","
+                  - link "#24690" [ref=e488] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24690
+                - listitem [ref=e490]:
+                  - text: 🔍
+                  - strong [ref=e491]: Web search reliability.
+                  - text: Web search again fetches page content reliably with the default web loader engine, a new "USER_AGENT" environment variable lets administrators set a real browser user-agent so fetches aren't blocked by Cloudflare, Wikipedia, and other bot-detection systems, and the startup script no longer fails to launch when these new environment variables are unset.
+                  - link "#24560" [ref=e492] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24560
+                  - text: ","
+                  - link "#24793" [ref=e493] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24793
+                  - text: ","
+                  - link "#24683" [ref=e494] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24683
+                  - text: ","
+                  - link "Commit" [ref=e495] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/f60733758272c4532cd032e518c9cd73f648043a
+                - listitem [ref=e497]:
+                  - text: 🔥
+                  - strong [ref=e498]: Firecrawl web search results.
+                  - text: Web search using Firecrawl now returns results correctly regardless of which response format the Firecrawl version uses.
+                  - link "#24712" [ref=e499] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24712
+                - listitem [ref=e501]:
+                  - text: 🦅
+                  - strong [ref=e502]: Kagi web search.
+                  - text: Web search using Kagi works again after its API endpoint and request method were updated to match Kagi's current API.
+                  - link "#25015" [ref=e503] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25015
+                - listitem [ref=e505]:
+                  - text: 🔢
+                  - strong [ref=e506]: Bracketed numbers in code blocks.
+                  - text: Numbers in square brackets such as "[0]" inside code blocks are no longer stripped out as if they were source citations, so code displays and copies correctly.
+                  - link "#24948" [ref=e507] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24948
+                  - text: ","
+                  - link "Commit" [ref=e508] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/e90a618f4555cea2c024bb60c1332ca04eed96da
+                - listitem [ref=e510]:
+                  - text: 🔌
+                  - strong [ref=e511]: API chat completions reliability.
+                  - text: Direct calls to the chat completions API no longer fail with an internal error when no chat session identifier is supplied.
+                  - link "#24553" [ref=e512] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24553
+                  - text: ","
+                  - link "#25235" [ref=e513] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25235
+                  - text: ","
+                  - link "Commit" [ref=e514] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/bc244fdc90504824b76654880898bf3f6649c299
+                  - text: ","
+                  - link "Commit" [ref=e515] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/f16b5c446027eae1bd767617bac2fdf54b24d6fc
+                - listitem [ref=e517]:
+                  - text: 🖼️
+                  - strong [ref=e518]: ComfyUI image generation and editing.
+                  - text: Generating and editing images via a ComfyUI backend now works again, including when ComfyUI is hosted on a private or internal network where URL validation was previously blocking the admin-configured endpoint.
+                  - link "#24565" [ref=e519] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24565
+                  - text: ","
+                  - link "Commit" [ref=e520] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/7dcd932ad7cb5feab007737c6e0281def5cd47fc
+                  - text: ","
+                  - link "Commit" [ref=e521] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/8aa2a42dc7887512e697ff85d044220945ced40f
+                - listitem [ref=e523]:
+                  - text: 🖌️
+                  - strong [ref=e524]: Image generation with non-standard response headers.
+                  - text: Image generation now works with backends that return valid JSON without a standard content-type header, instead of rejecting the response.
+                  - link "#24838" [ref=e525] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24838
+                - listitem [ref=e527]:
+                  - text: 🐘
+                  - strong [ref=e528]: Knowledge search on large documents.
+                  - text: Searching knowledge bases on PostgreSQL no longer fails when scanning across documents with very large extracted text content.
+                  - link "#24670" [ref=e529] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24670
+                  - text: ","
+                  - link "Commit" [ref=e530] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/d74ee34d9128295faa116c919bd1dcca77744975
+                - listitem [ref=e532]:
+                  - text: 💬
+                  - strong [ref=e533]: Chat title generation.
+                  - text: Automatically generated chat titles now use the model currently selected in the dropdown for the active chat and fall back to the model from the active message branch otherwise, and a clear message is shown if no model is available instead of an unhelpful error.
+                  - link "#24604" [ref=e534] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24604
+                  - text: ","
+                  - link "#24745" [ref=e535] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24745
+                  - text: ","
+                  - link "Commit" [ref=e536] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/e5c8f8110a88739e011d8ab23e5cb11b4768469f
+                  - text: ","
+                  - link "Commit" [ref=e537] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/3c5e7968f0b5130890e17f1f2a2a52297cb145a6
+                - listitem [ref=e539]:
+                  - text: 🧮
+                  - strong [ref=e540]: Message search and analytics consistency.
+                  - text: Edits, deletions, and branch changes made in a chat are now reflected in message search results and analytics counts instead of leaving stale entries behind.
+                  - link "#25205" [ref=e541] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25205
+                  - text: ","
+                  - link "Commit" [ref=e542] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/aa06200f789a4c3fc54ea9a141cd347d76cda4c5
+                - listitem [ref=e544]:
+                  - text: 🩹
+                  - strong [ref=e545]: Graceful handling of in-chat task failures.
+                  - text: When web search query generation, image prompt generation, or a tool call fails or references a missing tool, the chat now falls back or surfaces a clear error instead of breaking partway through the response.
+                  - link "#25038" [ref=e546] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25038
+                  - text: ","
+                  - link "#25144" [ref=e547] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25144
+                  - text: ","
+                  - link "Commit" [ref=e548] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/b64fd988f02b8a4295193892b24b00bdf635a4dc
+                - listitem [ref=e550]:
+                  - text: 🎛️
+                  - strong [ref=e551]: Filter changes to message output.
+                  - text: Filter functions that modify a message's structured output after generation now have those changes saved and displayed, instead of being discarded when only the output, not the text content, was changed.
+                  - link "#24884" [ref=e552] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24884
+                - listitem [ref=e554]:
+                  - text: ⏩
+                  - strong [ref=e555]: Titles and tags reflect filtered output.
+                  - text: Outlet filters now run before automatic title, tag, and follow-up generation, so those are based on the final filtered message instead of the unfiltered version.
+                  - link "#24717" [ref=e556] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24717
+                - listitem [ref=e558]:
+                  - text: 💾
+                  - strong [ref=e559]: Action-replaced message content persists.
+                  - text: Message content replaced by an action function through its event emitter is now kept when the chat is saved, instead of reverting to the original after a page reload.
+                  - link "#24585" [ref=e560] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24585
+                  - text: ","
+                  - link "#25485" [ref=e561] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25485
+                - listitem [ref=e563]:
+                  - text: 🏷️
+                  - strong [ref=e564]: Skill mentions in messages.
+                  - text: Mentioning a skill in a message now keeps the skill's name as readable text instead of removing it, and selecting a skill without typing anything no longer causes an error on providers that reject empty messages.
+                  - link "#24929" [ref=e565] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24929
+                  - text: ","
+                  - link "Commit" [ref=e566] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/01810e32ad51305ca3247e8f83da95f6e6260f0c
+                - listitem [ref=e568]:
+                  - text: 🧹
+                  - strong [ref=e569]: Usage timer cleanup on send failure.
+                  - text: The background usage-stats timer started during message generation is now always cleared, even when sending a message fails, preventing leaked timers from accumulating over a session.
+                  - link "#25478" [ref=e570] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25478
+                - listitem [ref=e572]:
+                  - text: 🗑️
+                  - strong [ref=e573]: Background tasks stop when a chat is removed.
+                  - text: Deleting or archiving a chat now cancels any in-flight generation or title and tag tasks for it, instead of leaving orphaned background work running.
+                  - link "#25050" [ref=e574] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25050
+                  - text: ","
+                  - link "Commit" [ref=e575] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/778dba1d6b8dc3962163fa7bf9d802d9a07fba26
+                - listitem [ref=e577]:
+                  - text: ⌨️
+                  - strong [ref=e578]: Responsive knowledge file search.
+                  - text: Searching for knowledge files in the chat picker and model knowledge selector now matches on file names by default instead of scanning the full extracted text of every document on each keystroke, keeping the search responsive on large deployments, with content search available as an explicit opt-in.
+                  - link "#25082" [ref=e579] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25082
+                  - text: ","
+                  - link "#25119" [ref=e580] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25119
+                  - text: ","
+                  - link "Commit" [ref=e581] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/591e0aafa1d5e21dcd9fa1279dada2076968b9cb
+                - listitem [ref=e583]:
+                  - text: 📥
+                  - strong [ref=e584]: Document processing with empty embeddings.
+                  - text: Saving documents to the vector database no longer crashes when an embedding step returns no vectors, allowing the process to continue instead of failing the whole upload.
+                  - link "#25166" [ref=e585] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25166
+                - listitem [ref=e587]:
+                  - text: 🔤
+                  - strong [ref=e588]: Non-UTF-8 text and CSV uploads.
+                  - text: Text and CSV files saved in legacy encodings, including Latin-1, Windows-1252, and Chinese encodings such as GB18030, are now detected and loaded correctly instead of being rejected as binary or failing with an empty-content error.
+                  - link "#25172" [ref=e589] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25172
+                  - text: ","
+                  - link "#24973" [ref=e590] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24973
+                  - text: ","
+                  - link "Commit" [ref=e591] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/6f0277db52d005420480abb0702d421525d6ea8b
+                  - text: ","
+                  - link "Commit" [ref=e592] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1bbb2b933d4cee70a5102eca4109e77b8625f8fc
+                - listitem [ref=e594]:
+                  - text: 🧽
+                  - strong [ref=e595]: Null bytes in nested data no longer break saves.
+                  - text: Data containing null bytes nested inside structured fields is now sanitized correctly before being written, preventing database errors that the previous check failed to catch.
+                  - link "#25018" [ref=e596] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25018
+                  - text: ","
+                  - link "Commit" [ref=e597] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/e3ab4bd212e44c39f439ec4ff5df7c3dbd046895
+                - listitem [ref=e599]:
+                  - text: 🧠
+                  - strong [ref=e600]: Clear error when no embedding model is configured.
+                  - text: Using knowledge or retrieval features without a loaded embedding model now returns a clear setup error explaining what to configure, instead of failing with a cryptic crash.
+                  - link "Commit" [ref=e601] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/55ca719bbf76306ed647424c728f730d0bef21f9
+                - listitem [ref=e603]:
+                  - text: 🧲
+                  - strong [ref=e604]: Memory search quality.
+                  - text: Memory searches now apply the configured embedding query prefix, so retrieval works correctly with embedding models that require one for queries.
+                  - link "#24921" [ref=e605] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24921
+                  - text: ","
+                  - link "Commit" [ref=e606] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ce4dca47cb19a6582fd8a550806c89ab297c038d
+                - listitem [ref=e608]:
+                  - text: 📚
+                  - strong [ref=e609]: Knowledge tool context overflow.
+                  - text: The built-in tool that lists a model's knowledge no longer dumps every file in every knowledge base into the model's context; it now returns summaries by default and paginates file listings only for a requested knowledge base.
+                  - link "#25105" [ref=e610] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25105
+                  - text: ","
+                  - link "Commit" [ref=e611] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/0e73f7af099e1f9437c55a5c2d16741c97dbd57f
+                - listitem [ref=e613]:
+                  - text: ⏳
+                  - strong [ref=e614]: Terminal session stability.
+                  - text: The terminal proxy no longer hangs when one direction of the connection closes before the other, so terminal sessions shut down cleanly instead of stalling.
+                  - link "#25464" [ref=e615] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25464
+                  - text: ","
+                  - link "#25479" [ref=e616] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25479
+                - listitem [ref=e618]:
+                  - text: 🧷
+                  - strong [ref=e619]: Tool call continuity with strict providers.
+                  - text: Chats that contain incomplete tool calls or orphaned tool results no longer fail to continue when sent to providers that strictly validate tool pairings, such as Anthropic and AWS Bedrock Converse.
+                  - link "#24758" [ref=e620] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24758
+                  - text: ","
+                  - link "#24940" [ref=e621] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24940
+                  - text: ","
+                  - link "#24798" [ref=e622] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24798
+                  - text: ","
+                  - link "Commit" [ref=e623] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/cfa6908d579e1f7f202a321289029996130b8411
+                - listitem [ref=e625]:
+                  - text: 🛑
+                  - strong [ref=e626]: Stream termination for pipe functions.
+                  - text: Streamed responses from pipe functions now always send the standard end-of-stream marker, so chat clients and external integrations reliably detect when a response is complete instead of waiting on streams that already finished.
+                  - link "#24763" [ref=e627] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24763
+                - listitem [ref=e629]:
+                  - text: 🔊
+                  - strong [ref=e630]: Non-blocking text-to-speech transcoding.
+                  - text: Converting text-to-speech audio to MP3 no longer blocks the server's event loop, so other requests stay responsive even while a TTS response is being transcoded.
+                  - link "#24876" [ref=e631] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24876
+                - listitem [ref=e633]:
+                  - text: 🎚️
+                  - strong [ref=e634]: Default text-to-speech voice.
+                  - text: Text-to-speech requests now honor the voice specified in the request and fall back to the configured default only when none is given, instead of always using the admin default or failing.
+                  - link "#15143" [ref=e635] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/15143
+                  - text: ","
+                  - link "#25035" [ref=e636] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25035
+                  - text: ","
+                  - link "Commit" [ref=e637] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/f16b5c446027eae1bd767617bac2fdf54b24d6fc
+                  - text: ","
+                  - link "Commit" [ref=e638] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/750604a11d4adcb5ae568b9fc93010031ad394f9
+                - listitem [ref=e640]:
+                  - text: 🪝
+                  - strong [ref=e641]: Reliable knowledge base file linking.
+                  - text: Files uploaded to a knowledge collection are now linked on the server as part of the upload itself, so they remain attached to the collection even if you navigate away or close the page before processing finishes.
+                  - link "#24807" [ref=e642] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24807
+                  - text: ","
+                  - link "Commit" [ref=e643] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/d0b17f056911ec73df2b686a0d92bb789391db27
+                - listitem [ref=e645]:
+                  - text: ☁️
+                  - strong [ref=e646]: Azure connections on custom hostnames.
+                  - text: Connections marked as the Azure provider now use the Azure code path even when the endpoint does not contain "azure" in its hostname, fixing custom Azure deployments served from non-standard domains.
+                  - link "#24882" [ref=e647] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24882
+                  - text: ","
+                  - link "Commit" [ref=e648] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c8f851bd2de3d127f1e818fc116c27174f96d3f1
+                - listitem [ref=e650]:
+                  - text: 🗓️
+                  - strong [ref=e651]: Clearing calendar event fields.
+                  - text: Removing the description or location from a calendar event now saves correctly instead of silently keeping the previous value.
+                  - link "#25026" [ref=e652] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25026
+                  - text: ","
+                  - link "Commit" [ref=e653] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/91810f1c4e93d4f559bdf61cd085cadc288a732d
+                  - text: ","
+                  - link "Commit" [ref=e654] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/78b1637a035d71099262412e5dee3e4d65c7fb2f
+                - listitem [ref=e656]:
+                  - text: 💭
+                  - strong [ref=e657]: Advanced parameter settings.
+                  - text: Custom reasoning tags and custom model parameters are now saved correctly instead of being dropped, and the presence penalty and repeat penalty no longer save the frequency penalty's value instead of their own.
+                  - link "#25183" [ref=e658] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25183
+                  - text: ","
+                  - link "#25200" [ref=e659] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25200
+                  - text: ","
+                  - link "#25204" [ref=e660] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25204
+                - listitem [ref=e662]:
+                  - text: 📏
+                  - strong [ref=e663]: Long username display.
+                  - text: Long usernames no longer overflow their containers in the admin user list, user modals, and sidebar.
+                  - link "#25185" [ref=e664] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25185
+                - listitem [ref=e666]:
+                  - text: 🎯
+                  - strong [ref=e667]: All skills selectable in the model editor.
+                  - text: The model editor's skills selector now lists every skill you have access to, with a search box for large lists, instead of showing only the first 30 with no way to reach the rest.
+                  - link "#24873" [ref=e668] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24873
+                  - text: ","
+                  - link "Commit" [ref=e669] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/936d5f2676dfbd2ba763b30af33a8557dcda9b05
+                - listitem [ref=e671]:
+                  - text: 🔔
+                  - strong [ref=e672]: Accurate knowledge upload feedback.
+                  - text: Dragging files into a knowledge base no longer shows an upload notification before the upload has actually been processed.
+                  - link "#25484" [ref=e673] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25484
+                - listitem [ref=e675]:
+                  - text: ♿
+                  - strong [ref=e676]: High-contrast timestamp readability.
+                  - text: The user message timestamp now uses the correct colors in high-contrast mode instead of inverted ones, keeping it readable.
+                  - link "#25461" [ref=e677] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25461
+                - listitem [ref=e679]:
+                  - text: ♿
+                  - strong [ref=e680]: Keyboard and screen reader access to menus.
+                  - text: The integrations, more-options, and user menus are now real buttons with labels and keyboard support, so they can be opened with the keyboard and announced by screen readers.
+                  - link "Commit" [ref=e681] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/346dab3d8f909fc321a49ea2be633ea5c4c4a349
+                - listitem [ref=e683]:
+                  - text: 🖱️
+                  - strong [ref=e684]: Focus-loss handling in editors.
+                  - text: Workspace and admin editors for models, tools, functions, and skills again respond correctly when the browser window loses focus, after the wrong event name was being listened for.
+                  - link "#25459" [ref=e685] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25459
+                - listitem [ref=e687]:
+                  - text: 🛟
+                  - strong [ref=e688]: Resilience to corrupted local storage.
+                  - text: Corrupted data in the browser's local storage no longer crashes the interface; affected settings and dismissed-banner state now fall back to safe defaults.
+                  - link "#25481" [ref=e689] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25481
+                - listitem [ref=e691]:
+                  - text: 📶
+                  - strong [ref=e692]: Quieter reconnection notifications.
+                  - text: Brief connection interruptions, such as backgrounding a mobile tab, no longer flash a "connection lost" warning, and the "reconnected" message only appears if a disconnect was actually shown.
+                  - link "Commit" [ref=e693] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/77c8c54b1ea07189e21313f9cd401f3b956bb93a
+                - listitem [ref=e695]:
+                  - text: 🍎
+                  - strong [ref=e696]: Safari PDF handling.
+                  - text: PDF processing now works in Safari, which doesn't support the stream iteration the previous code relied on.
+                  - link "#25151" [ref=e697] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25151
+                  - text: ","
+                  - link "#25473" [ref=e698] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25473
+                - listitem [ref=e700]:
+                  - text: 🎙️
+                  - strong [ref=e701]: Voice mode mute shortcut listing.
+                  - text: The keyboard shortcut for muting voice mode now appears in the keyboard shortcuts help modal.
+                  - link "#25193" [ref=e702] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25193
+                - listitem [ref=e704]:
+                  - text: 📎
+                  - strong [ref=e705]: Document attachments in channel model replies.
+                  - text: Tagging a model in a channel thread now forwards uploaded non-image documents such as PDFs and DOCX files into the model's context, so document summarization and comparison workflows that already worked in direct chat now work in channels too.
+                  - link "#24896" [ref=e706] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24896
+                  - text: ","
+                  - link "#24898" [ref=e707] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24898
+                  - text: ","
+                  - link "Commit" [ref=e708] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/7e9d41d664d7065a92ac93606d18e88c45eb36b6
+                - listitem [ref=e710]:
+                  - text: 🙈
+                  - strong [ref=e711]: Hidden models in channel mentions.
+                  - text: Models marked as hidden no longer appear in the channel message-input model mention selector, matching how hidden models are excluded elsewhere in the interface.
+                  - link "#24892" [ref=e712] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24892
+                - listitem [ref=e714]:
+                  - text: 🧵
+                  - strong [ref=e715]: Channel thread and pinned message stability.
+                  - text: Opening a channel thread or the pinned messages view no longer fails to render when a message or its data is missing.
+                  - link "#25209" [ref=e716] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25209
+                - listitem [ref=e718]:
+                  - text: 📺
+                  - strong [ref=e719]: YouTube short link transcripts.
+                  - text: Pasting a "youtu.be" short link into a chat now loads the video transcript correctly instead of failing with an empty-content error.
+                  - link "#24856" [ref=e720] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24856
+                  - text: ","
+                  - link "Commit" [ref=e721] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1e36a206008c3abce5ccdc98d5750e30a7345b98
+                - listitem [ref=e723]:
+                  - text: 🙉
+                  - strong [ref=e724]: Hidden models in default-model and automation pickers.
+                  - text: The admin pickers for default models and default pinned models, and the automation model dropdown, now filter out hidden models, consistent with how hidden models are treated elsewhere.
+                  - link "#24869" [ref=e725] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24869
+                  - text: ","
+                  - link "Commit" [ref=e726] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1fa3050f069a72de1daaaa29233b545c4deaea51
+                  - text: ","
+                  - link "Commit" [ref=e727] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/4705c2d98812c1189c2ae4960399bc8888d4861c
+                - listitem [ref=e729]:
+                  - text: 🔊
+                  - strong [ref=e730]: Speech-to-text SSL setting honored.
+                  - text: Speech-to-text requests now respect the "AIOHTTP_CLIENT_SESSION_SSL" setting, so administrators using self-signed certificates or custom SSL configurations can use STT engines that were previously failing TLS verification.
+                  - link "#24568" [ref=e731] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24568
+                  - text: ","
+                  - link "#24857" [ref=e732] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24857
+                  - text: ","
+                  - link "Commit" [ref=e733] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/2ca91ceeeca6a6a21e5a6ad68ea3ab8c9d9f6deb
+                  - text: ","
+                  - link "Commit" [ref=e734] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/94b66b17972e0ad77954df4b81a6bb86a7a6a04b
+                - listitem [ref=e736]:
+                  - text: 🔗
+                  - strong [ref=e737]: Placeholders in MCP connection headers.
+                  - text: "Custom header templates configured on MCP server connections now have their \"{{USER_ID}}\", \"{{USER_NAME}}\", \"{{USER_EMAIL}}\", \"{{USER_ROLE}}\", \"{{CHAT_ID}}\", and \"{{MESSAGE_ID}}\" placeholders interpolated at request time, matching how custom headers already work for direct connections and tool servers."
+                  - link "#24822" [ref=e738] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24822
+                - listitem [ref=e740]:
+                  - text: 🪟
+                  - strong [ref=e741]: Bing search CLI smoke test.
+                  - text: Running the Bing web-search module from the command line for a quick connectivity check no longer raises an error about missing arguments.
+                  - link "#24765" [ref=e742] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24765
+                  - text: ","
+                  - link "#24768" [ref=e743] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24768
+                - listitem [ref=e745]:
+                  - text: 🩺
+                  - strong [ref=e746]: Database health check recovery.
+                  - text: After a transient database connection error, the health check endpoint now recovers automatically instead of staying permanently broken on the affected worker.
+                  - link "Commit" [ref=e747] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/0b81520e072bb4ed15532b8e153b43dd3243feaf
+                - listitem [ref=e749]:
+                  - text: 🥾
+                  - strong [ref=e750]: Startup on non-Unicode consoles.
+                  - text: Open WebUI no longer crashes at startup when the console can't encode the banner's box-drawing characters, such as on Windows or with redirected or headless output, falling back to a plain-text banner instead.
+                  - link "#24965" [ref=e751] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24965
+                  - text: ","
+                  - link "#25482" [ref=e752] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25482
+                - listitem [ref=e754]:
+                  - text: 🆕
+                  - strong [ref=e755]: First admin signup after a reset.
+                  - text: Creating the first administrator account is no longer blocked by a previously stored signup setting, so a fresh or reset instance can always be bootstrapped.
+                  - link "#24821" [ref=e756] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24821
+                - listitem [ref=e758]:
+                  - text: 🪵
+                  - strong [ref=e759]: JSON exception logging.
+                  - text: With JSON log formatting enabled, exceptions are now recorded correctly with a structured type, message, and stacktrace instead of being dropped, and a logging failure can no longer crash the application.
+                  - link "#25135" [ref=e760] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/25135
+                  - text: ","
+                  - link "Commit" [ref=e761] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/79bf3d28d88e78b0136ef3c3c9f8e7bb85d3cea9
+                - listitem [ref=e763]:
+                  - text: 🧭
+                  - strong [ref=e764]: Workspace skills permission.
+                  - text: Users granted only the "workspace.skills" permission can now see the workspace entry in the sidebar and are correctly routed to the skills page from the workspace index.
+                  - link "#24729" [ref=e765] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24729
+                - listitem [ref=e767]:
+                  - text: 🔁
+                  - strong [ref=e768]: Resilient database migrations.
+                  - text: Database migrations now skip tables, indexes, and columns that already exist and add missing primary keys to legacy tables, so upgrades succeed even when parts of the schema were manually or partially created beforehand.
+                  - link "Commit" [ref=e769] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/81f611fb73c726cfcfc20ee57a926a543f07e95f
+                  - text: ","
+                  - link "Commit" [ref=e770] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/f0e88dadc8502ea05b1a00f3155bee7d1cf32249
+                  - text: ","
+                  - link "Commit" [ref=e771] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/bd9f82d5a681ee94bde44325033447500a0c76bf
+                  - text: ","
+                  - link "Commit" [ref=e772] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/459b1c3fda2ec3579fbd2ab408d0fdeb07c96b99
+                  - text: ","
+                  - link "Commit" [ref=e773] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/6df09a4039d181f4e2d41324e93cd36c6fb27dfd
+                  - text: ","
+                  - link "Commit" [ref=e774] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/95840e307a66429168775de389b329487a4311c4
+                  - text: ","
+                  - link "Commit" [ref=e775] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/6b1df94bf933af92f5c7d093a2d92e2e50d6fdd0
+                  - text: ","
+                  - link "Commit" [ref=e776] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/98d3b2308564e2112290773ea240b90419ebb48d
+                  - text: ","
+                  - link "Commit" [ref=e777] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1b9d22e324181b96511a15cbacc40fdbb439ad79
+                  - text: ","
+                  - link "Commit" [ref=e778] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/dc0f8ae6f2372b6e5dd42f3520813b09c54146c0
+                  - text: ","
+                  - link "Commit" [ref=e779] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ee3b14233a642ff1bc38aef03a2418afcf5d6c1d
+                  - text: ","
+                  - link "Commit" [ref=e780] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1004dad2749bcc369d511315a808d4bb5277854c
+                  - text: ","
+                  - link "Commit" [ref=e781] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/db2b3d7fd86cc7d76424671ead3c62a3f6302fe7
+                  - text: ","
+                  - link "Commit" [ref=e782] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/2e1b671e8db49f47d69fd59ece2b58e109ec8b84
+                  - text: ","
+                  - link "Commit" [ref=e783] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9a8969ca93f8c9109d956518a085be3e2afacc07
+                  - text: ","
+                  - link "Commit" [ref=e784] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9717ada92fdb3761a217d309f322ee9fbe418d0d
+                  - text: ","
+                  - link "Commit" [ref=e785] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/d7cfc1e46a8f3e5c8f6758c12ef641f41fb51a39
+                  - text: ","
+                  - link "Commit" [ref=e786] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9263b7568eaa83f43e4a118c98490c4f7aaba570
+                  - text: ","
+                  - link "Commit" [ref=e787] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/73d2065227e651cf90a2cfade721516815743ab4
+                  - text: ","
+                  - link "#24722" [ref=e788] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24722
+            - generic [ref=e789]:
+              - generic [ref=e790]: changed
+              - generic [ref=e791]:
+                - listitem [ref=e793]:
+                  - text: ⚠️
+                  - strong [ref=e794]: Database Migrations
+                  - text: ": This release includes database schema changes; we strongly recommend backing up your database and all associated data before upgrading in production environments. If you are running a multi-worker, multi-server, or load-balanced deployment, all instances must be updated simultaneously, rolling updates are not supported and will cause application failures due to schema incompatibility."
+                - listitem [ref=e796]:
+                  - text: ⚙️
+                  - strong [ref=e797]: Tool-call iteration cap renamed and raised.
+                  - text: The environment variable that limits how many tool calls a single chat response may make is now "CHAT_RESPONSE_MAX_TOOL_CALL_ITERATIONS", with its default raised from 30 to 256 and a new "-1" value for unlimited; the previous "CHAT_RESPONSE_MAX_TOOL_CALL_RETRIES" name continues to work as a fallback, and chats that hit the cap now show a clear error in-chat instead of stopping silently.
+                  - link "#24918" [ref=e798] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24918
+                  - text: ","
+                  - link "Commit" [ref=e799] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/2b99945d2726bdf5aed7b1712f9e3b7b622671df
+                - listitem [ref=e801]:
+                  - text: 🔐
+                  - strong [ref=e802]: Reduced public "/api/config" exposure.
+                  - text: The "/api/config" response no longer includes several feature flags ("enable_api_keys", "enable_password_change_form", "enable_version_update_check", "enable_public_active_users_count", "enable_easter_eggs") for unauthenticated callers, reducing information disclosure to anonymous visitors.
+                  - link "Commit" [ref=e803] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/245e0ee029e9e10617f62953a9e6f67dd00ecf81
+                  - text: ","
+                  - link "Commit" [ref=e804] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ae06e199d5d3f65296a978cc35079bdacba596d2
+                - listitem [ref=e806]:
+                  - text: 🔑
+                  - strong [ref=e807]: "\"WEBUI_SECRET_KEY\" is now a hard requirement even for unsupported deployments."
+                  - text: Deployments that start the backend in an explicitly unsupported way (such as invoking uvicorn directly) without setting "WEBUI_SECRET_KEY" will now refuse to start instead of falling back to an empty key; the supported start methods (start.sh, start_windows.bat, and "open-webui serve") still set or auto-generate it automatically, so standard deployments are unaffected. Direct Uvicorn startup is not supported.
+                  - link "#25218" [ref=e808] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/25218
+          - generic [ref=e809]:
+            - heading "v0.9.5 - 2026-05-09" [level=3] [ref=e810]
+            - separator [ref=e811]
+            - generic [ref=e812]:
+              - generic [ref=e813]: added
+              - generic [ref=e814]:
+                - listitem [ref=e816]:
+                  - text: 🛡️
+                  - strong [ref=e817]: Redirect-based SSRF protection.
+                  - text: All outbound HTTP requests now block 3xx redirects by default via a new
+                  - code [ref=e818]: AIOHTTP_CLIENT_ALLOW_REDIRECTS
+                  - text: environment variable, preventing redirect-based SSRF where a public URL silently redirects to internal addresses (RFC 1918, loopback, cloud-metadata endpoints). Affected call sites include web fetch, image loading, OAuth discovery, tool server execution, and code interpreter login.
+                  - link "#24491" [ref=e819] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24491
+                - listitem [ref=e821]:
+                  - text: 🛡️
+                  - strong [ref=e822]: Iframe content security policy.
+                  - text: Administrators can now configure a Content-Security-Policy for all srcdoc iframes (Artifacts, tool embeds, file previews, citation modals) via the
+                  - code [ref=e823]: IFRAME_CSP
+                  - text: environment variable, restricting what LLM-generated or user-uploaded HTML can load and execute inside previews.
+                  - link "Commit" [ref=e824] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/3bba1c227059a44c7eeefa97b8c69a63bf4f3454
+                - listitem [ref=e826]:
+                  - text: 🎛️
+                  - strong [ref=e827]: Granular markdown rendering controls.
+                  - text: Users can now independently disable Markdown rendering for user messages and assistant responses from Interface settings, preventing unintended formatting when pasting text that contains Markdown-sensitive characters.
+                  - link "Commit" [ref=e828] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/4a1064cefd6f48a8b3b02cd31f77838c8802b635
+                - listitem [ref=e830]:
+                  - text: 🔧
+                  - strong [ref=e831]: Terminal proxy response headers.
+                  - text: Administrators can now inject custom response headers into terminal proxy responses via the
+                  - code [ref=e832]: TERMINAL_PROXY_HEADERS
+                  - text: environment variable (JSON object), enabling deployment-specific security headers like sandbox policies for proxied content.
+                  - link "Commit" [ref=e833] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/8d3133fe2835122bffaa4f2ce584730bc9c78981
+                - listitem [ref=e835]:
+                  - text: 🔌
+                  - strong [ref=e836]: Channel streaming and tool support.
+                  - text: Mentioning a model in a Channel now streams responses in real time and supports the full chat completion pipeline, including native and default function calling, built-in tools (web search, image generation), user tools, MCP tools, filters, and RAG knowledge injection — the same capabilities available in standard chats.
+            - generic [ref=e837]:
+              - generic [ref=e838]: fixed
+              - generic [ref=e839]:
+                - listitem [ref=e841]:
+                  - text: 📝
+                  - strong [ref=e842]: Notes create and open reliability.
+                  - text: Creating new notes and opening existing notes no longer fails with a TypeError caused by
+                  - code [ref=e843]: is_pinned
+                  - text: being passed to the SQLAlchemy model on create, and passed twice to
+                  - code [ref=e844]: NoteResponse
+                  - text: on read.
+                  - link "#24484" [ref=e845] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24484
+                  - text: ","
+                  - link "#24486" [ref=e846] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24486
+                - listitem [ref=e848]:
+                  - text: 🔐
+                  - strong [ref=e849]: Skill public sharing permission enforcement.
+                  - text: Creating or updating skills now filters access grants through the
+                  - code [ref=e850]: sharing.public_skills
+                  - text: permission, preventing non-admin users from making skills publicly accessible without the required permission.
+                  - link "#24494" [ref=e851] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24494
+                - listitem [ref=e853]:
+                  - text: 🔐
+                  - strong [ref=e854]: Calendar public sharing permission enforcement.
+                  - text: Creating or updating calendars now filters access grants through a new
+                  - code [ref=e855]: sharing.public_calendars
+                  - text: permission, preventing users from making calendars publicly readable or writable without explicit admin-granted sharing permission.
+                  - link "#24493" [ref=e856] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24493
+                - listitem [ref=e858]:
+                  - text: 🔐
+                  - strong [ref=e859]: Feedback user attribution spoofing.
+                  - text: Submitting evaluation feedback can no longer forge the
+                  - code [ref=e860]: user_id
+                  - text: field through mass-assignment, preventing authenticated users from attributing ratings to other users and corrupting Elo leaderboard rankings and admin feedback exports.
+                  - link "#24508" [ref=e861] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24508
+                - listitem [ref=e863]:
+                  - text: 🛡️
+                  - strong [ref=e864]: Image URL redirect-based SSRF.
+                  - text: Chat messages containing image URLs no longer follow 3xx redirects to internal addresses during base64 conversion, closing the most reachable redirect-based SSRF variant that required no special permissions or feature flags.
+                  - link "#24524" [ref=e865] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24524
+                - listitem [ref=e867]:
+                  - text: 🛡️
+                  - strong [ref=e868]: Collection write access on file processing.
+                  - text: The
+                  - code [ref=e869]: process_file
+                  - text: and
+                  - code [ref=e870]: process_files_batch
+                  - text: retrieval endpoints now enforce collection write-access checks before embedding content, preventing authenticated users from injecting file content into another user's knowledge-base collection.
+                  - link "#24524" [ref=e871] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24524
+                - listitem [ref=e873]:
+                  - text: 🔐
+                  - strong [ref=e874]: Tool source code update authorization.
+                  - text: Updating a tool's Python source code now requires
+                  - code [ref=e875]: workspace.tools
+                  - text: or
+                  - code [ref=e876]: workspace.tools_import
+                  - text: permission, preventing users with only a write-access grant from overwriting executable tool code while still allowing metadata edits.
+                  - link "#24513" [ref=e877] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24513
+                - listitem [ref=e879]:
+                  - text: 🔐
+                  - strong [ref=e880]: Channel message ownership enforcement.
+                  - text: Updating or deleting messages in group and DM channels now requires message ownership, preventing channel members from tampering with or silently removing other members' messages.
+                  - link "#24506" [ref=e881] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24506
+                - listitem [ref=e883]:
+                  - text: 🔐
+                  - strong [ref=e884]: Channel pin write permission.
+                  - text: Pinning and unpinning messages on standard channels now requires write permission instead of read permission, preventing read-only users from modifying pinned content.
+                  - link "#24521" [ref=e885] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24521
+                - listitem [ref=e887]:
+                  - text: 🛡️
+                  - strong [ref=e888]: Image generation URL validation.
+                  - text: Generated image URLs are now validated through
+                  - code [ref=e889]: validate_url()
+                  - text: before fetching, aligning the defense-in-depth posture with sibling image-loading paths.
+                  - link "#24518" [ref=e890] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24518
+                - listitem [ref=e892]:
+                  - text: 🔐
+                  - strong [ref=e893]: Model params exposure for read-only users.
+                  - text: The per-model API endpoint now strips the
+                  - code [ref=e894]: params
+                  - text: dict (including system prompts) from responses to callers without write access, preventing read-only users from viewing admin-curated model configuration.
+                  - link "#24525" [ref=e895] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24525
+                - listitem [ref=e897]:
+                  - text: 🛡️
+                  - strong [ref=e898]: URL parser SSRF bypass.
+                  - text: URL validation now rejects backslash, tab, CR, and LF characters that cause urllib and requests/aiohttp to disagree on the target host, closing a parser-confusion SSRF bypass.
+                  - link "#24534" [ref=e899] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24534
+                - listitem [ref=e901]:
+                  - text: 🛡️
+                  - strong [ref=e902]: Profile image MIME-type allowlist.
+                  - text: Serving profile images from data URIs now enforces a strict MIME-type allowlist (PNG, JPEG, GIF, WEBP by default, configurable via
+                  - code [ref=e903]: PROFILE_IMAGE_ALLOWED_MIME_TYPES
+                  - text: ) and sets
+                  - code [ref=e904]: "X-Content-Type-Options: nosniff"
+                  - text: ", preventing stored-XSS through SVG or other executable content types."
+                  - link "Commit" [ref=e905] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/15e696691cad98692c329de62ed8a5bdb3a26d4e
+                - listitem [ref=e907]:
+                  - text: 🔐
+                  - strong [ref=e908]: File ownership in folder and knowledge attachments.
+                  - text: Attaching files to folders or knowledge bases now verifies per-file read access, and folder file lists in chat middleware are filtered to entries the caller can read, preventing unauthorized file content from being injected into RAG context.
+                  - link "Commit" [ref=e909] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/2dbf7b6764a7922458d3b0139687ad6dcd7596d9
+                - listitem [ref=e911]:
+                  - text: 🔐
+                  - strong [ref=e912]: Shared chat access for owners and admins.
+                  - text: Chat owners can now view and clone their own shared chats without requiring an explicit access grant, and administrators can manage shared chat access controls on any chat.
+                  - link "Commit" [ref=e913] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/3a21b334cce30226750c5c537345dc51bb8bef17
+                  - text: ","
+                  - link "Commit" [ref=e914] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/315566064aedeff071854b023d09e5f1ea0eb950
+                - listitem [ref=e916]:
+                  - text: 🧵
+                  - strong [ref=e917]: Legacy chat history self-healing.
+                  - text: Loading legacy conversations now automatically detects broken parent-link graphs in migrated message records, merges missing messages from the embedded JSON history, and backfills them to the normalized table so future loads use the fast path without data loss.
+                  - link "Commit" [ref=e918] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1388f4568b8f508c26542673dd01f1fa049e798a
+                - listitem [ref=e920]:
+                  - text: 🎛️
+                  - strong [ref=e921]: Filter selector reactivity.
+                  - text: Model filter checkboxes now derive state reactively from the current filter list and selected IDs instead of capturing a one-time snapshot at mount, so checkboxes update correctly when model contexts or filter configurations change at runtime.
+                  - link "Commit" [ref=e922] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/d1ef5382377f590f97a6dbaee88f369e6d7c5f6f
+                - listitem [ref=e924]:
+                  - text: 🌐
+                  - strong [ref=e925]: Portuguese (Brazil) translation updates.
+                  - text: Translations for newly added UI items were added along with a consistency pass across existing entries.
+                  - link "#24503" [ref=e926] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24503
+            - generic [ref=e927]:
+              - generic [ref=e928]: changed
+              - generic [ref=e929]:
+                - listitem [ref=e931]:
+                  - text: 🧹
+                  - strong [ref=e932]: Removed unauthenticated retrieval status endpoint.
+                  - text: The unauthenticated
+                  - code [ref=e933]: GET /api/v1/retrieval/
+                  - text: status endpoint has been removed as dead code — retrieval configuration is already available through authenticated admin endpoints.
+                  - link "#24497" [ref=e934] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24497
+                - listitem [ref=e936]:
+                  - text: 📋
+                  - strong [ref=e937]: PR template issue requirement.
+                  - text: Pull requests now require a linked Issue or Discussion reference, ensuring better traceability for all contributions. PRs without a linked issue or discussion may be closed without review.
+          - generic [ref=e938]:
+            - heading "v0.9.4 - 2026-05-09" [level=3] [ref=e939]
+            - separator [ref=e940]
+            - generic [ref=e941]:
+              - generic [ref=e942]: fixed
+              - listitem [ref=e945]:
+                - text: 📜
+                - strong [ref=e946]: Chat scroll position on load.
+                - text: Opening a chat conversation now reliably scrolls to the bottom of the message history, fixing a regression caused by
+                - code [ref=e947]: "content-visibility: auto"
+                - text: where estimated element sizes prevented the initial scroll from reaching the true bottom.
+          - generic [ref=e948]:
+            - heading "v0.9.3 - 2026-05-09" [level=3] [ref=e949]
+            - separator [ref=e950]
+            - generic [ref=e951]:
+              - generic [ref=e952]: added
+              - generic [ref=e953]:
+                - listitem [ref=e955]:
+                  - text: 🔇
+                  - strong [ref=e956]: Voice Mode mute control.
+                  - text: Voice Mode now includes a dedicated mute toggle with an "M" shortcut and auto-unmute after assistant playback, so you can prevent accidental interruptions from background noise without leaving the call overlay.
+                  - link "Commit" [ref=e957] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/072d2000f35a9f7b96342fa9bb28f925a92e7b4c
+                  - text: ","
+                  - link "#23832" [ref=e958] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/23832
+                - listitem [ref=e960]:
+                  - text: 🚀
+                  - strong [ref=e961]: Faster prompt list loading.
+                  - text: Prompt and prompt-tag pages now load much faster for non-admin users, even with large prompt libraries, because accessible prompts are filtered efficiently in a single database query.
+                  - link "#24288" [ref=e962] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24288
+                  - text: ","
+                  - link "#24258" [ref=e963] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/discussions/24258
+                - listitem [ref=e965]:
+                  - text: ⚡
+                  - strong [ref=e966]: Faster chat history loading.
+                  - text: Chat history maps now load from normalized message records when available, reducing overhead for large conversations while preserving fallback behavior for legacy chats.
+                  - link "Commit" [ref=e967] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/485d689cfd1ef8b9e7f77cd7b535b8b8747dff1f
+                  - text: ","
+                  - link "#23159" [ref=e968] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23159
+                - listitem [ref=e970]:
+                  - text: 🗑️
+                  - strong [ref=e971]: Delete from conversation menu.
+                  - text: You can now delete the current conversation directly from the chat menu with a confirmation step, so cleanup is faster without searching through the full chat list.
+                  - link "Commit" [ref=e972] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ef6d4f2d6c4b79c7e12e864a4fcb6a57ee84e5d4
+                  - text: ","
+                  - link "#24329" [ref=e973] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24329
+                - listitem [ref=e975]:
+                  - text: ⬆️
+                  - strong [ref=e976]: Scroll to Top shortcut.
+                  - text: Long conversations now include a Scroll to Top action in the chat menu when you are away from the top, making it much faster to jump back to the beginning of a chat.
+                  - link "Commit" [ref=e977] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/cdfcbc4af6e9aec835b88dc1806a2a46711e6947
+                  - text: ","
+                  - link "#24133" [ref=e978] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24133
+                - listitem [ref=e980]:
+                  - text: 📅
+                  - strong [ref=e981]: Calendar creation flow.
+                  - text: Users can now create calendars from a dedicated modal and a quick-add action in the calendar sidebar, making calendar setup faster from the calendar workspace.
+                  - link "Commit" [ref=e982] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/34146ab60f5dc1a2f8bdda8e61ce02797233a25d
+                  - text: ","
+                  - link "Commit" [ref=e983] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1baf73bdd56f4e5ded12a4bd3c168f4d2a70b840
+                - listitem [ref=e985]:
+                  - text: 🧭
+                  - strong [ref=e986]: Unified model unload controls.
+                  - text: Administrators can now unload running models from the model selector across supported providers, with loaded-state indicators shown for Ollama and llama.cpp models.
+                  - link "Commit" [ref=e987] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/4fe2de78643c2213652190d2820f4e8d9f4f89cc
+                - listitem [ref=e989]:
+                  - text: ⚡
+                  - strong [ref=e990]: Health check responsiveness.
+                  - text: Health and readiness probes now avoid blocking database calls and skip sync session commit handling on probe paths, improving responsiveness and reducing false unready transitions during database pressure.
+                  - link "#24380" [ref=e991] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24380
+                  - text: ","
+                  - link "#24384" [ref=e992] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24384
+                - listitem [ref=e994]:
+                  - text: 🎛️
+                  - strong [ref=e995]: Playground controls panel.
+                  - text: The Playground now includes a dedicated Controls toggle so you can adjust parameters like temperature and related settings per chat run without changing model-level defaults.
+                  - link "Commit" [ref=e996] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c6763521c00f042a28829e33fb6f1b7355054046
+                  - text: ","
+                  - link "#24103" [ref=e997] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24103
+                - listitem [ref=e999]:
+                  - text: 🎙️
+                  - strong [ref=e1000]: STT file extension controls.
+                  - text: Administrators can now configure which audio file extensions are accepted for speech-to-text uploads, helping enforce safer and more predictable upload policies.
+                  - link "Commit" [ref=e1001] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/4754ece4a2de5bba85a1d53af2dc8d24fdfb58be
+                - listitem [ref=e1003]:
+                  - text: 📷
+                  - strong [ref=e1004]: Remembered call camera selection.
+                  - text: Voice call overlay now remembers your last selected camera and restores it automatically when available, so you do not need to reselect it every time you start voice mode.
+                  - link "Commit" [ref=e1005] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/5c3edc2539ac4d92c4cc2d37079549995203238a
+                  - text: ","
+                  - link "#24416" [ref=e1006] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24416
+                - listitem [ref=e1008]:
+                  - text: 👥
+                  - strong [ref=e1009]: User group prompt variable.
+                  - text: "System and template prompts now support the \"{{USER_GROUPS}}\" variable, which expands to the user’s group memberships so prompts can adapt to role- or access-based context automatically."
+                  - link "Commit" [ref=e1010] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c1202a23277abb8e7080271a929dcc9d29b67e66
+                  - text: ","
+                  - link "#24462" [ref=e1011] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24462
+                - listitem [ref=e1013]:
+                  - text: 🔐
+                  - strong [ref=e1014]: Public chat sharing permission control.
+                  - text: Administrators can now control whether users are allowed to create publicly shareable chats through a dedicated permission setting.
+                  - link "Commit" [ref=e1015] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ef6d4f2d6c4b79c7e12e864a4fcb6a57ee84e5d4
+                - listitem [ref=e1017]:
+                  - text: 🔐
+                  - strong [ref=e1018]: Profile image forwarding control.
+                  - text: Administrators can now disable external profile image URL forwarding with the "ENABLE_PROFILE_IMAGE_URL_FORWARDING" setting to prevent browser metadata leaks to third-party servers.
+                  - link "#24420" [ref=e1019] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24420
+                - listitem [ref=e1021]:
+                  - text: 🏷️
+                  - strong [ref=e1022]: Dynamic header template variables.
+                  - text: Administrators can now use chat, message, and user template variables in custom connection and tool server headers so each request can carry per-conversation context automatically.
+                  - link "Commit" [ref=e1023] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9907c0a25ae830d134af70022238715f834d20c6
+                  - text: ","
+                  - link "#24164" [ref=e1024] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24164
+                - listitem [ref=e1026]:
+                  - text: 🛂
+                  - strong [ref=e1027]: MCP OAuth server URL setting.
+                  - text: Static OAuth tool server setups can now define a separate OAuth server URL, making discovery and client registration work when authentication endpoints are hosted separately from the tool server URL.
+                  - link "Commit" [ref=e1028] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9907c0a25ae830d134af70022238715f834d20c6
+                  - text: ","
+                  - link "#24164" [ref=e1029] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24164
+                  - text: ","
+                  - link "#24216" [ref=e1030] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24216
+                - listitem [ref=e1032]:
+                  - text: ⚡
+                  - strong [ref=e1033]: Faster memory query performance.
+                  - text: Per-user memory lookups and deletions now run much faster at scale because the memory user filter is indexed for existing and new installations.
+                  - link "Commit" [ref=e1034] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/38a382ef888685650135d61dcc8ec0e29eb65573
+                  - text: ","
+                  - link "#23836" [ref=e1035] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23836
+                - listitem [ref=e1037]:
+                  - text: 🚀
+                  - strong [ref=e1038]: Smarter function dependency installs.
+                  - text: Function dependencies are now skipped when they were already preinstalled and unchanged, reducing first-load delays and repeated package installation churn after startup.
+                  - link "Commit" [ref=e1039] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ae43562b869b24699408e5ab107261a0a8bdb4bc
+                  - text: ","
+                  - link "#24166" [ref=e1040] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24166
+                - listitem [ref=e1042]:
+                  - text: 🔎
+                  - strong [ref=e1043]: Brave LLM Context web search.
+                  - text: Administrators can now choose Brave LLM Context as a web search provider to retrieve richer grounded passages with a configurable context token budget.
+                  - link "Commit" [ref=e1044] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/6700f7bb72d14a3f8dbb72dfa064cae3b3dc29ac
+                  - text: ","
+                  - link "#24120" [ref=e1045] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24120
+                - listitem [ref=e1047]:
+                  - text: 🗂️
+                  - strong [ref=e1048]: Open Terminal date sorting.
+                  - text: Open Terminal now includes sort controls for name and date, with directory-first ordering and modified-time visibility to make file browsing faster.
+                  - link "Commit" [ref=e1049] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/6bdc2ffa79d72daf78981209c9c5292c697cbfe5
+                  - text: ","
+                  - link "#24425" [ref=e1050] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24425
+                - listitem [ref=e1052]:
+                  - text: 🎤
+                  - strong [ref=e1053]: Voice mode prompt toggle.
+                  - text: Administrators can now explicitly enable or disable the Voice Mode custom prompt behavior from Interface settings, giving finer control over how voice replies are guided.
+                  - link "Commit" [ref=e1054] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/17893038869e3a763a8b34457f723b9666804e27
+                - listitem [ref=e1056]:
+                  - text: 🧮
+                  - strong [ref=e1057]: LaTeX copy shortcut.
+                  - text: You can now click rendered LaTeX expressions to copy the raw formula to your clipboard, making it easier to reuse equations outside chat.
+                  - link "Commit" [ref=e1058] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/064fdecb675c176a04b024c16ce179f4dda45236
+                  - text: ","
+                  - link "#24244" [ref=e1059] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24244
+                - listitem [ref=e1061]:
+                  - text: ✨
+                  - strong [ref=e1062]: Smoother rich text editing.
+                  - text: The message composer now defers formatting toolbar refresh work to the next animation frame, reducing typing jank while formatting controls stay accurate.
+                  - link "Commit" [ref=e1063] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/794b97025d4c56f91d49c9d1ec4775d2ea07b53a
+                  - text: ","
+                  - link "#24013" [ref=e1064] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24013
+                - listitem [ref=e1066]:
+                  - text: 🖼️
+                  - strong [ref=e1067]: Arena model profile images.
+                  - text: Arena models can now reliably display configured profile images instead of falling back to the default icon.
+                  - link "Commit" [ref=e1068] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1dee67b64d0b34e70bac949682b216c0aaec8152
+                  - text: ","
+                  - link "#24412" [ref=e1069] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24412
+                - listitem [ref=e1071]:
+                  - text: 🔄
+                  - strong [ref=e1072]: Replaceable tool embed updates.
+                  - text: Pipes and Tools can now overwrite previously emitted rich-UI embeds in-place by passing a
+                  - code [ref=e1073]: replace
+                  - text: flag on the
+                  - code [ref=e1074]: embeds
+                  - text: event, enabling live dashboards and progress panels that update without stacking duplicate entries.
+                - listitem [ref=e1076]:
+                  - text: ✏️
+                  - strong [ref=e1077]: Assistant response editing and continuation.
+                  - text: You can now edit and restructure assistant output items — including reasoning blocks, tool calls, and text content — from a dedicated editor view, and continue generating from the edited state so the model receives full prior context.
+                - listitem [ref=e1079]:
+                  - text: 🔄
+                  - strong [ref=e1080]: General improvements.
+                  - text: Various improvements were implemented across the application to enhance performance, stability, and security.
+                - listitem [ref=e1082]:
+                  - text: 🌐
+                  - strong [ref=e1083]: Translation updates.
+                  - text: Translations for Chinese, Catalan, Filipino, and Korean were enhanced and expanded.
+            - generic [ref=e1084]:
+              - generic [ref=e1085]: fixed
+              - generic [ref=e1086]:
+                - listitem [ref=e1088]:
+                  - text: 🧵
+                  - strong [ref=e1089]: Background code execution reliability.
+                  - text: Code execution no longer hangs indefinitely when you switch conversations or browser tabs during a run, and disconnected or inactive sessions now fail with a clear timeout error instead of endless processing.
+                  - link "Commit" [ref=e1090] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/552bbcecfae5ae273ab98e2ce3e540d0771aa964
+                  - text: ","
+                  - link "#24089" [ref=e1091] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24089
+                - listitem [ref=e1093]:
+                  - text: 🎙️
+                  - strong [ref=e1094]: Voice recording MIME fallback support.
+                  - text: Voice recording now tries a broader set of browser-supported audio formats and resets halted audio playback cleanly, improving microphone capture reliability in browsers where recording previously failed to start.
+                  - link "Commit" [ref=e1095] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/8ffc3d746f20007e9eb4e3ae4f152f383bc371e1
+                  - text: ","
+                  - link "#24162" [ref=e1096] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24162
+                - listitem [ref=e1098]:
+                  - text: 🧠
+                  - strong [ref=e1099]: Direct-connection task generation reliability.
+                  - text: Title, tags, follow-up, emoji, query, and related task-generation endpoints now work correctly when chats use direct-connection models instead of failing with model-not-found errors.
+                  - link "Commit" [ref=e1100] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1b4cd705d0b9a51a5e3a7851ec012fb3141eb0a9
+                  - text: ","
+                  - link "Commit" [ref=e1101] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/005df577fec16733a64edbec8a1b46f42f4e9a43
+                  - text: ","
+                  - link "#24092" [ref=e1102] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24092
+                - listitem [ref=e1104]:
+                  - text: 🔧
+                  - strong [ref=e1105]: Parameterized URL tool readiness.
+                  - text: New chats now wait for model defaults to finish applying before auto-submit, preventing early requests that can miss configured external tools.
+                  - link "Commit" [ref=e1106] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/212bb68a66435dc1803a6d67cb4ea584d3455fb7
+                  - text: ","
+                  - link "#24176" [ref=e1107] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24176
+                - listitem [ref=e1109]:
+                  - text: 🚦
+                  - strong [ref=e1110]: MCP cleanup response reliability.
+                  - text: Successful native MCP tool calls no longer get replaced by a 500 "No response returned" error during cleanup, so valid chat responses are now returned consistently.
+                  - link "#24105" [ref=e1111] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24105
+                - listitem [ref=e1113]:
+                  - text: 🧵
+                  - strong [ref=e1114]: Active task state recovery.
+                  - text: Chat input no longer stays blocked by unrelated background tasks after a response is already complete, and interrupted assistant replies are now marked done more reliably.
+                  - link "Commit" [ref=e1115] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/04bd0425ead28185bcd124e77892e31209a6e15b
+                  - text: ","
+                  - link "#23264" [ref=e1116] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23264
+                - listitem [ref=e1118]:
+                  - text: 📌
+                  - strong [ref=e1119]: Per-user note pinning behavior.
+                  - text: Pinned notes are now tracked per user instead of with a shared note-level flag, so one person’s pin changes no longer affect everyone else.
+                  - link "Commit" [ref=e1120] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/33e588cf09b294f0abe08b9566efa8545a7dbf92
+                - listitem [ref=e1122]:
+                  - text: 🧱
+                  - strong [ref=e1123]: Custom header value coercion.
+                  - text: Custom header values are now converted to text before requests are sent, preventing request failures when non-text values are configured.
+                  - link "Commit" [ref=e1124] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9907c0a25ae830d134af70022238715f834d20c6
+                  - text: ","
+                  - link "#24164" [ref=e1125] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24164
+                - listitem [ref=e1127]:
+                  - text: 🔗
+                  - strong [ref=e1128]: HTTP share link copy fallback.
+                  - text: Copy Link now works reliably on HTTP deployments by using a selection-based fallback when secure clipboard APIs are unavailable.
+                  - link "Commit" [ref=e1129] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/f70b0da1563ffa0a8daecbe71cbc30fd8cf834c4
+                  - text: ","
+                  - link "#24135" [ref=e1130] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24135
+                - listitem [ref=e1132]:
+                  - text: 🧵
+                  - strong [ref=e1133]: Regeneration loading lock recovery.
+                  - text: Chats no longer get stuck in a permanent loading state after failed regenerations because invalid message-tree references are repaired before rendering.
+                  - link "Commit" [ref=e1134] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ee3b82926b37843f2771c6a8d432781a557ea96a
+                  - text: ","
+                  - link "#24424" [ref=e1135] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24424
+                - listitem [ref=e1137]:
+                  - text: 📸
+                  - strong [ref=e1138]: Complete chat image capture.
+                  - text: Downloaded chat snapshots now include all messages more reliably through visibility overrides and layout timing improvements during capture.
+                  - link "Commit" [ref=e1139] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/34146ab60f5dc1a2f8bdda8e61ce02797233a25d
+                  - text: ","
+                  - link "Commit" [ref=e1140] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1baf73bdd56f4e5ded12a4bd3c168f4d2a70b840
+                  - text: ","
+                  - link "#24088" [ref=e1141] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24088
+                - listitem [ref=e1143]:
+                  - text: 🗓️
+                  - strong [ref=e1144]: Calendar deletion lock handling.
+                  - text: Calendar deletion now avoids SQLite write-lock contention by revoking calendar access grants in a separate transaction after calendar and event removal.
+                  - link "Commit" [ref=e1145] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1d892ce2c513c4d933c902de5e5d76c317a06dd2
+                - listitem [ref=e1147]:
+                  - text: 🧩
+                  - strong [ref=e1148]: Filter and internal tool coexistence.
+                  - text: Internal tools now remain available when filters add provider-native tools, so filter-added tools no longer replace the built-in tool set during request processing.
+                  - link "Commit" [ref=e1149] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/02f9fe78907c2ecf6f1d93646cbfa2173409bbe8
+                  - text: ","
+                  - link "#24237" [ref=e1150] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24237
+                - listitem [ref=e1152]:
+                  - text: 🛠️
+                  - strong [ref=e1153]: OpenAPI tool spec compatibility.
+                  - text: OpenAPI tool integrations now handle null or non-operation path entries more safely and parse path-level parameters consistently, preventing crashes and improving tool execution reliability across imperfect OpenAPI specs.
+                  - link "Commit" [ref=e1154] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/2ba6b423aa0c9c800bd96cb638c6ade867cac0f6
+                  - text: ","
+                  - link "Commit" [ref=e1155] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/5b80932e5951786bb348b91589e8d87753f18905
+                  - text: ","
+                  - link "#24376" [ref=e1156] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24376
+                - listitem [ref=e1158]:
+                  - text: 🧰
+                  - strong [ref=e1159]: OpenAPI tool schema parsing.
+                  - text: OpenAPI tool imports now ignore non-method path item fields and correctly resolve nested composition schemas, preventing invalid tool parsing for compatible specs.
+                  - link "Commit" [ref=e1160] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/85c7373f68ac3e39a9cd37e63b6926b13fb8b8cc
+                  - text: ","
+                  - link "#23254" [ref=e1161] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23254
+                - listitem [ref=e1163]:
+                  - text: 🌍
+                  - strong [ref=e1164]: Web search proxy compatibility.
+                  - text: DuckDuckGo search now respects configured proxy environments more reliably, and trust-env behavior defaults to enabled so proxied web loading does not fail unexpectedly.
+                  - link "Commit" [ref=e1165] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/bb0e6cb1085aa3c3da66a5f5ea1cecff7e9b5297
+                  - text: ","
+                  - link "#23810" [ref=e1166] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23810
+                - listitem [ref=e1168]:
+                  - text: 🧾
+                  - strong [ref=e1169]: Final markdown render flush.
+                  - text: Streaming markdown now forces an immediate final parse when generation completes, preventing stale or partially rendered final output.
+                  - link "Commit" [ref=e1170] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/29f6c72e879d67f23021938e24a21914cc9fb120
+                  - text: ","
+                  - link "#24088" [ref=e1171] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24088
+                - listitem [ref=e1173]:
+                  - text: 🛡️
+                  - strong [ref=e1174]: Webhook avatar URL validation.
+                  - text: Channel webhook profile image URLs are now validated before saving, preventing invalid or unsafe avatar URLs from being accepted.
+                  - link "#24370" [ref=e1175] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24370
+                - listitem [ref=e1177]:
+                  - text: 📝
+                  - strong [ref=e1178]: System prompt editor scroll stability.
+                  - text: Editing large system prompts no longer jumps the page back to the top, so you can continue editing long model prompts without losing your place.
+                  - link "Commit" [ref=e1179] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/c978a788c8315e37357c93c1b605a2831fc77485
+                  - text: ","
+                  - link "#23999" [ref=e1180] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/23999
+                - listitem [ref=e1182]:
+                  - text: 🔎
+                  - strong [ref=e1183]: Knowledge content search matching.
+                  - text: Knowledge file search now matches both file titles and file content, so relevant files are easier to find even when the keyword is not in the filename.
+                  - link "Commit" [ref=e1184] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/11e076817ae5db34621ce03136353248f7377d97
+                  - text: ","
+                  - link "#24297" [ref=e1185] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24297
+                - listitem [ref=e1187]:
+                  - text: ⚡
+                  - strong [ref=e1188]: Faster prompt tag loading.
+                  - text: Prompt tag filters now load much faster for non-admin users by fetching only accessible tags directly, avoiding per-prompt permission checks and unnecessary prompt data loading.
+                  - link "#24287" [ref=e1189] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24287
+                  - text: ","
+                  - link "#24258" [ref=e1190] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/discussions/24258
+                - listitem [ref=e1192]:
+                  - text: 🧾
+                  - strong [ref=e1193]: Citation overflow badge readability.
+                  - text: Citation overflow badges now keep multi-digit counts readable in a single compact bubble, preventing wrapped or cramped display when many sources are attached.
+                  - link "Commit" [ref=e1194] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/23ff9943a9fc8c314100fa074157853fbece1a55
+                  - text: ","
+                  - link "#24391" [ref=e1195] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24391
+                - listitem [ref=e1197]:
+                  - text: 🌐
+                  - strong [ref=e1198]: Yandex result parsing guard.
+                  - text: Yandex web search no longer fails when some XML fields are missing in individual results, so valid search responses continue to return usable sources instead of dropping to no results.
+                  - link "Commit" [ref=e1199] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9386fc83a3eff3e55cc157ac8c15c337e3d822c1
+                  - text: ","
+                  - link "#24243" [ref=e1200] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24243
+                - listitem [ref=e1202]:
+                  - text: 🎧
+                  - strong [ref=e1203]: Safer voice transcription uploads.
+                  - text: Empty or failed voice conversions are now rejected with a clear error instead of continuing as malformed audio, reducing failed transcription attempts from corrupted or near-empty recordings.
+                  - link "Commit" [ref=e1204] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/072d2000f35a9f7b96342fa9bb28f925a92e7b4c
+                - listitem [ref=e1206]:
+                  - text: 🎚️
+                  - strong [ref=e1207]: Safer chunked STT processing.
+                  - text: Chunked transcription now limits worker concurrency when no external STT engine is configured, reducing failed transcription behavior caused by overly parallel local processing.
+                  - link "Commit" [ref=e1208] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/55e7c7854bba5182803239c903a0ac2d14426a4c
+                - listitem [ref=e1210]:
+                  - text: 📈
+                  - strong [ref=e1211]: Imported chat analytics coverage.
+                  - text: Imported ChatGPT conversations now carry proper model and timestamp metadata and reliably write imported messages into analytics-backed storage, so imported chats are reflected correctly in Admin Analytics totals and model usage views.
+                  - link "Commit" [ref=e1212] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/4d766a3edfa116abcefe7168f1d1284683b860b2
+                  - text: ","
+                  - link "#24263" [ref=e1213] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24263
+                - listitem [ref=e1215]:
+                  - text: 📎
+                  - strong [ref=e1216]: Knowledge collection persistence.
+                  - text: Knowledge collections selected with the chat input selector now remain attached after reloads and chat switches, so attached context no longer disappears between sessions.
+                  - link "Commit" [ref=e1217] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/7c398a625a8d51f79d80217f6d329fc30c72b782
+                  - text: ","
+                  - link "#24142" [ref=e1218] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24142
+                - listitem [ref=e1220]:
+                  - text: 🧹
+                  - strong [ref=e1221]: Embedding model name trimming.
+                  - text: Embedding model names entered in Documents settings now automatically trim surrounding whitespace, preventing silent embedding failures caused by accidental trailing spaces.
+                  - link "Commit" [ref=e1222] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/6082e1adaebc8aa3e7f55265c8dc2dbe130c0446
+                  - text: ","
+                  - link "#24090" [ref=e1223] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24090
+                - listitem [ref=e1225]:
+                  - text: 🔊
+                  - strong [ref=e1226]: PCM TTS playback compatibility.
+                  - text: Text-to-speech audio returned as PCM is now converted to MP3 before delivery, so speech playback works correctly with providers that return raw PCM audio.
+                  - link "Commit" [ref=e1227] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/ff791b4814fc1453df2235ea78016d7015aa6806
+                  - text: ","
+                  - link "#24143" [ref=e1228] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24143
+                - listitem [ref=e1230]:
+                  - text: 🪟
+                  - strong [ref=e1231]: Windows PostgreSQL startup compatibility.
+                  - text: Windows pip installs using PostgreSQL now start reliably with psycopg async by using a compatible event loop policy instead of the default Proactor loop.
+                  - link "Commit" [ref=e1232] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/7eaecbad5a0913ed04ca3bc10c930bb051dd2bd9
+                  - text: ","
+                  - link "#24152" [ref=e1233] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24152
+                - listitem [ref=e1235]:
+                  - text: ⏱️
+                  - strong [ref=e1236]: MCP OAuth timeout control.
+                  - text: OAuth token exchanges for MCP tool server connections now respect the configurable client timeout setting, reducing callback failures with slower providers.
+                  - link "Commit" [ref=e1237] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/cde72dab71671645e119564ca9747ce25dd590ad
+                  - text: ","
+                  - link "#24138" [ref=e1238] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24138
+                - listitem [ref=e1240]:
+                  - text: 📄
+                  - strong [ref=e1241]: PDF text search restoration.
+                  - text: PDF previews now include a proper text layer so browser text selection and find-in-page search work again instead of rendering only image-like pages.
+                  - link "Commit" [ref=e1242] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/bc4d6eef33dcb92719b07483cdb1d63ebf250721
+                  - text: ","
+                  - link "#24149" [ref=e1243] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24149
+                - listitem [ref=e1245]:
+                  - text: 🔑
+                  - strong [ref=e1246]: Android password autofill support.
+                  - text: Password inputs now expose the expected field name metadata, improving password manager autofill reliability on Android login pages.
+                  - link "Commit" [ref=e1247] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/60ea4214aa42f1ad22142f1a43535007a2293d16
+                  - text: ","
+                  - link "#24137" [ref=e1248] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24137
+                - listitem [ref=e1250]:
+                  - text: 🎤
+                  - strong [ref=e1251]: Non-blocking STT processing.
+                  - text: Speech-to-text transcription no longer blocks the server event loop during both live transcription and uploaded audio file processing, so other users can continue using chats and live connections under concurrent load.
+                  - link "#24338" [ref=e1252] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24338
+                  - text: ","
+                  - link "#24379" [ref=e1253] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24379
+                  - text: ","
+                  - link "#24169" [ref=e1254] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24169
+                - listitem [ref=e1256]:
+                  - text: 🌐
+                  - strong [ref=e1257]: SearXNG language parameter handling.
+                  - text: Web searches now send clean multi-language values without trailing separators, so SearXNG requests no longer fail when multiple languages are selected.
+                  - link "Commit" [ref=e1258] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/6dff85b9d205cfc4bc2845dac40909b8d859910c
+                  - text: ","
+                  - link "#24198" [ref=e1259] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24198
+                - listitem [ref=e1261]:
+                  - text: 📂
+                  - strong [ref=e1262]: File modal open-link behavior.
+                  - text: Clicking a file name in the file details modal now opens the correct file content in a new tab for uploaded file items instead of failing to open.
+                  - link "#24125" [ref=e1263] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24125
+                - listitem [ref=e1265]:
+                  - text: 📎
+                  - strong [ref=e1266]: Chat attachment display recovery.
+                  - text: Files attached by chat tools now appear reliably in assistant responses, including non-image file attachments that were previously hidden.
+                  - link "Commit" [ref=e1267] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/7eeff2fdf945024585a01b72071a61971afc844d
+                  - text: ","
+                  - link "#24332" [ref=e1268] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24332
+                - listitem [ref=e1270]:
+                  - text: 🧱
+                  - strong [ref=e1271]: Channel embed rendering guard.
+                  - text: Channel message embeds now appear only for model-generated messages and are suppressed in reply previews, preventing unintended embed expansion in regular user posts.
+                  - link "Commit" [ref=e1272] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/e1dce9914745de9b4d2c67b1deddde3472ce4dfa
+                - listitem [ref=e1274]:
+                  - text: 🛡️
+                  - strong [ref=e1275]: Safer image URL handling.
+                  - text: Untrusted external image URLs are now blocked in profile and rich-text image rendering paths, preventing unintended client-side requests to attacker-controlled domains.
+                  - link "#24420" [ref=e1276] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24420
+                - listitem [ref=e1278]:
+                  - text: 🛡️
+                  - strong [ref=e1279]: Sanitized spreadsheet HTML previews.
+                  - text: Spreadsheet previews now sanitize generated HTML before rendering, reducing the risk of unsafe content being executed when opening office files in chat and file modals.
+                  - link "#24468" [ref=e1280] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24468
+                - listitem [ref=e1282]:
+                  - text: 🧰
+                  - strong [ref=e1283]: Multi-worker tool update consistency.
+                  - text: Updated tool code now refreshes correctly across workers without requiring a full service restart, so chats no longer run stale tool versions after edits.
+                  - link "Commit" [ref=e1284] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/3309f5d9f11f521c0ee97b64c59a83e3cf390bde
+                  - text: ","
+                  - link "#24400" [ref=e1285] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24400
+                  - text: ","
+                  - link "#24433" [ref=e1286] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24433
+                - listitem [ref=e1288]:
+                  - text: 🧩
+                  - strong [ref=e1289]: Default model metadata env parsing.
+                  - text: The "DEFAULT_MODEL_METADATA" environment setting is now parsed and applied correctly, including when persistent config is disabled, so configured model capability defaults are no longer ignored at startup.
+                  - link "Commit" [ref=e1290] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/0103d7e82cccbd5c4b1c8daabcb3e5160fa74a97
+                  - text: ","
+                  - link "#24319" [ref=e1291] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24319
+                - listitem [ref=e1293]:
+                  - text: 🔄
+                  - strong [ref=e1294]: Config import and Redis consistency.
+                  - text: Imported settings now remain effective after import because configuration values are immediately synchronized to Redis, preventing stale cached values from overriding imported permissions and settings.
+                  - link "Commit" [ref=e1295] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/55a572cd398c9b4e6118728f8f129941437aa225
+                  - text: ","
+                  - link "Commit" [ref=e1296] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/1c1c8b18e5cc90ca3c6961a4c193a4363febbc83
+                  - text: ","
+                  - link "#24346" [ref=e1297] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24346
+                - listitem [ref=e1299]:
+                  - text: 🔔
+                  - strong [ref=e1300]: LDAP signup webhook parity.
+                  - text: New accounts created through LDAP now trigger the same signup webhook notifications as password and OAuth signups, so downstream provisioning and audit automations receive consistent events.
+                  - link "Commit" [ref=e1301] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/fd3368c0bff168417e3c49ffd73491c344702339
+                  - text: ","
+                  - link "#24377" [ref=e1302] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24377
+                - listitem [ref=e1304]:
+                  - text: 🦆
+                  - strong [ref=e1305]: DDGS auto-backend compatibility.
+                  - text: Web search now handles DDGS automatic backend selection correctly and safely falls back on empty or rate-limited responses, preventing search failures in newer DDGS versions.
+                  - link "Commit" [ref=e1306] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/9adc0c442a57eaa88a5f30c2b2cb393623154e20
+                  - text: ","
+                  - link "#24188" [ref=e1307] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24188
+                - listitem [ref=e1309]:
+                  - text: 🤖
+                  - strong [ref=e1310]: Automation update tool reliability.
+                  - text: Updating existing automations in chat now works correctly instead of failing with a missing method error.
+                  - link "Commit" [ref=e1311] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/f39f4a86aedc2769d8268670a020b1f3c16776dd
+                  - text: ","
+                  - link "#24405" [ref=e1312] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24405#issuecomment-4408011166
+                - listitem [ref=e1314]:
+                  - text: 📅
+                  - strong [ref=e1315]: Calendar event permission checks.
+                  - text: Calendar event update and delete actions now handle ownership and access checks more reliably, returning clean access-denied results when appropriate.
+                  - link "Commit" [ref=e1316] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/2977910ffd9d2369dfa504aa6ab12745b3dbd19a
+                - listitem [ref=e1318]:
+                  - text: 🛡️
+                  - strong [ref=e1319]: Safer cached file delivery.
+                  - text: Cached files that are not recognized as image, audio, or video now download as attachments instead of rendering inline, reducing the risk of unsafe browser content handling.
+                  - link "Commit" [ref=e1320] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/4754ece4a2de5bba85a1d53af2dc8d24fdfb58be
+                - listitem [ref=e1322]:
+                  - text: 📊
+                  - strong [ref=e1323]: Streaming token analytics accuracy.
+                  - text: Admin Analytics now records and aggregates token usage correctly for streaming chats across Responses API and OpenAI-compatible providers, including fallback handling for provider usage formats that use prompt and completion token keys.
+                  - link "Commit" [ref=e1324] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/989d5fd4e2ce285edf4475a1e13f0981a78d3821
+                  - text: ","
+                  - link "Commit" [ref=e1325] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/a32d26e61d24d9f63650faed5cb8909ed90af661
+                  - text: ","
+                  - link "#24217" [ref=e1326] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24217
+                  - text: ","
+                  - link "#24294" [ref=e1327] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24294
+                  - text: ","
+                  - link "#24241" [ref=e1328] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24241
+                - listitem [ref=e1330]:
+                  - text: 🔗
+                  - strong [ref=e1331]: Admin shared chat links.
+                  - text: Admin users can now open and clone shared chat links reliably without 401 errors because shared links are now resolved by share ID first, with safe fallback behavior for direct chat ID access.
+                  - link "Commit" [ref=e1332] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/cde21b9f6dc11575a668484f42440824ec5a4fae
+                  - text: ","
+                  - link "#24311" [ref=e1333] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24311
+                  - text: ","
+                  - link "#24096" [ref=e1334] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24096
+                - listitem [ref=e1336]:
+                  - text: 💾
+                  - strong [ref=e1337]: Chat settings persistence.
+                  - text: System prompts and other chat-level settings now persist correctly after creating a new chat and reloading, preventing prompt loss in affected conversations.
+                  - link "Commit" [ref=e1338] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/86df8bf27e1b84abbe2eeedcc8650df59c7d23d6
+                  - text: ","
+                  - link "#24193" [ref=e1339] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24193
+                  - text: ","
+                  - link "#24270" [ref=e1340] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24270
+                - listitem [ref=e1342]:
+                  - text: 💾
+                  - strong [ref=e1343]: Chat control autosave persistence.
+                  - text: Changes to chat controls like system prompt, parameters, and attached files are now autosaved on existing chats, so edits are no longer lost when you refresh or navigate away before sending a message.
+                  - link "Commit" [ref=e1344] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/a938c8ae2e45a00d2f06151fdaeaee94e54a8095
+                  - text: ","
+                  - link "#23897" [ref=e1345] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23897
+                - listitem [ref=e1347]:
+                  - text: ☁️
+                  - strong [ref=e1348]: OneDrive option visibility.
+                  - text: OneDrive personal and business upload options now appear only when their respective client IDs are configured, preventing unavailable options from showing in attachment menus.
+                  - link "Commit" [ref=e1349] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/commit/b72019db393a658ca0ceecdcc59b70f6cc5dcd40
+                  - text: ","
+                  - link "#24411" [ref=e1350] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/24411
+                - listitem [ref=e1352]:
+                  - text: 🧠
+                  - strong [ref=e1353]: Reasoning content leakage prevention.
+                  - text: Tool-call round-trip messages no longer wrap reasoning text in
+                  - code [ref=e1354]: <think>
+                  - text: tags inside the content field, preventing raw markup from leaking into chat output for models whose templates don't strip think tags (e.g. Gemma 4).
+                  - link "#23844" [ref=e1355] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/issues/23844
+                - listitem [ref=e1357]:
+                  - text: 🖥️
+                  - strong [ref=e1358]: Terminal sidebar auto-open guard.
+                  - text: The terminal sidebar no longer auto-opens on chat load when OpenTerminal is disabled, because stale terminal IDs saved on models or in localStorage are now validated against available terminal servers before use.
+                - listitem [ref=e1360]:
+                  - text: 🔁
+                  - strong [ref=e1361]: Single-confirmation connection deletion.
+                  - text: Deleting OpenAI, Ollama, tool server, and terminal server connections now shows exactly one confirmation dialog instead of two, because redundant outer confirmation wrappers were removed from all connection components.
+                - listitem [ref=e1363]:
+                  - text: 🧵
+                  - strong [ref=e1364]: Reliable background task cleanup.
+                  - text: The chat task lifecycle now deregisters completed tasks before checking for remaining siblings, eliminating the off-by-one timing issue that could leave the stop button stuck or dismiss the sidebar activity spinner too early.
+            - generic [ref=e1365]:
+              - generic [ref=e1366]: changed
+              - generic [ref=e1367]:
+                - listitem [ref=e1369]:
+                  - text: ⚠️
+                  - strong [ref=e1370]: Database Migrations
+                  - text: ": This release includes database schema changes; we strongly recommend backing up your database and all associated data before upgrading in production environments. If you are running a multi-worker, multi-server, or load-balanced deployment, all instances must be updated simultaneously, rolling updates are not supported and will cause application failures due to schema incompatibility."
+                - listitem [ref=e1372]:
+                  - text: 🚪
+                  - strong [ref=e1373]: Signout request method.
+                  - text: The signout endpoint now requires POST instead of GET, so custom clients and integrations must update logout calls accordingly.
+                  - link "#24420" [ref=e1374] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24420
+          - generic [ref=e1375]:
+            - heading "v0.9.2 - 2026-04-24" [level=3] [ref=e1376]
+            - separator [ref=e1377]
+            - generic [ref=e1378]:
+              - generic [ref=e1379]: added
+              - generic [ref=e1380]:
+                - listitem [ref=e1382]:
+                  - text: 🧠
+                  - strong [ref=e1383]: PaddleOCR-vl document extraction.
+                  - text: Administrators can now use PaddleOCR-vl as a content extraction engine for document processing, with configurable API URL and token settings in document retrieval configuration.
+                  - link "#23945" [ref=e1384] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23945
+                - listitem [ref=e1386]:
+                  - text: 🔥
+                  - strong [ref=e1387]: Firecrawl v2 API.
+                  - text: Firecrawl web loading now uses the v2 API directly with proper retry logic, exponential backoff on rate limits, and configurable timeout handling, improving reliability for both cloud and self-hosted Firecrawl setups.
+                  - link "#23934" [ref=e1388] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23934
+                - listitem [ref=e1390]:
+                  - text: ⏰
+                  - strong [ref=e1391]: Calendar event reminder customization.
+                  - text: Calendar events now support a configurable
+                  - code [ref=e1392]: reminder_minutes
+                  - text: parameter, allowing models to set custom reminder durations instead of the default 10-minute notification.
+                - listitem [ref=e1394]:
+                  - text: 🔑
+                  - strong [ref=e1395]: Custom API key header.
+                  - text: Administrators can now configure a custom header name for API key authentication via the
+                  - code [ref=e1396]: CUSTOM_API_KEY_HEADER
+                  - text: environment variable, enabling compatibility with reverse proxies that use the
+                  - code [ref=e1397]: Authorization
+                  - text: header for their own authentication.
+                - listitem [ref=e1399]:
+                  - text: 🔌
+                  - strong [ref=e1400]: OAuth session disconnection.
+                  - text: Users can now disconnect OAuth sessions for specific providers (e.g., MCP connections) through a new API endpoint, enabling cleaner re-authentication workflows.
+                - listitem [ref=e1402]:
+                  - text: 📚
+                  - strong [ref=e1403]: Source overflow indicator.
+                  - text: The Sources button now shows a +N badge when more than three sources are available, so hidden sources are clearly indicated in chat responses.
+                  - link "#23918" [ref=e1404] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23918
+                - listitem [ref=e1406]:
+                  - text: ⚡
+                  - strong [ref=e1407]: Model list performance.
+                  - text: Model list API responses now strip base64 profile image data from paginated results, and model tags are fetched via a dedicated efficient query instead of loading all models. This significantly reduces payload sizes and improves workspace Models page responsiveness.
+                - listitem [ref=e1409]:
+                  - text: ⚡
+                  - strong [ref=e1410]: Model avatar cache reuse.
+                  - text: Default model profile images now redirect to a shared static path instead of reading files from disk per-request, reducing repeated I/O and improving loading efficiency when multiple models use the fallback icon.
+                  - link "#24015" [ref=e1411] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24015
+                - listitem [ref=e1413]:
+                  - text: 🚀
+                  - strong [ref=e1414]: Faster splash image loading.
+                  - text: Splash screen images are now prioritized earlier during page load with preload links, improving first-load LCP behavior and reducing delayed image discovery.
+                  - link "#24011" [ref=e1415] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24011
+                - listitem [ref=e1417]:
+                  - text: 🧵
+                  - strong [ref=e1418]: Streaming markdown performance stability.
+                  - text: Streaming responses now stay more memory-efficient by preventing repeated cleanup callback registration during markdown updates.
+                  - link "#24048" [ref=e1419] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24048
+                - listitem [ref=e1421]:
+                  - text: 📊
+                  - strong [ref=e1422]: Telemetry gauge reliability.
+                  - text: OpenTelemetry user gauge callbacks now use synchronous database queries directly, eliminating cross-thread async bridging issues that could cause silent failures in metric collection.
+                - listitem [ref=e1424]:
+                  - text: 🔄
+                  - strong [ref=e1425]: General improvements.
+                  - text: Various improvements were implemented across the application to enhance performance, stability, and security.
+                - listitem [ref=e1427]:
+                  - text: 🌐
+                  - strong [ref=e1428]: Translation updates.
+                  - text: Translations for Finnish, Korean, Portuguese (Brazil), and Dutch were enhanced and expanded.
+            - generic [ref=e1429]:
+              - generic [ref=e1430]: fixed
+              - generic [ref=e1431]:
+                - listitem [ref=e1433]:
+                  - text: 🔧
+                  - strong [ref=e1434]: MCP task cancellation stability.
+                  - text: Interrupted MCP tool calls no longer cause CPU spikes or runaway cleanup behavior. MCP client disconnection now runs in the same asyncio task as connection, respecting cancel scope constraints, and chat-active events are properly shielded during cancellation.
+                - listitem [ref=e1436]:
+                  - text: 🧠
+                  - strong [ref=e1437]: Persistent chat skill injection.
+                  - text: Skills mentioned in persisted chats now inject into the system prompt reliably. Skill ID extraction from
+                  - code [ref=e1438]: <$skillId|label>
+                  - text: message tags is now handled server-side, and tags are stripped before messages reach the model.
+                - listitem [ref=e1440]:
+                  - text: 🗄️
+                  - strong [ref=e1441]: Async database driver migration.
+                  - text: The async database backend now uses psycopg (v3) instead of asyncpg, eliminating brittle SSL parameter translation and supporting native libpq connection strings including
+                  - code [ref=e1442]: sslmode
+                  - text: ","
+                  - code [ref=e1443]: options
+                  - text: ", and"
+                  - code [ref=e1444]: target_session_attrs
+                  - text: without any stripping or conversion.
+                - listitem [ref=e1446]:
+                  - text: 🐳
+                  - strong [ref=e1447]: Docker ARM64 reliability.
+                  - text: Docker images built for arm64 via QEMU cross-compilation no longer produce 0-byte corrupted Python dependencies.
+                  - code [ref=e1448]: UV_LINK_MODE=copy
+                  - text: is now set in the Dockerfile to force reliable file installation.
+                - listitem [ref=e1450]:
+                  - text: 🛠️
+                  - strong [ref=e1451]: Throttle request handling.
+                  - text: Request handling no longer fails when user activity status updates are throttled with a non-zero interval.
+                  - link "#23979" [ref=e1452] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/23979
+                - listitem [ref=e1454]:
+                  - text: ✍️
+                  - strong [ref=e1455]: Rich text extension conflicts.
+                  - text: Rich text editing no longer triggers duplicate extension conflicts for lists and code blocks, improving editor stability.
+                  - link "#24009" [ref=e1456] [cursor=pointer]:
+                    - /url: https://github.com/open-webui/open-webui/pull/24009
+                - listitem [ref=e1458]:
+                  - text: 🔇
+                  - strong [ref=e1459]: Fetch URL null content guard.
+                  - text: The
+                  - code [ref=e1460]: fetch_url
+                  - text: built-in tool now safely handles
+                  - code [ref=e1461]: None
+                  - text: content returned by web loaders instead of crashing with a
+                  - code [ref=e1462]: TypeError
+                  - text: .
+                - listitem [ref=e1464]:
+                  - text: 🌐
+                  - strong [ref=e1465]: OAuth discovery fallback.
+                  - text: OAuth protected resource discovery now falls back to well-known RFC 9728 URIs when the
+                  - code [ref=e1466]: WWW-Authenticate
+                  - text: header doesn't contain a
+                  - code [ref=e1467]: resource_metadata
+                  - text: link, improving compatibility with more MCP server implementations.
+                - listitem [ref=e1469]:
+                  - text: 🔐
+                  - strong [ref=e1470]: Session token resolution.
+                  - text: Session user endpoints now gracefully handle missing
+                  - code [ref=e1471]: Authorization
+                  - text: headers by falling back to cookie and request state tokens, preventing errors when used behind forward-auth proxies.
+                - listitem [ref=e1473]:
+                  - text: 🚫
+                  - strong [ref=e1474]: Direct API error responses.
+                  - text: Chat completion requests without a WebSocket channel (direct API calls) now return proper HTTP error responses instead of silently returning null on failure.
+                - listitem [ref=e1476]:
+                  - text: 📡
+                  - strong [ref=e1477]: Cancelled response stream cleanup.
+                  - text: Cancelled chat generation now explicitly closes the upstream response body iterator, preventing orphaned async generators from spinning in anyio internals.
+                - listitem [ref=e1479]:
+                  - text: 🔒
+                  - strong [ref=e1480]: Model profile image path safety.
+                  - text: Model profile image endpoints now validate and sanitize static asset redirect paths, preventing path traversal through encoded dots or malicious URL patterns.
+                - listitem [ref=e1482]:
+                  - text: 📊
+                  - strong [ref=e1483]: RAG template validation UI.
+                  - text: The Documents settings page now displays a warning when RAG templates contain multiple
+                  - code [ref=e1484]: "[context]"
+                  - text: or
+                  - code [ref=e1485]: "{{CONTEXT}}"
+                  - text: placeholders, helping administrators avoid accidental redundant context injection.
+                - listitem [ref=e1487]:
+                  - text: 🧩
+                  - strong [ref=e1488]: Automation model detection.
+                  - text: The
+                  - code [ref=e1489]: create_automation
+                  - text: tool now correctly detects the current model ID even when
+                  - code [ref=e1490]: model_id
+                  - text: is not yet set in metadata, falling back to the model dict.
+                - listitem [ref=e1492]:
+                  - text: 🔄
+                  - strong [ref=e1493]: MCP resource content handling.
+                  - text: MCP tool results with the
+                  - code [ref=e1494]: resource
+                  - text: content type are now correctly detected and their
+                  - code [ref=e1495]: resource.text
+                  - text: payload is extracted, instead of being silently ignored.
+                - listitem [ref=e1497]:
+                  - text: 🔄
+                  - strong [ref=e1498]: Ollama and OpenAI metadata forwarding.
+                  - text: Ollama and OpenAI proxy routes now forward request metadata to downstream handlers, ensuring consistent context propagation.
+                - listitem [ref=e1500]:
+                  - text: 🧹
+                  - strong [ref=e1501]: Browser-native message virtualization.
+                  - text: The custom JavaScript-based message culling system (spacers, height caching, scroll listeners) was replaced with CSS
+                  - code [ref=e1502]: "content-visibility: auto"
+                  - text: ", letting the browser natively skip rendering of off-screen messages without destroying component trees. This eliminates scroll jump artifacts and mount/destroy thrashing while preserving memory efficiency in long conversations."
+                - listitem [ref=e1504]:
+                  - text: 📻
+                  - strong [ref=e1505]: Redis notification compatibility.
+                  - text: Redis pub/sub now handles missing or incompatible
+                  - code [ref=e1506]: client_name
+                  - text: support more gracefully, preventing connection errors with certain Redis configurations.
+            - generic [ref=e1507]:
+              - generic [ref=e1508]: changed
+              - generic [ref=e1509]:
+                - listitem [ref=e1511]:
+                  - text: ⚙️
+                  - strong [ref=e1512]: psycopg v3 async driver.
+                  - text: The async database driver has been migrated from
+                  - code [ref=e1513]: asyncpg
+                  - text: to
+                  - code [ref=e1514]: psycopg
+                  - text: (v3). This is a transparent change for most deployments, but custom connection strings with
+                  - code [ref=e1515]: asyncpg
+                  - text: "-specific parameters may need adjustment."
+                - listitem [ref=e1517]:
+                  - text: 🔑
+                  - strong [ref=e1518]: Brotli dependency update.
+                  - text: Brotli has been updated to address CVE-2025-6176.
+                - listitem [ref=e1520]:
+                  - text: 🖥️
+                  - strong [ref=e1521]: Windows startup script.
+                  - text: The Windows startup batch script has been updated for improved compatibility.
+        - button "确认，开始使用！" [ref=e1523] [cursor=pointer]

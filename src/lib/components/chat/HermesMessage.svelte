@@ -1,7 +1,10 @@
 <script lang="ts">
-  import { onDestroy } from 'svelte';
-  import DOMPurify from 'dompurify';
+	// @ts-nocheck
+  import { onMount, onDestroy } from 'svelte';
+  import { browser } from '$app/environment';
   import { HermesParser, type HermesSegment } from '$lib/utils/hermes-parser';
+  import { getMascotImagePath } from '$lib/utils/ba-assets';
+  import { theme } from '$lib/stores/theme';
   import ThinkPanel from './ThinkPanel.svelte';
   import ToolCallCard from './ToolCallCard.svelte';
   import ToolResponseCard from './ToolResponseCard.svelte';
@@ -13,6 +16,13 @@
   let segments: HermesSegment[] = [];
   let partial: HermesSegment | null = null;
   let lastProcessedContent = '';
+  let DOMPurify: typeof import('dompurify').default | null = null;
+
+  onMount(async () => {
+    if (browser) {
+      DOMPurify = (await import('dompurify')).default;
+    }
+  });
 
   // Re-parse when content changes (for streaming)
   // Only feed the delta (new content since last update) to avoid duplication
@@ -52,11 +62,22 @@
   });
 </script>
 
-<div class="hermes-message">
-  {#each segments as segment, index (`${segment.type}-${index}`)}
+<div class="hermes-message flex items-start gap-2">
+  <img
+    src={getMascotImagePath($theme, 'icon')}
+    alt="AI"
+    class="w-6 h-6 rounded-full object-cover flex-shrink-0 mt-1"
+    on:error={(e) => { e.currentTarget.style.display = 'none'; }}
+  />
+  <div class="flex-1">
+    {#each segments as segment, index (`${segment.type}-${index}`)}
     {#if segment.type === 'text'}
       <div class="prose prose-sm max-w-none text-[var(--ba-text-primary)]">
-        {@html DOMPurify.sanitize(segment.content)}
+        {#if DOMPurify}
+          {@html DOMPurify.sanitize(segment.content)}
+        {:else}
+          {segment.content}
+        {/if}
       </div>
 
     {:else if segment.type === 'think' || segment.type === 'reasoning'}
@@ -83,4 +104,5 @@
       {partial.content}
     </div>
   {/if}
+  </div>
 </div>

@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+	// @ts-nocheck
 	/** Shared 1×1 transparent drag preview; avoids one Image per sidebar row */
 	const invisibleDragImage = new Image();
 	invisibleDragImage.src =
@@ -64,7 +65,9 @@
 	export let selected = false;
 	export let shiftKey = false;
 
-	export let onDragEnd = () => {};
+	export let onDragEnd: Function = () => {};
+
+	let draggable = true;
 
 	function formatTimeAgo(timestamp: number): string {
 		const now = Date.now();

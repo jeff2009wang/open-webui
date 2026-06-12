@@ -1,0 +1,26 @@
+- generic [ref=e5]:
+  - generic [ref=e14]:
+    - generic [ref=e16]: Sensei！欢迎回到 Schale！今天想聊些什么呢？
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]: 电子邮箱
+        - textbox "电子邮箱" [ref=e20]:
+          - /placeholder: 输入您的电子邮箱
+          - text: wangjunfengv@qq.com
+      - generic [ref=e21]:
+        - generic [ref=e22]: 密码
+        - generic [ref=e23]:
+          - generic [ref=e24]: 输入您的密码
+          - textbox "密码 输入您的密码" [ref=e25]:
+            - /placeholder: 输入您的密码
+            - text: password123
+          - button "在用户界面中显示密码" [ref=e26] [cursor=pointer]:
+            - img [ref=e27]
+    - button "登录" [active] [ref=e31] [cursor=pointer]
+  - region "Notifications alt+T":
+    - list:
+      - status [ref=e43]:
+        - button "Close toast" [ref=e44] [cursor=pointer]:
+          - img [ref=e45]
+        - img [ref=e49]
+        - generic [ref=e52]: The email or password provided is incorrect. Please check for typos and try logging in again.

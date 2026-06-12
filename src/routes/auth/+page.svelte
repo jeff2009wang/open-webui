@@ -24,6 +24,7 @@
 
 	import { LOGIN_WELCOME } from '$lib/constants/character-lines';
 	import { theme } from '$lib/stores/theme';
+	import { getMascotImagePath } from '$lib/utils/ba-assets';
 
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import OnBoarding from '$lib/components/OnBoarding.svelte';
@@ -235,7 +236,14 @@
 />
 
 <div class="w-full h-screen max-h-[100dvh] text-white relative" id="auth-page">
-	<div class="w-full h-full absolute top-0 left-0 bg-white dark:bg-black"></div>
+	<div
+		class="w-full h-full absolute top-0 left-0 bg-gray-50 dark:bg-gray-950"
+		style="background-image: url({getMascotImagePath($theme, 'portrait')}); background-size: cover; background-position: top center;"
+	>
+		<div
+			class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white/85 via-white/50 to-white/20 dark:from-black/80 dark:via-black/50 dark:to-black/30"
+		></div>
+	</div>
 
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
 
@@ -261,7 +269,9 @@
 					</div>
 				{:else}
 					<div class="my-auto flex flex-col justify-center items-center">
-						<div class=" sm:max-w-md my-auto pb-10 w-full dark:text-gray-100">
+						<div
+							class="sm:max-w-md my-auto pb-10 w-full px-8 pt-8 rounded-3xl bg-white/70 dark:bg-black/60 backdrop-blur-xl shadow-2xl border border-white/30 dark:border-white/10 text-gray-900 dark:text-gray-100"
+						>
 							{#if $config?.metadata?.auth_logo_position === 'center'}
 								<div class="flex justify-center mb-6">
 									<img
@@ -364,13 +374,13 @@
 												bind:value={password}
 												type="password"
 												id="password"
-												class="my-0.5 w-full text-sm outline-hidden bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-600"
+												inputClassName="my-0.5 w-full text-sm outline-hidden bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-600"
 												placeholder={$i18n.t('Enter Your Password')}
 												autocomplete={mode === 'signup' ? 'new-password' : 'current-password'}
 												name="password"
 												screenReader={true}
 												required
-												aria-required="true"
+												ariaRequired="true"
 											/>
 										</div>
 
@@ -385,7 +395,7 @@
 													bind:value={confirmPassword}
 													type="password"
 													id="confirm-password"
-													class="my-0.5 w-full text-sm outline-hidden bg-transparent"
+													inputClassName="my-0.5 w-full text-sm outline-hidden bg-transparent"
 													placeholder={$i18n.t('Confirm Your Password')}
 													autocomplete="new-password"
 													name="confirm-password"

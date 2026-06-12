@@ -1,0 +1,88 @@
+- generic [ref=e7]:
+  - generic [ref=e8]:
+    - button "展开侧边栏 新对话 搜索 笔记 工作空间" [ref=e9]:
+      - button "展开侧边栏" [ref=e12]
+      - generic [ref=e14]:
+        - link "新对话" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e19]
+        - button "搜索" [ref=e23] [cursor=pointer]:
+          - img [ref=e25]
+        - link "笔记" [ref=e29] [cursor=pointer]:
+          - /url: /notes
+          - img [ref=e31]
+        - link "工作空间" [ref=e35] [cursor=pointer]:
+          - /url: /workspace
+          - img [ref=e37]
+    - button "用户菜单" [ref=e42] [cursor=pointer]:
+      - button "用户菜单" [ref=e43]:
+        - img "打开个人资料菜单" [ref=e45]
+  - generic [ref=e52]:
+    - navigation [ref=e53]:
+      - generic [ref=e56]:
+        - generic [ref=e59]:
+          - button "已选择：HermesPipe" [ref=e63] [cursor=pointer]:
+            - generic [ref=e64]:
+              - text: HermesPipe
+              - img [ref=e65]
+          - button "Add Model" [ref=e69] [cursor=pointer]:
+            - img [ref=e70]
+        - generic [ref=e74]:
+          - button [ref=e1524] [cursor=pointer]:
+            - button [ref=e1525]:
+              - img [ref=e1527]
+          - button "Controls" [ref=e81] [cursor=pointer]:
+            - img [ref=e83]
+          - button "用户菜单" [ref=e85] [cursor=pointer]:
+            - button "用户菜单" [ref=e86]
+    - generic [ref=e88]:
+      - region "对话内容" [ref=e1533]:
+        - heading "对话内容" [level=2] [ref=e1534]
+        - log [ref=e1535]:
+          - listitem [ref=e1536]:
+            - generic [ref=e1538]:
+              - generic [ref=e1542]: 今天 10:24 AM
+              - generic [ref=e1543]:
+                - paragraph [ref=e1547]: 你好
+                - generic [ref=e1548]:
+                  - button [ref=e1550] [cursor=pointer]:
+                    - img [ref=e1551]
+                  - button [ref=e1554] [cursor=pointer]:
+                    - img [ref=e1555]
+          - listitem [ref=e1557]:
+            - generic [ref=e1558]:
+              - img "阿罗纳" [ref=e1560]
+              - generic [ref=e1561]:
+                - generic [ref=e1564]: HermesPipe
+                - generic [ref=e1565]:
+                  - generic [ref=e1566]:
+                    - img "AI" [ref=e1567]
+                    - paragraph [ref=e1611]: 老师好！<action emotion="joy"/>欢迎回来～有什么阿罗娜可以帮忙的吗？<action name="idle"/>
+                  - generic [ref=e1612]:
+                    - button "编辑" [ref=e1614] [cursor=pointer]:
+                      - img [ref=e1615]
+                    - button "复制" [ref=e1618] [cursor=pointer]:
+                      - img [ref=e1619]
+                    - button "朗读" [ref=e1622] [cursor=pointer]:
+                      - img [ref=e1623]
+                    - button "点赞此回答" [ref=e1626] [cursor=pointer]:
+                      - img [ref=e1627]
+                    - button "点踩此回答" [ref=e1630] [cursor=pointer]:
+                      - img [ref=e1631]
+                    - button "继续生成" [ref=e1634] [cursor=pointer]:
+                      - img [ref=e1635]
+                    - button "重新生成" [ref=e1638] [cursor=pointer]:
+                      - generic "重新生成" [ref=e1640]:
+                        - img [ref=e1641]
+      - generic [ref=e1582]:
+        - paragraph [ref=e1587]: Sensei，请在这里输入~
+        - generic [ref=e1588]:
+          - generic [ref=e1589]:
+            - button "更多" [ref=e1590] [cursor=pointer]:
+              - button "更多" [ref=e1592]:
+                - img [ref=e1593]
+            - button "扩展功能" [ref=e1596] [cursor=pointer]:
+              - button "扩展功能" [ref=e1598]:
+                - img [ref=e1599]
+          - button [ref=e1607] [cursor=pointer]:
+            - img [ref=e1608]

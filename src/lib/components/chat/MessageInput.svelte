@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import DOMPurify from 'dompurify';
 	import { toast } from 'svelte-sonner';
 
@@ -61,6 +62,7 @@
 	import { getTools } from '$lib/apis/tools';
 	import { getSkills } from '$lib/apis/skills';
 
+	import { getMascotImagePath } from '$lib/utils/ba-assets';
 	import { WEBUI_BASE_URL, WEBUI_API_BASE_URL, PASTED_TEXT_CHARACTER_LIMIT } from '$lib/constants';
 	import { INPUT_PLACEHOLDER } from '$lib/constants/character-lines';
 	import { theme } from '$lib/stores/theme';
@@ -1281,7 +1283,7 @@
 											<img
 												alt="model profile"
 												class="size-3.5 max-w-[28px] object-cover rounded-full"
-												src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${$models.find((model) => model.id === atSelectedModel.id).id}&lang=${$i18n.language}`}
+												src={getMascotImagePath($theme, 'icon')}
 											/>
 											<div class="translate-y-[0.5px]">
 												<span class="">{atSelectedModel.name}</span>

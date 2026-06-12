@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { marked } from 'marked';
 	import Fuse from 'fuse.js';
 

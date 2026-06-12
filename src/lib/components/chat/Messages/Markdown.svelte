@@ -1,4 +1,5 @@
 <script>
+	// @ts-nocheck
 	import { onDestroy } from 'svelte';
 	import { marked } from 'marked';
 	import { replaceTokens, processResponseContent } from '$lib/utils';

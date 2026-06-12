@@ -1,0 +1,100 @@
+- generic [ref=e5]:
+  - generic [ref=e44]:
+    - generic [ref=e45]:
+      - button "展开侧边栏 新对话 搜索 笔记 工作空间" [ref=e46]:
+        - button "展开侧边栏" [ref=e49]
+        - generic [ref=e51]:
+          - link "新对话" [ref=e54] [cursor=pointer]:
+            - /url: /
+            - img [ref=e56]
+          - button "搜索" [ref=e60] [cursor=pointer]:
+            - img [ref=e62]
+          - link "笔记" [ref=e66] [cursor=pointer]:
+            - /url: /notes
+            - img [ref=e68]
+          - link "工作空间" [ref=e72] [cursor=pointer]:
+            - /url: /workspace
+            - img [ref=e74]
+      - button "用户菜单" [ref=e79] [cursor=pointer]:
+        - button "用户菜单" [ref=e80]:
+          - img "打开个人资料菜单" [ref=e82]
+    - generic [ref=e89]:
+      - navigation [ref=e90]:
+        - generic [ref=e93]:
+          - generic [ref=e96]:
+            - button "已选择：TestEchoPipe" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]:
+                - text: TestEchoPipe
+                - img [ref=e102]
+            - button "Add Model" [ref=e106] [cursor=pointer]:
+              - img [ref=e107]
+          - generic [ref=e111]:
+            - button [ref=e1570] [cursor=pointer]:
+              - button [ref=e1571]:
+                - img [ref=e1573]
+            - button "Controls" [ref=e118] [cursor=pointer]:
+              - img [ref=e120]
+            - button "用户菜单" [ref=e122] [cursor=pointer]:
+              - button "用户菜单" [ref=e123]
+      - generic [ref=e125]:
+        - region "对话内容" [ref=e1579]:
+          - heading "对话内容" [level=2] [ref=e1580]
+          - log [ref=e1581]:
+            - listitem [ref=e1582]:
+              - paragraph [ref=e1590]: Hello, this is a test message
+            - listitem [ref=e1594]:
+              - generic [ref=e1595]:
+                - img "阿罗纳" [ref=e1597]
+                - generic [ref=e1598]:
+                  - generic [ref=e1601]: TestEchoPipe
+                  - generic [ref=e1602]:
+                    - generic [ref=e1603]:
+                      - img "AI" [ref=e1604]
+                      - generic [ref=e1608]:
+                        - paragraph [ref=e1610]: "Echo: Hello, this is a test message"
+                        - generic [ref=e1611]:
+                          - img [ref=e1613]
+                          - generic [ref=e1615]: name 'generate_title' is not defined
+                    - generic [ref=e1616]:
+                      - button "编辑" [ref=e1618] [cursor=pointer]:
+                        - img [ref=e1619]
+                      - button "复制" [ref=e1622] [cursor=pointer]:
+                        - img [ref=e1623]
+                      - button "朗读" [ref=e1626] [cursor=pointer]:
+                        - img [ref=e1627]
+                      - button "点赞此回答" [ref=e1630] [cursor=pointer]:
+                        - img [ref=e1631]
+                      - button "点踩此回答" [ref=e1634] [cursor=pointer]:
+                        - img [ref=e1635]
+                      - button "继续生成" [ref=e1638] [cursor=pointer]:
+                        - img [ref=e1639]
+                      - button "重新生成" [ref=e1642] [cursor=pointer]:
+                        - generic "重新生成" [ref=e1644]:
+                          - img [ref=e1645]
+                    - generic [ref=e1648]:
+                      - generic [ref=e1649]: 追问
+                      - generic [ref=e1650]:
+                        - button "追问：Question 1?" [ref=e1652] [cursor=pointer]:
+                          - generic [ref=e1653]: Question 1?
+                        - separator [ref=e1654]
+                        - button "追问：Question 2?" [ref=e1656] [cursor=pointer]:
+                          - generic [ref=e1657]: Question 2?
+                        - separator [ref=e1658]
+                        - button "追问：Question 3?" [ref=e1660] [cursor=pointer]:
+                          - generic [ref=e1661]: Question 3?
+        - generic [ref=e1669]:
+          - paragraph [ref=e1674]: Sensei，请在这里输入~
+          - generic [ref=e1675]:
+            - generic [ref=e1676]:
+              - button "更多" [ref=e1677] [cursor=pointer]:
+                - button "更多" [ref=e1679]:
+                  - img [ref=e1680]
+              - button "扩展功能" [ref=e1683] [cursor=pointer]:
+                - button "扩展功能" [ref=e1685]:
+                  - img [ref=e1686]
+            - generic [ref=e1691]:
+              - button "Voice Input" [ref=e1693] [cursor=pointer]:
+                - img [ref=e1694]
+              - button "语音模式" [ref=e1699] [cursor=pointer]:
+                - img [ref=e1700]
+  - generic [ref=e32]: Open WebUI

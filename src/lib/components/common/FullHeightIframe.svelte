@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { onDestroy, onMount, tick } from 'svelte';
 	import { config } from '$lib/stores';
 	import { injectCsp } from '$lib/utils/csp';

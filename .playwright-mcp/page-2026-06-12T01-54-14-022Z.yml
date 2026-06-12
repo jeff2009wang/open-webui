@@ -1,0 +1,90 @@
+- generic [ref=e5]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - button "展开侧边栏 新对话 搜索 笔记 工作空间" [ref=e9]:
+        - button "展开侧边栏" [ref=e12]
+        - generic [ref=e14]:
+          - link "新对话" [ref=e17] [cursor=pointer]:
+            - /url: /
+            - img [ref=e19]
+          - button "搜索" [ref=e23] [cursor=pointer]:
+            - img [ref=e25]
+          - link "笔记" [ref=e29] [cursor=pointer]:
+            - /url: /notes
+            - img [ref=e31]
+          - link "工作空间" [ref=e35] [cursor=pointer]:
+            - /url: /workspace
+            - img [ref=e37]
+      - button "用户菜单" [ref=e42] [cursor=pointer]:
+        - button "用户菜单" [ref=e43]:
+          - img "打开个人资料菜单" [ref=e45]
+    - generic [ref=e52]:
+      - navigation [ref=e53]:
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e59]:
+              - button "已选择：TestEchoPipe" [ref=e63] [cursor=pointer]:
+                - generic [ref=e64]:
+                  - text: TestEchoPipe
+                  - img [ref=e65]
+              - button "Add Model" [ref=e69] [cursor=pointer]:
+                - img [ref=e70]
+            - button "设为默认" [ref=e73] [cursor=pointer]
+          - generic [ref=e74]:
+            - button [ref=e76] [cursor=pointer]:
+              - img [ref=e78]
+            - button "Controls" [ref=e81] [cursor=pointer]:
+              - img [ref=e83]
+            - button "用户菜单" [ref=e85] [cursor=pointer]:
+              - button "用户菜单" [ref=e86]
+      - generic [ref=e90]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - button [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+            - generic [ref=e101]: TestEchoPipe
+          - generic [ref=e108]:
+            - paragraph [ref=e113]: Sensei，请指示...
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - button "更多" [ref=e116] [cursor=pointer]:
+                  - button "更多" [ref=e118]:
+                    - img [ref=e119]
+                - button "扩展功能" [ref=e122] [cursor=pointer]:
+                  - button "扩展功能" [ref=e124]:
+                    - img [ref=e125]
+              - generic [ref=e130]:
+                - button "Voice Input" [ref=e132] [cursor=pointer]:
+                  - img [ref=e133]
+                - button "语音模式" [ref=e138] [cursor=pointer]:
+                  - img [ref=e139]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - text: 建议
+          - list [ref=e146]:
+            - listitem [ref=e147] [cursor=pointer]:
+              - generic [ref=e148]:
+                - generic [ref=e149]: Tell me a fun fact
+                - generic [ref=e150]: about the Roman Empire
+            - listitem [ref=e151] [cursor=pointer]:
+              - generic [ref=e152]:
+                - generic [ref=e153]: Give me ideas
+                - generic [ref=e154]: for what to do with my kids' art
+            - listitem [ref=e155] [cursor=pointer]:
+              - generic [ref=e156]:
+                - generic [ref=e157]: Overcome procrastination
+                - generic [ref=e158]: give me tips
+            - listitem [ref=e159] [cursor=pointer]:
+              - generic [ref=e160]:
+                - generic [ref=e161]: Help me study
+                - generic [ref=e162]: vocabulary for a college entrance exam
+            - listitem [ref=e163] [cursor=pointer]:
+              - generic [ref=e164]:
+                - generic [ref=e165]: Explain options trading
+                - generic [ref=e166]: if I'm familiar with buying and selling stocks
+            - listitem [ref=e167] [cursor=pointer]:
+              - generic [ref=e168]:
+                - generic [ref=e169]: Show me a code snippet
+                - generic [ref=e170]: of a website's sticky header
+  - generic [ref=e171]: Open WebUI

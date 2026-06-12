@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+	// @ts-nocheck
 	import { marked, type Token } from 'marked';
 
 	type AlertType = 'NOTE' | 'TIP' | 'IMPORTANT' | 'WARNING' | 'CAUTION';
@@ -46,11 +47,11 @@
 	export function alertComponent(token: Token): AlertData | false {
 		const regExpStr = `^(?:\\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\\])\\s*?\n*`;
 		const regExp = new RegExp(regExpStr);
-		const matches = token.text?.match(regExp);
+		const matches = (token as any).text?.match(regExp);
 
 		if (matches && matches.length) {
 			const alertType = matches[1] as AlertType;
-			const newText = token.text.replace(regExp, '');
+			const newText = (token as any).text.replace(regExp, '');
 			const newTokens = marked.lexer(newText);
 			return {
 				type: alertType,

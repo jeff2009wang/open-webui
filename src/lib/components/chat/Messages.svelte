@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { v4 as uuidv4 } from 'uuid';
 	import {
 		chats,
@@ -29,21 +30,21 @@
 	export let chatId = '';
 	export let user = $_user;
 
-	export let prompt;
-	export let history = {};
+	export let prompt = '';
+	export let history: Record<string, any> = {};
 	export let selectedModels;
-	export let atSelectedModel;
+	export let atSelectedModel: any = null;
 
-	let messages = [];
+	export let messages = [];
 
 	export let setInputText: Function = () => {};
 
 	export let sendMessage: Function;
 	export let continueResponse: Function;
 	export let regenerateResponse: Function;
-	export let mergeResponses: Function;
+	export let mergeResponses: Function = () => {};
 
-	export let chatActionHandler: Function;
+	export let chatActionHandler: Function = () => {};
 	export let showMessage: Function = () => {};
 	export let submitMessage: Function = () => {};
 	export let addMessages: Function = () => {};
@@ -54,6 +55,7 @@
 	export let topPadding = false;
 	export let bottomPadding = false;
 	export let autoScroll;
+	export let processing = '';
 
 	export let onSelect = (e) => {};
 

@@ -3,6 +3,8 @@
 
 	const i18n = getContext('i18n');
 
+	import { getMascotImagePath } from '$lib/utils/ba-assets';
+	import { theme } from '$lib/stores/theme';
 	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
 
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
@@ -36,7 +38,7 @@
 		>
 			<div class="self-center shrink-0">
 				<img
-					src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model.id}&lang=${$i18n.language}`}
+					src={getMascotImagePath($theme, 'icon')}
 					class=" size-5 rounded-full -translate-x-[0.5px]"
 					alt="logo"
 					on:error={(e) => {

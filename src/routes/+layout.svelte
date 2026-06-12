@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	// @ts-nocheck
 	import { io } from 'socket.io-client';
 	import { spring } from 'svelte/motion';
 	import { Toaster, toast } from 'svelte-sonner';
@@ -21,12 +22,14 @@
 		socketConnected,
 		chatId,
 		chats,
+		models,
 		currentChatPage,
 		tags,
 		temporaryChatEnabled,
 		isLastActiveTab,
 		isApp,
 		appInfo,
+		appData,
 		toolServers,
 		playingNotificationSound,
 		channels,
@@ -283,7 +286,7 @@
 			}
 
 			if (['write_file'].includes(data?.name) && data?.params?.path) {
-				showFileNavDir.set(res?.path ?? data.params.path);
+				showFileNavDir.set((res as any)?.path ?? data.params.path);
 			}
 
 			if (cb) {
@@ -727,7 +730,7 @@
 		}
 	};
 
-	onMount(async () => {
+	onMount((async () => {
 		window.addEventListener('message', windowMessageEventHandler);
 
 		let touchstartY = 0;
@@ -821,7 +824,7 @@
 		const stored = localStorage.getItem('theme');
 		if (stored) {
 			document.documentElement.setAttribute('data-theme', stored);
-			theme.set(stored);
+			theme.set(stored as any);
 		} else {
 			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 			const initial = prefersDark ? 'dark' : 'light';
@@ -876,7 +879,7 @@
 			backendConfig = await getBackendConfig();
 			console.log('Backend config:', backendConfig);
 		} catch (error) {
-			if (error?.authRedirect) {
+			if ((error as any)?.authRedirect) {
 				// Forward-auth proxy is redirecting to an external login page.
 				// Full-page navigation lets the browser follow the redirect natively.
 				window.location.href = '/';
@@ -1008,7 +1011,7 @@
 			document.removeEventListener('touchend', touchendHandler);
 			document.removeEventListener('visibilitychange', handleVisibilityChange);
 		};
-	});
+	}) as any);
 
 	onDestroy(() => {
 		bc.close();

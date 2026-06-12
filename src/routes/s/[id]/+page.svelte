@@ -30,14 +30,14 @@
 	let showModelSelector = false;
 	let selectedModels = [''];
 
-	let chat = null;
-	let user = null;
+	let chat: any = null;
+	let user: any = null;
 
 	let title = '';
-	let files = [];
+	let files: any[] = [];
 
-	let messages = [];
-	let history = {
+	let messages: any[] = [];
+	let history: any = {
 		messages: {},
 		currentId: null
 	};

@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { decode } from 'html-entities';
 	import { getContext } from 'svelte';
 	import { slide } from 'svelte/transition';

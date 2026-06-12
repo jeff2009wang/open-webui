@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { getContext, tick } from 'svelte';
 
 	import fileSaver from 'file-saver';

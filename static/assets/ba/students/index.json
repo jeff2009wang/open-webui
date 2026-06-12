@@ -1,0 +1,34 @@
+{
+  "10005": {
+    "name": "星野",
+    "devName": "Hoshino",
+    "pathName": "hoshino",
+    "icon": "/assets/ba/students/icon/10005.webp",
+    "portrait": "/assets/ba/students/portrait/10005.webp",
+    "collection": "/assets/ba/students/collection/10005.webp"
+  },
+  "10010": {
+    "name": "白子",
+    "devName": "Shiroko",
+    "pathName": "shiroko",
+    "icon": "/assets/ba/students/icon/10010.webp",
+    "portrait": "/assets/ba/students/portrait/10010.webp",
+    "collection": "/assets/ba/students/collection/10010.webp"
+  },
+  "10015": {
+    "name": "爱丽丝",
+    "devName": "Aris",
+    "pathName": "aris",
+    "icon": "/assets/ba/students/icon/10015.webp",
+    "portrait": "/assets/ba/students/portrait/10015.webp",
+    "collection": "/assets/ba/students/collection/10015.webp"
+  },
+  "10059": {
+    "name": "未花",
+    "devName": "CH0069",
+    "pathName": "mika",
+    "icon": "/assets/ba/students/icon/10059.webp",
+    "portrait": "/assets/ba/students/portrait/10059.webp",
+    "collection": "/assets/ba/students/collection/10059.webp"
+  }
+}

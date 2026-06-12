@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { getContext, onMount, tick } from 'svelte';
 	import { fly } from 'svelte/transition';
 

@@ -1,0 +1,63 @@
+- generic [ref=e7]:
+  - generic [ref=e8]:
+    - button "展开侧边栏 新对话 搜索 笔记 工作空间" [ref=e9]:
+      - button "展开侧边栏" [ref=e12]
+      - generic [ref=e14]:
+        - link "新对话" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e19]
+        - button "搜索" [ref=e23] [cursor=pointer]:
+          - img [ref=e25]
+        - link "笔记" [ref=e29] [cursor=pointer]:
+          - /url: /notes
+          - img [ref=e31]
+        - link "工作空间" [ref=e35] [cursor=pointer]:
+          - /url: /workspace
+          - img [ref=e37]
+    - button "用户菜单" [ref=e42] [cursor=pointer]:
+      - button "用户菜单" [ref=e43]:
+        - img "打开个人资料菜单" [ref=e45]
+  - generic [ref=e52]:
+    - navigation [ref=e53]:
+      - generic [ref=e56]:
+        - generic [ref=e59]:
+          - button "已选择：HermesPipe" [ref=e1625] [cursor=pointer]:
+            - generic [ref=e64]:
+              - text: HermesPipe
+              - img [ref=e65]
+          - button "Add Model" [ref=e69] [cursor=pointer]:
+            - img [ref=e70]
+        - generic [ref=e74]:
+          - button [ref=e1646] [cursor=pointer]:
+            - button [ref=e1647]:
+              - img [ref=e1649]
+          - button "Controls" [ref=e81] [cursor=pointer]:
+            - img [ref=e83]
+          - button "用户菜单" [ref=e85] [cursor=pointer]:
+            - button "用户菜单" [ref=e86]
+    - generic [ref=e88]:
+      - region "对话内容" [ref=e1655]:
+        - heading "对话内容" [level=2] [ref=e1656]
+        - log [ref=e1657]:
+          - listitem [ref=e1658]:
+            - paragraph [ref=e1666]: hello
+          - listitem [ref=e1670]:
+            - generic [ref=e1671]:
+              - img "阿罗纳" [ref=e1673]
+              - generic [ref=e1674]:
+                - generic [ref=e1675]:
+                  - generic [ref=e1677]: HermesPipe
+                  - generic [ref=e1680]: 今天 10:11 AM
+                - img "AI" [ref=e1683]
+      - generic [ref=e1698]:
+        - paragraph [ref=e1703]: Sensei，请在这里输入~
+        - generic [ref=e1704]:
+          - generic [ref=e1705]:
+            - button "更多" [ref=e1706] [cursor=pointer]:
+              - button "更多" [ref=e1708]:
+                - img [ref=e1709]
+            - button "扩展功能" [ref=e1712] [cursor=pointer]:
+              - button "扩展功能" [ref=e1714]:
+                - img [ref=e1715]
+          - button [ref=e1723] [cursor=pointer]:
+            - img [ref=e1724]

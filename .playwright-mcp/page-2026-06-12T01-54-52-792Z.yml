@@ -1,0 +1,63 @@
+- generic [ref=e5]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - button "展开侧边栏 新对话 搜索 笔记 工作空间" [ref=e9]:
+        - button "展开侧边栏" [ref=e12]
+        - generic [ref=e14]:
+          - link "新对话" [ref=e17] [cursor=pointer]:
+            - /url: /
+            - img [ref=e19]
+          - button "搜索" [ref=e23] [cursor=pointer]:
+            - img [ref=e25]
+          - link "笔记" [ref=e29] [cursor=pointer]:
+            - /url: /notes
+            - img [ref=e31]
+          - link "工作空间" [ref=e35] [cursor=pointer]:
+            - /url: /workspace
+            - img [ref=e37]
+      - button "用户菜单" [ref=e42] [cursor=pointer]:
+        - button "用户菜单" [ref=e43]:
+          - img "打开个人资料菜单" [ref=e45]
+    - generic [ref=e52]:
+      - navigation [ref=e53]:
+        - generic [ref=e56]:
+          - generic [ref=e59]:
+            - button "已选择：TestEchoPipe" [ref=e63] [cursor=pointer]:
+              - generic [ref=e64]:
+                - text: TestEchoPipe
+                - img [ref=e65]
+            - button "Add Model" [ref=e69] [cursor=pointer]:
+              - img [ref=e70]
+          - generic [ref=e74]:
+            - button [ref=e1524] [cursor=pointer]:
+              - button [ref=e1525]:
+                - img [ref=e1527]
+            - button "Controls" [ref=e81] [cursor=pointer]:
+              - img [ref=e83]
+            - button "用户菜单" [ref=e85] [cursor=pointer]:
+              - button "用户菜单" [ref=e86]
+      - generic [ref=e90]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - button [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+            - generic [ref=e101]: TestEchoPipe
+          - generic [ref=e108]:
+            - paragraph [ref=e113]: Sensei，请指示...
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - button "更多" [ref=e116] [cursor=pointer]:
+                  - button "更多" [ref=e118]:
+                    - img [ref=e119]
+                - button "扩展功能" [ref=e122] [cursor=pointer]:
+                  - button "扩展功能" [ref=e124]:
+                    - img [ref=e125]
+              - generic [ref=e130]:
+                - button [ref=e1530] [cursor=pointer]:
+                  - img [ref=e1531]
+                - button "Voice Input" [ref=e132] [cursor=pointer]:
+                  - img [ref=e133]
+                - button [ref=e1535] [cursor=pointer]:
+                  - img [ref=e1536]
+        - generic [ref=e1538]: Open WebUI ‧ v0.9.6
+  - generic [ref=e171]: Open WebUI

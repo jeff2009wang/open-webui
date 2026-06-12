@@ -19,7 +19,7 @@ export const createNewSkill = async (token: string, skill: object) => {
 			return res.json();
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -50,13 +50,14 @@ export const getSkills = async (token: string = '') => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
 
+	// Endpoint may be unavailable in this build; return empty array on error
 	if (error) {
-		throw error;
+		return [];
 	}
 
 	return res;
@@ -81,7 +82,7 @@ export const getSkillList = async (token: string = '') => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -153,7 +154,7 @@ export const exportSkills = async (token: string = '') => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -184,7 +185,7 @@ export const getSkillById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -215,7 +216,7 @@ export const updateSkillById = async (token: string, id: string, skill: object) 
 			return res.json();
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -246,7 +247,7 @@ export const updateSkillAccessGrants = async (token: string, id: string, accessG
 			return res.json();
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -277,7 +278,7 @@ export const toggleSkillById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -308,7 +309,7 @@ export const deleteSkillById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});

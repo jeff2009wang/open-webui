@@ -1,0 +1,22 @@
+- generic [ref=e5]:
+  - generic [ref=e44]:
+    - generic [ref=e45]:
+      - button "展开侧边栏 新对话 搜索 笔记 工作空间" [ref=e46]:
+        - button "展开侧边栏" [ref=e49]
+        - generic [ref=e51]:
+          - link "新对话" [ref=e54] [cursor=pointer]:
+            - /url: /
+            - img [ref=e56]
+          - button "搜索" [ref=e60] [cursor=pointer]:
+            - img [ref=e62]
+          - link "笔记" [ref=e66] [cursor=pointer]:
+            - /url: /notes
+            - img [ref=e68]
+          - link "工作空间" [ref=e72] [cursor=pointer]:
+            - /url: /workspace
+            - img [ref=e74]
+      - button "用户菜单" [ref=e79] [cursor=pointer]:
+        - button "用户菜单" [ref=e80]:
+          - img "打开个人资料菜单" [ref=e82]
+    - img [ref=e90]
+  - generic [ref=e32]: Open WebUI

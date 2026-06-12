@@ -11,19 +11,28 @@ export class HermesParser {
   private buffer = '';
   private segments: HermesSegment[] = [];
   private currentSegment: HermesSegment | null = null;
-  private state: 'text' | 'in_think' | 'in_tool_call' | 'in_tool_response' = 'text';
+  private state: 'text' | 'in_think' | 'in_reasoning' | 'in_tool_call' | 'in_tool_response' = 'text';
 
   private tagStack: string[] = [];
 
   feed(chunk: string): HermesSegment[] {
+    // Append first, then strip Hermes display/action tags from the whole buffer.
+    // This handles action tags that are split across SSE chunks.
     this.buffer += chunk;
+    this.buffer = this.buffer.replace(/<action\s+[^>]*\/>/g, '');
+
     const completed: HermesSegment[] = [];
 
     while (this.buffer.length > 0) {
+      const prevState = this.state;
       const result = this.processBuffer();
       if (result) {
         completed.push(result);
+      } else if (this.state !== prevState) {
+        // Entered a tag state — keep processing the same buffer
+        continue;
       } else {
+        // Waiting for more data (streaming)
         break;
       }
     }
@@ -64,18 +73,26 @@ export class HermesParser {
       }
 
       // Enter tag mode
-      this.state = earliest.tag as 'think' | 'in_tool_call' | 'in_tool_response';
-      if (this.state === 'think') this.state = 'in_think';
+      if (earliest.tag === 'think') {
+        this.state = 'in_think';
+      } else if (earliest.tag === 'reasoning') {
+        this.state = 'in_reasoning';
+      } else if (earliest.tag === 'tool_call') {
+        this.state = 'in_tool_call';
+      } else {
+        this.state = 'in_tool_response';
+      }
 
       // Remove opening tag
       const openTagLen = earliest.tag.length + 2; // <tag>
       this.buffer = this.buffer.substring(openTagLen);
-      this.currentSegment = { type: earliest.tag as 'think' | 'tool_call' | 'tool_response', content: '' };
+      this.currentSegment = { type: earliest.tag === 'reasoning' ? 'think' : earliest.tag as 'think' | 'tool_call' | 'tool_response', content: '' };
       return null;
     }
 
     // In tag mode, look for closing tag
     const endTag = this.state === 'in_think' ? '</think>'
+      : this.state === 'in_reasoning' ? '</reasoning>'
       : this.state === 'in_tool_call' ? '</tool_call>'
       : '</tool_response>';
 

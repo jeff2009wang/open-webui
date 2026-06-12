@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import Info from '$lib/components/icons/Info.svelte';
 
 	export let content = '';

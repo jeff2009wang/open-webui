@@ -5,6 +5,8 @@
 	import { tick, getContext } from 'svelte';
 
 	import { models } from '$lib/stores';
+	import { getMascotImagePath } from '$lib/utils/ba-assets';
+	import { theme } from '$lib/stores/theme';
 	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 
@@ -83,7 +85,7 @@
 			>
 				<div class="flex text-black dark:text-gray-100 line-clamp-1">
 					<img
-						src={`${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model.id}&lang=${$i18n.language}`}
+						src={getMascotImagePath($theme, 'icon')}
 						alt={model?.name ?? model.id}
 						class="rounded-full size-5 items-center mr-2"
 						on:error={(e) => {

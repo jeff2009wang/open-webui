@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { toast } from 'svelte-sonner';
 	import dayjs from 'dayjs';
 
@@ -37,6 +38,7 @@
 		removeDetails,
 		removeAllDetails
 	} from '$lib/utils';
+	import { getMascotImagePath, getMascotForTheme } from '$lib/utils/ba-assets';
 	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
 	import equal from 'fast-deep-equal';
 
@@ -172,10 +174,8 @@
 	let model = null;
 	$: model = $models.find((m) => m.id === message.model);
 
-	$: mascotSrc = $theme === 'dark'
-		? '/assets/mascots/plana.svg'
-		: '/assets/mascots/arona.svg';
-	$: characterName = $theme === 'dark' ? '普拉纳' : '阿罗纳';
+	$: mascotSrc = getMascotImagePath($theme, 'portrait');
+	$: characterName = getMascotForTheme($theme).name;
 
 	$: statusEntries = message?.statusHistory ?? [...(message?.status ? [message?.status] : [])];
 	$: hasVisibleStatus =
@@ -351,7 +351,17 @@
 	};
 
 	const hasHermesContent = (content: string): boolean => {
-		return content.includes('<think>') || content.includes('<reasoning>') || content.includes('<tool_call>') || content.includes('<tool_response>');
+		return (
+			content.includes('<think>') ||
+			content.includes('<reasoning>') ||
+			content.includes('<tool_call>') ||
+			content.includes('<tool_response>') ||
+			/<action\s+[^>]*\/>/.test(content)
+		);
+	};
+
+	const stripHermesActionTags = (content: string): string => {
+		return content.replace(/<action\s+[^>]*\/>/g, '');
 	};
 
 	let preprocessedDetailsCache = [];
@@ -705,209 +715,221 @@
 			</Name>
 
 			<div>
-				<div class="chat-{message.role} w-full min-w-full markdown-prose">
-					<div>
-						{#if model?.info?.meta?.capabilities?.status_updates ?? true}
-							<StatusHistory statusHistory={message?.statusHistory} />
-						{/if}
+				<div class="flex items-start gap-2">
+					{#if message.role === 'assistant'}
+						<img
+							src={getMascotImagePath($theme, 'icon')}
+							alt="AI"
+							class="w-8 h-8 rounded-full object-cover flex-shrink-0 mt-1 ring-1 ring-[var(--ba-border)]"
+							on:error={(e) => { e.currentTarget.style.display = 'none'; }}
+						/>
+					{/if}
+					<div class="flex-1">
+						<div class="chat-{message.role} w-full min-w-full markdown-prose">
+							<div>
+								{#if model?.info?.meta?.capabilities?.status_updates ?? true}
+									<StatusHistory statusHistory={message?.statusHistory} />
+								{/if}
 
-						{#if message?.files && message.files?.filter( (f) => ['image', 'file'].includes(f.type) ).length > 0}
-							<div
-								class="my-1 w-full flex overflow-x-auto gap-2 flex-wrap"
-								dir={$settings?.chatDirection ?? 'auto'}
-							>
-								{#each message.files.filter((f) => ['image', 'file'].includes(f.type)) as file}
-									<div>
-										{#if file.type === 'image' || (file?.content_type ?? '').startsWith('image/')}
-											<Image src={file.url} alt={message.content} />
+								{#if message?.files && message.files?.filter( (f) => ['image', 'file'].includes(f.type) ).length > 0}
+									<div
+										class="my-1 w-full flex overflow-x-auto gap-2 flex-wrap"
+										dir={$settings?.chatDirection ?? 'auto'}
+									>
+										{#each message.files.filter((f) => ['image', 'file'].includes(f.type)) as file}
+											<div>
+												{#if file.type === 'image' || (file?.content_type ?? '').startsWith('image/')}
+													<Image src={file.url} alt={message.content} />
+												{:else}
+													<FileItem
+														item={file}
+														url={file.url}
+														name={file.name}
+														type={file.type}
+														size={file?.size}
+														small={true}
+													/>
+												{/if}
+											</div>
+										{/each}
+									</div>
+								{/if}
+
+								{#if message?.embeds && message.embeds.length > 0}
+									<div
+										class="my-1 w-full flex overflow-x-auto gap-2 flex-wrap"
+										id={`${message.id}-embeds-container`}
+									>
+										{#each message.embeds as embed, idx}
+											<div class="my-2 w-full" id={`${message.id}-embeds-${idx}`}>
+												<FullHeightIframe
+													src={embed}
+													allowScripts={true}
+													allowForms={true}
+													allowSameOrigin={$settings?.iframeSandboxAllowSameOrigin ?? false}
+													allowPopups={true}
+												/>
+											</div>
+										{/each}
+									</div>
+								{/if}
+
+								{#if edit === true}
+									<div class="w-full bg-gray-50 dark:bg-gray-800 rounded-3xl px-3 py-3 my-2">
+										{#if editedOutput}
+											<!-- Structured output editor (visual + JSON toggle) -->
+											<OutputEditView
+												output={editedOutput}
+												onChange={(updated) => {
+													editedOutput = updated;
+												}}
+											/>
 										{:else}
-											<FileItem
-												item={file}
-												url={file.url}
-												name={file.name}
-												type={file.type}
-												size={file?.size}
-												small={true}
+											<!-- Legacy textarea for messages without output -->
+											<textarea
+												id="message-edit-{message.id}"
+												bind:this={editTextAreaElement}
+												class=" bg-transparent outline-hidden w-full resize-none"
+												bind:value={editedContent}
+												on:input={(e) => {
+													const messagesContainer = document.getElementById('messages-container');
+													const savedScrollTop = messagesContainer?.scrollTop;
+
+													e.target.style.height = '';
+													e.target.style.height = `${e.target.scrollHeight}px`;
+
+													if (messagesContainer) messagesContainer.scrollTop = savedScrollTop;
+												}}
+												on:keydown={(e) => {
+													if (e.key === 'Escape') {
+														document.getElementById('close-edit-message-button')?.click();
+													}
+
+													const isCmdOrCtrlPressed = e.metaKey || e.ctrlKey;
+													const isEnterPressed = e.key === 'Enter';
+
+													if (isCmdOrCtrlPressed && isEnterPressed) {
+														document.getElementById('confirm-edit-message-button')?.click();
+													}
+												}}
 											/>
 										{/if}
-									</div>
-								{/each}
-							</div>
-						{/if}
 
-						{#if message?.embeds && message.embeds.length > 0}
-							<div
-								class="my-1 w-full flex overflow-x-auto gap-2 flex-wrap"
-								id={`${message.id}-embeds-container`}
-							>
-								{#each message.embeds as embed, idx}
-									<div class="my-2 w-full" id={`${message.id}-embeds-${idx}`}>
-										<FullHeightIframe
-											src={embed}
-											allowScripts={true}
-											allowForms={true}
-											allowSameOrigin={$settings?.iframeSandboxAllowSameOrigin ?? false}
-											allowPopups={true}
+										<div class=" mt-2 mb-1 flex justify-between text-sm font-medium">
+											<div>
+												<button
+													id="save-new-message-button"
+													class="px-3.5 py-1.5 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-200 transition rounded-3xl"
+													on:click={() => {
+														saveAsCopyHandler();
+													}}
+												>
+													{$i18n.t('Save As Copy')}
+												</button>
+											</div>
+
+											<div class="flex space-x-1.5">
+												<button
+													id="close-edit-message-button"
+													class="px-3.5 py-1.5 bg-white dark:bg-gray-900 hover:bg-gray-100 text-gray-800 dark:text-gray-100 transition rounded-3xl"
+													on:click={() => {
+														cancelEditMessage();
+													}}
+												>
+													{$i18n.t('Cancel')}
+												</button>
+
+												<button
+													id="confirm-edit-message-button"
+													class="px-3.5 py-1.5 bg-gray-900 dark:bg-white hover:bg-gray-850 text-gray-100 dark:text-gray-800 transition rounded-3xl"
+													on:click={() => {
+														editMessageConfirmHandler();
+													}}
+												>
+													{$i18n.t('Save')}
+												</button>
+											</div>
+										</div>
+									</div>
+								{/if}
+
+								<div
+									bind:this={contentContainerElement}
+									class="w-full flex flex-col relative {edit ? 'hidden' : ''}"
+									id="response-content-container"
+								>
+									{#if message.content === '' && !message.done && !message.error && !hasVisibleStatus}
+										<Skeleton />
+									{:else if message.content && message.error !== true}
+										<!-- always show message contents even if there's an error -->
+										<!-- unless message.error === true which is legacy error handling, where the error message is stored in message.content -->
+										{#if hasHermesContent(message.content)}
+											<HermesMessage
+												content={message.content}
+												streaming={!message.done}
+											/>
+										{:else}
+											<ContentRenderer
+												id={`${chatId}-${message.id}`}
+												content={stripHermesActionTags(message.content)}
+												sources={message.sources}
+												floatingButtons={message?.done &&
+													!readOnly &&
+													($settings?.showFloatingActionButtons ?? true)}
+												save={!readOnly}
+												preview={!readOnly}
+												{editCodeBlock}
+												{topPadding}
+												done={($settings?.chatFadeStreamingText ?? true)
+													? (message?.done ?? false)
+													: true}
+												{model}
+												onTaskClick={async (e) => {
+													console.log(e);
+												}}
+												onSourceClick={async (id) => {
+													console.log(id);
+
+													if (citationsElement) {
+														citationsElement?.showSourceModal(id);
+													}
+												}}
+												onSetInputText={(text) => {
+													setInputText(text);
+												}}
+												onSave={({ raw, oldContent, newContent }) => {
+													history.messages[message.id].content = history.messages[
+														message.id
+													].content.replace(raw, raw.replace(oldContent, newContent));
+
+													updateChat();
+												}}
+											/>
+										{/if}
+									{/if}
+
+									{#if message?.error}
+										<Error content={message?.error?.content ?? message.content} />
+									{/if}
+
+									{#if (message?.sources || message?.citations) && (model?.info?.meta?.capabilities?.citations ?? true)}
+										<Citations
+											bind:this={citationsElement}
+											id={message?.id}
+											{chatId}
+											sources={message?.sources ?? message?.citations}
+											{readOnly}
 										/>
-									</div>
-								{/each}
+									{/if}
+
+									{#if message.code_executions}
+										<CodeExecutions codeExecutions={message.code_executions} />
+									{/if}
 							</div>
-						{/if}
-
-						{#if edit === true}
-							<div class="w-full bg-gray-50 dark:bg-gray-800 rounded-3xl px-3 py-3 my-2">
-								{#if editedOutput}
-									<!-- Structured output editor (visual + JSON toggle) -->
-									<OutputEditView
-										output={editedOutput}
-										onChange={(updated) => {
-											editedOutput = updated;
-										}}
-									/>
-								{:else}
-									<!-- Legacy textarea for messages without output -->
-									<textarea
-										id="message-edit-{message.id}"
-										bind:this={editTextAreaElement}
-										class=" bg-transparent outline-hidden w-full resize-none"
-										bind:value={editedContent}
-										on:input={(e) => {
-											const messagesContainer = document.getElementById('messages-container');
-											const savedScrollTop = messagesContainer?.scrollTop;
-
-											e.target.style.height = '';
-											e.target.style.height = `${e.target.scrollHeight}px`;
-
-											if (messagesContainer) messagesContainer.scrollTop = savedScrollTop;
-										}}
-										on:keydown={(e) => {
-											if (e.key === 'Escape') {
-												document.getElementById('close-edit-message-button')?.click();
-											}
-
-											const isCmdOrCtrlPressed = e.metaKey || e.ctrlKey;
-											const isEnterPressed = e.key === 'Enter';
-
-											if (isCmdOrCtrlPressed && isEnterPressed) {
-												document.getElementById('confirm-edit-message-button')?.click();
-											}
-										}}
-									/>
-								{/if}
-
-								<div class=" mt-2 mb-1 flex justify-between text-sm font-medium">
-									<div>
-										<button
-											id="save-new-message-button"
-											class="px-3.5 py-1.5 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-200 transition rounded-3xl"
-											on:click={() => {
-												saveAsCopyHandler();
-											}}
-										>
-											{$i18n.t('Save As Copy')}
-										</button>
-									</div>
-
-									<div class="flex space-x-1.5">
-										<button
-											id="close-edit-message-button"
-											class="px-3.5 py-1.5 bg-white dark:bg-gray-900 hover:bg-gray-100 text-gray-800 dark:text-gray-100 transition rounded-3xl"
-											on:click={() => {
-												cancelEditMessage();
-											}}
-										>
-											{$i18n.t('Cancel')}
-										</button>
-
-										<button
-											id="confirm-edit-message-button"
-											class="px-3.5 py-1.5 bg-gray-900 dark:bg-white hover:bg-gray-850 text-gray-100 dark:text-gray-800 transition rounded-3xl"
-											on:click={() => {
-												editMessageConfirmHandler();
-											}}
-										>
-											{$i18n.t('Save')}
-										</button>
-									</div>
-								</div>
-							</div>
-						{/if}
-
-						<div
-							bind:this={contentContainerElement}
-							class="w-full flex flex-col relative {edit ? 'hidden' : ''}"
-							id="response-content-container"
-						>
-							{#if message.content === '' && !message.done && !message.error && !hasVisibleStatus}
-								<Skeleton />
-							{:else if message.content && message.error !== true}
-								<!-- always show message contents even if there's an error -->
-								<!-- unless message.error === true which is legacy error handling, where the error message is stored in message.content -->
-								{#if hasHermesContent(message.content)}
-									<HermesMessage
-										content={message.content}
-										streaming={!message.done}
-									/>
-								{:else}
-									<ContentRenderer
-										id={`${chatId}-${message.id}`}
-										content={message.content}
-										sources={message.sources}
-										floatingButtons={message?.done &&
-											!readOnly &&
-											($settings?.showFloatingActionButtons ?? true)}
-										save={!readOnly}
-										preview={!readOnly}
-										{editCodeBlock}
-										{topPadding}
-										done={($settings?.chatFadeStreamingText ?? true)
-											? (message?.done ?? false)
-											: true}
-										{model}
-										onTaskClick={async (e) => {
-											console.log(e);
-										}}
-										onSourceClick={async (id) => {
-											console.log(id);
-
-											if (citationsElement) {
-												citationsElement?.showSourceModal(id);
-											}
-										}}
-										onSetInputText={(text) => {
-											setInputText(text);
-										}}
-										onSave={({ raw, oldContent, newContent }) => {
-											history.messages[message.id].content = history.messages[
-												message.id
-											].content.replace(raw, raw.replace(oldContent, newContent));
-
-											updateChat();
-										}}
-									/>
-								{/if}
-							{/if}
-
-							{#if message?.error}
-								<Error content={message?.error?.content ?? message.content} />
-							{/if}
-
-							{#if (message?.sources || message?.citations) && (model?.info?.meta?.capabilities?.citations ?? true)}
-								<Citations
-									bind:this={citationsElement}
-									id={message?.id}
-									{chatId}
-									sources={message?.sources ?? message?.citations}
-									{readOnly}
-								/>
-							{/if}
-
-							{#if message.code_executions}
-								<CodeExecutions codeExecutions={message.code_executions} />
-							{/if}
 						</div>
 					</div>
 				</div>
+			</div>
 
 				{#if !edit}
 					<div

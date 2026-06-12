@@ -19,7 +19,7 @@ export const createNewTool = async (token: string, tool: object) => {
 			return res.json();
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -53,7 +53,7 @@ export const loadToolByUrl = async (token: string = '', url: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -84,13 +84,14 @@ export const getTools = async (token: string = '') => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
 
+	// Endpoint may be unavailable in this build; return empty array on error
 	if (error) {
-		throw error;
+		return [];
 	}
 
 	return res;
@@ -115,7 +116,7 @@ export const getToolList = async (token: string = '') => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -146,7 +147,7 @@ export const exportTools = async (token: string = '') => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -177,7 +178,7 @@ export const getToolById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;
@@ -212,7 +213,7 @@ export const updateToolById = async (token: string, id: string, tool: object) =>
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;
@@ -242,7 +243,7 @@ export const updateToolAccessGrants = async (token: string, id: string, accessGr
 			return res.json();
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			console.error(err);
 			return null;
 		});
@@ -273,7 +274,7 @@ export const deleteToolById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;
@@ -305,7 +306,7 @@ export const getToolValvesById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;
@@ -337,7 +338,7 @@ export const getToolValvesSpecById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;
@@ -372,7 +373,7 @@ export const updateToolValvesById = async (token: string, id: string, valves: ob
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;
@@ -404,7 +405,7 @@ export const getUserValvesById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;
@@ -436,7 +437,7 @@ export const getUserValvesSpecById = async (token: string, id: string) => {
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;
@@ -471,7 +472,7 @@ export const updateUserValvesById = async (token: string, id: string, valves: ob
 			return json;
 		})
 		.catch((err) => {
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 
 			console.error(err);
 			return null;

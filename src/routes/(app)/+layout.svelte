@@ -337,7 +337,7 @@
 				const dismissedUpdateToast = new Date(Number(localStorage.dismissedUpdateToast));
 				const now = new Date();
 
-				if (now - dismissedUpdateToast > 24 * 60 * 60 * 1000) {
+				if (now.getTime() - dismissedUpdateToast.getTime() > 24 * 60 * 60 * 1000) {
 					checkForVersionUpdates();
 				}
 			} else {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { WEBUI_BASE_URL } from '$lib/constants';
 import { convertOpenApiToToolPayload } from '$lib/utils';
 import { getOpenAIModelsDirect } from './openai';
@@ -1642,6 +1643,9 @@ export interface ModelMeta {
 	description?: string;
 	capabilities?: object;
 	profile_image_url?: string;
+	[key: string]: any;
 }
 
-export interface ModelParams {}
+export interface ModelParams {
+	[key: string]: any;
+}

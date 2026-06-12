@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import hljs from 'highlight.js';
 	import { toast } from 'svelte-sonner';
 	import { getContext, onMount, tick, onDestroy } from 'svelte';

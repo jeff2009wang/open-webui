@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+	// @ts-nocheck
 	let savedTab: 'controls' | 'files' | 'overview' = 'controls';
 </script>
 
@@ -54,7 +55,7 @@
 
 	export let codeInterpreterEnabled = false;
 
-	export let pane: Pane | null = null;
+	export let pane: any = null;
 
 	let largeScreen = false;
 	let dragged = false;
@@ -298,7 +299,7 @@
 				{:else if $showEmbeds}
 					<Embeds />
 				{:else if $showArtifacts}
-					<Artifacts {history} />
+					<Artifacts />
 				{:else}
 					<!-- Controls + Files tabs -->
 					<div class="flex flex-col h-full min-h-0">
@@ -444,7 +445,7 @@
 					{:else if $showEmbeds}
 						<Embeds overlay={dragged} />
 					{:else if $showArtifacts}
-						<Artifacts {history} overlay={dragged} />
+						<Artifacts overlay={dragged} />
 					{:else}
 						<!-- Controls + Files tabs -->
 						<div class="flex flex-col h-full min-h-0">

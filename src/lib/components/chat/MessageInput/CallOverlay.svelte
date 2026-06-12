@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { config, models, settings, showCallOverlay, TTSWorker } from '$lib/stores';
 	import { onMount, tick, getContext, onDestroy, createEventDispatcher } from 'svelte';
 
@@ -13,6 +14,8 @@
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import VideoInputMenu from './CallOverlay/VideoInputMenu.svelte';
 	import { KokoroWorker } from '$lib/workers/KokoroWorker';
+	import { getMascotImagePath } from '$lib/utils/ba-assets';
+	import { theme } from '$lib/stores/theme';
 	import { WEBUI_API_BASE_URL } from '$lib/constants';
 
 	const i18n = getContext('i18n');
@@ -833,7 +836,7 @@
 								: rmsLevel * 100 > 1
 									? 'size-14'
 									: 'size-12'}  transition-all rounded-full bg-cover bg-center bg-no-repeat"
-						style={`background-image: url('${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model?.id}&lang=${$i18n.language}&voice=true');`}
+						style={`background-image: url('getMascotImagePath($theme, 'portrait')');`}
 					/>
 				{/if}
 				<!-- navbar -->
@@ -909,7 +912,7 @@
 									: rmsLevel * 100 > 1
 										? 'size-44'
 										: 'size-40'} transition-all rounded-full bg-cover bg-center bg-no-repeat"
-							style={`background-image: url('${WEBUI_API_BASE_URL}/models/model/profile/image?id=${model?.id}&lang=${$i18n.language}&voice=true');`}
+							style={`background-image: url('getMascotImagePath($theme, 'portrait')');`}
 						/>
 					{/if}
 				</button>

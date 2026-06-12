@@ -24,6 +24,9 @@ from open_webui.config import (
     CODE_INTERPRETER_BLOCKED_MODULES,
     CODE_INTERPRETER_PYODIDE_PROMPT,
     DEFAULT_CODE_INTERPRETER_PROMPT,
+    DEFAULT_FOLLOW_UP_GENERATION_PROMPT_TEMPLATE,
+    DEFAULT_TAGS_GENERATION_PROMPT_TEMPLATE,
+    DEFAULT_TITLE_GENERATION_PROMPT_TEMPLATE,
     DEFAULT_TOOLS_FUNCTION_CALLING_PROMPT_TEMPLATE,
     DEFAULT_VOICE_MODE_PROMPT_TEMPLATE,
 )
@@ -91,8 +94,11 @@ from open_webui.utils.plugin import load_function_module_by_id
 from open_webui.utils.response import normalize_usage
 from open_webui.utils.sanitize import sanitize_code
 from open_webui.utils.task import (
+    follow_up_generation_template,
     get_task_model_id,
     rag_template,
+    tags_generation_template,
+    title_generation_template,
     tools_function_calling_generation_template,
 )
 from open_webui.utils.tools import (
@@ -130,6 +136,174 @@ DEFAULT_CODE_INTERPRETER_TAGS = [('<code_interpreter>', '</code_interpreter>')]
 def output_id(prefix: str) -> str:
     """Generate OR-style ID: prefix + 24-char hex UUID."""
     return f'{prefix}_{uuid4().hex[:24]}'
+
+
+async def generate_follow_ups(
+    request: Request,
+    form_data: dict,
+    user: Any,
+):
+    """Generate follow-up questions for a chat message."""
+    if not request.app.state.config.ENABLE_FOLLOW_UP_GENERATION:
+        return None
+
+    if getattr(request.state, 'direct', False) and hasattr(request.state, 'model'):
+        models = {
+            **request.app.state.MODELS,
+            request.state.model['id']: request.state.model,
+        }
+    else:
+        models = request.app.state.MODELS
+
+    model_id = form_data['model']
+    if model_id not in models:
+        return None
+
+    task_model_id = get_task_model_id(
+        model_id,
+        request.app.state.config.TASK_MODEL,
+        request.app.state.config.TASK_MODEL_EXTERNAL,
+        models,
+    )
+
+    log.debug(f'generating follow-ups using model {task_model_id} for user {getattr(user, "email", "unknown")}')
+
+    if request.app.state.config.FOLLOW_UP_GENERATION_PROMPT_TEMPLATE != '':
+        template = request.app.state.config.FOLLOW_UP_GENERATION_PROMPT_TEMPLATE
+    else:
+        template = DEFAULT_FOLLOW_UP_GENERATION_PROMPT_TEMPLATE
+
+    content = await follow_up_generation_template(template, form_data['messages'], user)
+
+    payload = {
+        'model': task_model_id,
+        'messages': [{'role': 'user', 'content': content}],
+        'stream': False,
+        'metadata': {
+            **(request.state.metadata if hasattr(request.state, 'metadata') else {}),
+            'task': str(TASKS.FOLLOW_UP_GENERATION),
+            'task_body': form_data,
+            'chat_id': form_data.get('chat_id', None),
+        },
+    }
+
+    try:
+        return await generate_chat_completion(request, form_data=payload, user=user)
+    except Exception as e:
+        log.error('Exception occurred generating follow-ups', exc_info=True)
+        return None
+
+
+async def generate_title(
+    request: Request,
+    form_data: dict,
+    user: Any,
+):
+    """Generate a chat title from messages."""
+    if not request.app.state.config.ENABLE_TITLE_GENERATION:
+        return None
+
+    if getattr(request.state, 'direct', False) and hasattr(request.state, 'model'):
+        models = {
+            **request.app.state.MODELS,
+            request.state.model['id']: request.state.model,
+        }
+    else:
+        models = request.app.state.MODELS
+
+    model_id = form_data['model']
+    if not model_id or model_id not in models:
+        return None
+
+    task_model_id = get_task_model_id(
+        model_id,
+        request.app.state.config.TASK_MODEL,
+        request.app.state.config.TASK_MODEL_EXTERNAL,
+        models,
+    )
+
+    log.debug(f'generating title using model {task_model_id} for user {getattr(user, "email", "unknown")}')
+
+    if request.app.state.config.TITLE_GENERATION_PROMPT_TEMPLATE != '':
+        template = request.app.state.config.TITLE_GENERATION_PROMPT_TEMPLATE
+    else:
+        template = DEFAULT_TITLE_GENERATION_PROMPT_TEMPLATE
+
+    content = await title_generation_template(template, form_data['messages'], user)
+
+    payload = {
+        'model': task_model_id,
+        'messages': [{'role': 'user', 'content': content}],
+        'stream': False,
+        'metadata': {
+            **(request.state.metadata if hasattr(request.state, 'metadata') else {}),
+            'task': str(TASKS.TITLE_GENERATION),
+            'task_body': form_data,
+            'chat_id': form_data.get('chat_id', None),
+        },
+    }
+
+    try:
+        return await generate_chat_completion(request, form_data=payload, user=user)
+    except Exception as e:
+        log.error('Exception occurred generating title', exc_info=True)
+        return None
+
+
+async def generate_chat_tags(
+    request: Request,
+    form_data: dict,
+    user: Any,
+):
+    """Generate tags for a chat from messages."""
+    if not request.app.state.config.ENABLE_TAGS_GENERATION:
+        return None
+
+    if getattr(request.state, 'direct', False) and hasattr(request.state, 'model'):
+        models = {
+            **request.app.state.MODELS,
+            request.state.model['id']: request.state.model,
+        }
+    else:
+        models = request.app.state.MODELS
+
+    model_id = form_data['model']
+    if model_id not in models:
+        return None
+
+    task_model_id = get_task_model_id(
+        model_id,
+        request.app.state.config.TASK_MODEL,
+        request.app.state.config.TASK_MODEL_EXTERNAL,
+        models,
+    )
+
+    log.debug(f'generating chat tags using model {task_model_id} for user {getattr(user, "email", "unknown")}')
+
+    if request.app.state.config.TAGS_GENERATION_PROMPT_TEMPLATE != '':
+        template = request.app.state.config.TAGS_GENERATION_PROMPT_TEMPLATE
+    else:
+        template = DEFAULT_TAGS_GENERATION_PROMPT_TEMPLATE
+
+    content = await tags_generation_template(template, form_data['messages'], user)
+
+    payload = {
+        'model': task_model_id,
+        'messages': [{'role': 'user', 'content': content}],
+        'stream': False,
+        'metadata': {
+            **(request.state.metadata if hasattr(request.state, 'metadata') else {}),
+            'task': str(TASKS.TAGS_GENERATION),
+            'task_body': form_data,
+            'chat_id': form_data.get('chat_id', None),
+        },
+    }
+
+    try:
+        return await generate_chat_completion(request, form_data=payload, user=user)
+    except Exception as e:
+        log.error('Exception occurred generating chat tags', exc_info=True)
+        return None
 
 
 def _split_tool_calls(

@@ -1,0 +1,16 @@
+- generic [ref=e14]:
+  - generic [ref=e16]: Sensei，夜间模式已启动。请放心，我会一直陪着您。
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]: 电子邮箱
+      - textbox "电子邮箱" [ref=e20]:
+        - /placeholder: 输入您的电子邮箱
+    - generic [ref=e21]:
+      - generic [ref=e22]: 密码
+      - generic [ref=e23]:
+        - generic [ref=e24]: 输入您的密码
+        - textbox "密码 输入您的密码" [ref=e25]:
+          - /placeholder: 输入您的密码
+        - button "在用户界面中显示密码" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+  - button "登录" [ref=e31] [cursor=pointer]

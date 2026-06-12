@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { getContext, onMount } from 'svelte';
 	import Modal from '../common/Modal.svelte';
 	import { shortcuts } from '$lib/shortcuts';

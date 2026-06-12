@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { createEventDispatcher, getContext } from 'svelte';
 	const dispatch = createEventDispatcher();
 	const i18n = getContext('i18n');

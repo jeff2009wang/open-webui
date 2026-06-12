@@ -26,7 +26,11 @@
 	const closeModal = async () => {
 		localStorage.version = $config.version;
 		await settings.set({ ...$settings, ...{ version: $config.version } });
-		await updateUserSettings(localStorage.token, { ui: $settings });
+		try {
+			await updateUserSettings(localStorage.token, { ui: $settings });
+		} catch {
+			// User settings endpoint may be unavailable in this build; still close the modal.
+		}
 		show = false;
 	};
 

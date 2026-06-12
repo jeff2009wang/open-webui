@@ -1,0 +1,14 @@
+- generic [ref=e84]:
+  - generic [ref=e85]:
+    - img [ref=e87]
+    - heading "股票预测展示系统" [level=1] [ref=e90]
+    - paragraph [ref=e91]: Stock Prediction Display System
+  - generic [ref=e93]:
+    - generic [ref=e94]:
+      - generic [ref=e95]: 用户名
+      - textbox "请输入用户名" [ref=e96]: wangjunfengv@qq.com
+    - generic [ref=e97]:
+      - generic [ref=e98]: 密码
+      - textbox "请输入密码" [ref=e99]: wang123456
+    - paragraph [ref=e101]: 登录失败，请稍后重试
+    - button "登 录" [ref=e100]

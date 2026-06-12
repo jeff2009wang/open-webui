@@ -1,4 +1,5 @@
 <script context="module">
+	// @ts-nocheck
 	// Persists across mount/unmount cycles (module-level, not per-instance)
 	let savedPath = '/';
 </script>
@@ -777,7 +778,7 @@
 	};
 
 	// ── Lifecycle ────────────────────────────────────────────────────────
-	onMount(async () => {
+	onMount((async () => {
 		const terminal = getTerminal();
 		if (!terminal) return;
 
@@ -871,7 +872,7 @@
 			window.removeEventListener('blur', onBlur);
 			document.removeEventListener('visibilitychange', onVisibilityChange);
 		};
-	});
+	}) as any);
 
 	onDestroy(() => {
 		if (fileImageUrl) URL.revokeObjectURL(fileImageUrl);

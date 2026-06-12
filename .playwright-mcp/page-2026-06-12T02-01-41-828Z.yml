@@ -1,0 +1,42 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - img [ref=e8]
+        - generic [ref=e10]: SPAS
+        - generic [ref=e11]: 个人学习项目
+      - button "登录" [ref=e12]
+  - generic [ref=e16]:
+    - heading "SPAS" [level=1] [ref=e17]
+    - generic [ref=e20]: 时序模型研究
+    - paragraph [ref=e21]: 基于深度学习模型，探索多维度市场数据中的潜在模式与趋势特征，为研究分析提供辅助视角。
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e25]: "0"
+        - generic [ref=e26]: 股票总数
+      - generic [ref=e27]:
+        - generic [ref=e29]: "0"
+        - generic [ref=e30]: 研究标的
+    - button "立即体验" [ref=e32]
+  - generic [ref=e34]:
+    - heading "技术亮点" [level=2] [ref=e35]
+    - generic [ref=e36]:
+      - generic [ref=e40]:
+        - img [ref=e42]
+        - heading "数据模式探索" [level=3] [ref=e50]
+        - paragraph [ref=e51]: 基于历史数据训练模型，探索市场趋势中可能存在的潜在模式
+      - generic [ref=e55]:
+        - img [ref=e57]
+        - heading "时序特征研究" [level=3] [ref=e62]
+        - paragraph [ref=e63]: 长短期记忆网络分析时间序列特征，辅助理解市场动态变化
+      - generic [ref=e67]:
+        - img [ref=e69]
+        - heading "多维度数据整合" [level=3] [ref=e71]
+        - paragraph [ref=e72]: 整合多数据源信息，为市场研究提供更全面的数据视角
+  - generic [ref=e75]:
+    - heading "免责声明" [level=3] [ref=e76]
+    - paragraph [ref=e77]: 本项目为个人学习研究用途，所有数据分析结果仅供技术探索与学术交流参考，不构成任何投资建议或买卖依据。 股市有风险，投资需谨慎。过往数据不代表未来表现，任何基于本系统信息的决策均由使用者自行承担风险。
+  - contentinfo [ref=e78]:
+    - generic [ref=e79]:
+      - paragraph [ref=e80]: SPAS · 个人开源学习项目
+      - paragraph [ref=e81]: 仅供学习研究，不构成投资建议

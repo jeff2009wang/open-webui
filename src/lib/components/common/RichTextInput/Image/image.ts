@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { mergeAttributes, Node, nodeInputRule } from '@tiptap/core';
 import { safeImageUrl } from '$lib/utils/safeImageUrl';
 

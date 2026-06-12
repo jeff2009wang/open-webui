@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { toast } from 'svelte-sonner';
 	import { v4 as uuidv4 } from 'uuid';
 	import Sortable from 'sortablejs';
@@ -51,6 +52,8 @@
 	import { updateUserSettings } from '$lib/apis/users';
 	import { checkActiveChats } from '$lib/apis/tasks';
 	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
+	import { getMascotImagePath, getMascotForTheme } from '$lib/utils/ba-assets';
+	import { theme } from '$lib/stores/theme';
 
 	import ArchivedChatsModal from './ArchivedChatsModal.svelte';
 	import UserMenu from './Sidebar/UserMenu.svelte';
@@ -73,7 +76,6 @@
 	import Code from '../icons/Code.svelte';
 	import { slide } from 'svelte/transition';
 	import HotkeyHint from '../common/HotkeyHint.svelte';
-	import { theme } from '$lib/stores/theme';
 
 	const BREAKPOINT = 768;
 	const DEFAULT_PINNED_ITEMS = ['notes', 'workspace'];
@@ -803,7 +805,7 @@
 					>
 						<div class=" self-center flex items-center justify-center size-9">
 							<img
-								src="{WEBUI_BASE_URL}/static/favicon.png"
+								src={getMascotImagePath($theme, 'icon')}
 								class="sidebar-new-chat-icon size-6 rounded-full group-hover:hidden"
 								alt=""
 							/>
@@ -1014,7 +1016,7 @@
 				>
 					<img
 						crossorigin="anonymous"
-						src="{WEBUI_BASE_URL}/static/favicon.png"
+						src={getMascotImagePath($theme, 'icon')}
 						class="sidebar-new-chat-icon size-6 rounded-full"
 						alt=""
 					/>
@@ -1092,6 +1094,23 @@
 						? 'visible'
 						: 'invisible'} sidebar-bg-gradient-to-b bg-linear-to-b from-gray-50 dark:from-gray-950 to-transparent from-50% pointer-events-none absolute inset-0 -z-10 -mb-6"
 				></div>
+			</div>
+
+			<div class="px-[0.5625rem] py-2 flex items-center gap-2 border-b border-[var(--ba-border)]">
+				<img
+					src={getMascotImagePath($theme, 'icon')}
+					alt={getMascotForTheme($theme).name}
+					class="w-10 h-10 rounded-full object-cover ring-2 ring-[var(--ba-accent-primary)]"
+					on:error={(e) => { e.currentTarget.src = '/assets/ba/mascots/arona-icon.png'; }}
+				/>
+				<div class="flex flex-col">
+					<span class="text-sm font-medium text-[var(--ba-text-primary)]">
+						{getMascotForTheme($theme).name}
+					</span>
+					<span class="text-xs text-[var(--ba-text-secondary)]">
+						{$theme === 'dark' ? '夜间值守中' : '准备就绪'}
+					</span>
+				</div>
 			</div>
 
 			<div

@@ -1,0 +1,141 @@
+- generic [ref=e4]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - button "展开侧边栏 新对话 搜索 笔记 工作空间" [ref=e9]:
+        - button "展开侧边栏" [ref=e12]
+        - generic [ref=e14]:
+          - link "新对话" [ref=e17] [cursor=pointer]:
+            - /url: /
+            - img [ref=e19]
+          - button "搜索" [ref=e23] [cursor=pointer]:
+            - img [ref=e25]
+          - link "笔记" [ref=e29] [cursor=pointer]:
+            - /url: /notes
+            - img [ref=e31]
+          - link "工作空间" [ref=e35] [cursor=pointer]:
+            - /url: /workspace
+            - img [ref=e37]
+      - button "用户菜单" [ref=e42] [cursor=pointer]:
+        - button "用户菜单" [ref=e43]:
+          - img "打开个人资料菜单" [ref=e45]
+    - generic [ref=e52]:
+      - navigation [ref=e53]:
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e59]:
+              - button "已选择：HermesPipe" [expanded] [ref=e63] [cursor=pointer]:
+                - generic [ref=e64]:
+                  - text: HermesPipe
+                  - img [ref=e65]
+              - button "Add Model" [ref=e69] [cursor=pointer]:
+                - img [ref=e70]
+            - button "设为默认" [ref=e73] [cursor=pointer]
+          - generic [ref=e74]:
+            - button [ref=e76] [cursor=pointer]:
+              - img [ref=e78]
+            - button "Controls" [ref=e81] [cursor=pointer]:
+              - img [ref=e83]
+            - button "用户菜单" [ref=e85] [cursor=pointer]:
+              - button "用户菜单" [ref=e86]
+      - generic [ref=e90]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - button [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+            - generic [ref=e101]: HermesPipe
+          - generic [ref=e108]:
+            - paragraph [ref=e113]: Sensei，请在这里输入~
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - button "更多" [ref=e116] [cursor=pointer]:
+                  - button "更多" [ref=e118]:
+                    - img [ref=e119]
+                - button "扩展功能" [ref=e122] [cursor=pointer]:
+                  - button "扩展功能" [ref=e124]:
+                    - img [ref=e125]
+              - generic [ref=e130]:
+                - button "Voice Input" [ref=e132] [cursor=pointer]:
+                  - img [ref=e133]
+                - button "语音模式" [ref=e138] [cursor=pointer]:
+                  - img [ref=e139]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - img [ref=e143]
+            - text: 建议
+          - list [ref=e146]:
+            - listitem [ref=e147] [cursor=pointer]:
+              - generic [ref=e148]:
+                - generic [ref=e149]: Give me ideas
+                - generic [ref=e150]: for what to do with my kids' art
+            - listitem [ref=e1524] [cursor=pointer]:
+              - generic [ref=e1525]:
+                - generic [ref=e1526]: Overcome procrastination
+                - generic [ref=e1527]: give me tips
+            - listitem [ref=e1528] [cursor=pointer]:
+              - generic [ref=e1529]:
+                - generic [ref=e1530]: Help me study
+                - generic [ref=e1531]: vocabulary for a college entrance exam
+            - listitem [ref=e1532] [cursor=pointer]:
+              - generic [ref=e1533]:
+                - generic [ref=e1534]: Tell me a fun fact
+                - generic [ref=e1535]: about the Roman Empire
+            - listitem [ref=e1536] [cursor=pointer]:
+              - generic [ref=e1537]:
+                - generic [ref=e1538]: Explain options trading
+                - generic [ref=e1539]: if I'm familiar with buying and selling stocks
+            - listitem [ref=e167] [cursor=pointer]:
+              - generic [ref=e168]:
+                - generic [ref=e169]: Show me a code snippet
+                - generic [ref=e170]: of a website's sticky header
+  - generic [ref=e1541]:
+    - generic [ref=e1542]:
+      - img [ref=e1543]
+      - textbox "搜索模型" [ref=e1545]
+    - listbox "可用模型" [ref=e1547]:
+      - option "选择模型 “TestEchoPipe”" [ref=e1548] [cursor=pointer]:
+        - generic [ref=e1550]:
+          - img "模型 “TestEchoPipe” 的头像" [ref=e1553]
+          - generic [ref=e1556]: TestEchoPipe
+        - button "更多选项" [ref=e1558]:
+          - button "更多选项" [ref=e1560]:
+            - img [ref=e1561]
+      - option "选择模型 “HermesPipe”" [selected] [ref=e1563] [cursor=pointer]:
+        - generic [ref=e1565]:
+          - img "模型 “HermesPipe” 的头像" [ref=e1568]
+          - generic [ref=e1571]: HermesPipe
+        - generic [ref=e1572]:
+          - button "更多选项" [expanded] [ref=e1573]:
+            - button "更多选项" [active] [ref=e1575]:
+              - img [ref=e1576]
+          - img [ref=e1579]
+      - option "选择模型 “ToolTestPipe”" [ref=e1581] [cursor=pointer]:
+        - generic [ref=e1583]:
+          - img "模型 “ToolTestPipe” 的头像" [ref=e1586]
+          - generic [ref=e1589]: ToolTestPipe
+        - button "更多选项" [ref=e1591]:
+          - button "更多选项" [ref=e1593]:
+            - img [ref=e1594]
+      - option "选择模型 “Arena Model”" [ref=e1596] [cursor=pointer]:
+        - generic [ref=e1598]:
+          - img "模型 “Arena Model” 的头像" [ref=e1601]
+          - generic [ref=e1604]: Arena Model
+          - img [ref=e1608]
+        - button "更多选项" [ref=e1611]:
+          - button "更多选项" [ref=e1613]:
+            - img [ref=e1614]
+  - menu [ref=e1617]:
+    - generic [ref=e1619]:
+      - button "编辑" [ref=e1620] [cursor=pointer]:
+        - img [ref=e1621]
+        - generic [ref=e1623]: 编辑
+      - separator [ref=e1624]
+      - button "保留在侧边栏" [ref=e1625] [cursor=pointer]:
+        - img [ref=e1626]
+        - generic [ref=e1629]: 保留在侧边栏
+      - button "复制链接" [ref=e1630] [cursor=pointer]:
+        - img [ref=e1631]
+        - generic [ref=e1634]: 复制链接
+      - separator [ref=e1635]
+      - button "社区评价" [ref=e1636] [cursor=pointer]:
+        - img [ref=e1637]
+        - generic [ref=e1639]: 社区评价

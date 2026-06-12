@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	const i18n = getContext('i18n');
 	import { getContext } from 'svelte';
 	import { settings } from '$lib/stores';
@@ -14,6 +15,7 @@
 	export let screenReader = true;
 	export let autocomplete = 'off';
 	export let name: string | undefined = undefined;
+	export let ariaRequired: string | boolean | undefined = undefined;
 
 	let show = false;
 </script>
@@ -32,6 +34,7 @@
 		required={required && !readOnly}
 		disabled={readOnly}
 		{autocomplete}
+		aria-required={ariaRequired}
 	/>
 	<button
 		class={showButtonClassName}

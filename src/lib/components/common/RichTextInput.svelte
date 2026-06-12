@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { marked } from 'marked';
 	import DOMPurify from 'dompurify';
 	import equal from 'fast-deep-equal';

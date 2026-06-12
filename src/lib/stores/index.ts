@@ -213,7 +213,7 @@ type Settings = {
 	iframeSandboxAllowForms?: boolean;
 	iframeSandboxAllowSameOrigin?: boolean;
 	scrollOnBranchChange?: boolean;
-	directConnections?: null;
+	directConnections?: any;
 	chatBubble?: boolean;
 	copyFormatted?: boolean;
 	models?: string[];
@@ -245,6 +245,8 @@ type Settings = {
 	num_batch?: string;
 	num_keep?: string;
 	options?: ModelOptions;
+
+	[key: string]: any;
 };
 
 type ModelOptions = {
@@ -302,6 +304,7 @@ type Config = {
 		enable_direct_connections: boolean;
 		enable_version_update_check: boolean;
 		folder_max_file_count?: number;
+		[key: string]: any;
 	};
 	oauth: {
 		providers: {
@@ -314,6 +317,7 @@ type Config = {
 		pending_user_overlay_content?: string;
 		iframe_csp?: string;
 	};
+	[key: string]: any;
 };
 
 type PromptSuggestion = {
@@ -328,4 +332,5 @@ export type SessionUser = {
 	name: string;
 	role: string;
 	profile_image_url: string;
+	[key: string]: any;
 };

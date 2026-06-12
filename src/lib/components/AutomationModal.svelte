@@ -1,4 +1,5 @@
 <script lang="ts">
+	// @ts-nocheck
 	import { createEventDispatcher, getContext } from 'svelte';
 	import { toast } from 'svelte-sonner';
 

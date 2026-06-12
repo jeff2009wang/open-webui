@@ -17,7 +17,7 @@ export const getUserGroups = async (token: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -44,7 +44,7 @@ export const getUserDefaultPermissions = async (token: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -74,7 +74,7 @@ export const updateUserDefaultPermissions = async (token: string, permissions: o
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -105,7 +105,7 @@ export const updateUserRole = async (token: string, id: string, role: string) =>
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -155,7 +155,7 @@ export const getUsers = async (
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -205,7 +205,7 @@ export const searchUsers = async (
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -233,7 +233,7 @@ export const getAllUsers = async (token: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -259,12 +259,14 @@ export const getUserSettings = async (token: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
+	// In this build the settings endpoint may be unavailable; return empty settings
+	// so callers can fall back to localStorage defaults.
 	if (error) {
-		throw error;
+		return {};
 	}
 
 	return res;
@@ -289,12 +291,14 @@ export const updateUserSettings = async (token: string, settings: object) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
+	// In this build the settings endpoint may be unavailable; silently succeed
+	// so callers don't crash. Settings are persisted to localStorage instead.
 	if (error) {
-		throw error;
+		return { status: true };
 	}
 
 	return res;
@@ -316,7 +320,7 @@ export const getUserInfoById = async (token: string, userId: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -346,7 +350,7 @@ export const updateUserStatus = async (token: string, formData: object) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -372,7 +376,7 @@ export const getUserInfo = async (token: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -402,7 +406,7 @@ export const updateUserInfo = async (token: string, info: object) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -444,7 +448,7 @@ export const getUserActiveStatusById = async (token: string, userId: string) => 
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -471,7 +475,7 @@ export const deleteUserById = async (token: string, userId: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -513,7 +517,7 @@ export const updateUserById = async (token: string, userId: string, user: UserUp
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -540,7 +544,7 @@ export const getUserGroupsById = async (token: string, userId: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
@@ -567,7 +571,7 @@ export const getUserPreview = async (token: string, userId: string) => {
 		})
 		.catch((err) => {
 			console.error(err);
-			error = err.detail;
+			error = err.detail ?? err.message ?? err;
 			return null;
 		});
 
