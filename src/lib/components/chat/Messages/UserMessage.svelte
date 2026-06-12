@@ -327,7 +327,7 @@
 									document.getElementById('confirm-edit-message-button')?.click();
 								}
 							}}
-						/>
+						></textarea>
 					</div>
 
 					<div class=" mt-2 mb-1 flex justify-between text-sm font-medium">
@@ -369,14 +369,12 @@
 			{:else if message.content !== ''}
 				<div class="w-full">
 					<div class="flex {($settings?.chatBubble ?? true) ? 'justify-end pb-1' : 'w-full'}">
-							<div
-								class="rounded-3xl text-white {($settings?.chatBubble ?? true)
-									? `max-w-[90%] px-4 py-1.5 ${
-											message.files ? 'rounded-tr-lg' : ''
-										}`
-									: ' w-full'}"
-								style="background: var(--ba-bg-chat-user);"
-							>
+						<div
+							class="rounded-3xl text-white {($settings?.chatBubble ?? true)
+								? `max-w-[90%] px-4 py-1.5 ${message.files ? 'rounded-tr-lg' : ''}`
+								: ' w-full'}"
+							style="background: var(--ba-bg-chat-user);"
+						>
 							{#if message.content}
 								{#if $settings?.renderMarkdownInUserMessages ?? true}
 									<Markdown

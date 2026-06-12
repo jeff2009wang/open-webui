@@ -59,7 +59,7 @@ export const uploadFile = async (
 				}
 
 				try {
-					let lines = value.split('\n');
+					const lines = value.split('\n');
 
 					for (const line of lines) {
 						if (line !== '') {
@@ -67,7 +67,7 @@ export const uploadFile = async (
 							if (line === 'data: [DONE]') {
 								console.log(line);
 							} else {
-								let data = JSON.parse(line.replace(/^data: /, ''));
+								const data = JSON.parse(line.replace(/^data: /, ''));
 								console.log(data);
 
 								if (data?.error) {

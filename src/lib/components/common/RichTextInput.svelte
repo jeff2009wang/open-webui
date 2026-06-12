@@ -1336,4 +1336,4 @@
 	bind:this={element}
 	dir="auto"
 	class="relative w-full min-w-full {className} {!editable ? 'cursor-not-allowed' : ''}"
-/>
+></div>

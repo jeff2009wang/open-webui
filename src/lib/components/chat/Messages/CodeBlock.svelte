@@ -6,16 +6,13 @@
 	import { config } from '$lib/stores';
 
 	import { executeCode } from '$lib/apis/utils';
-	import {
-		copyToClipboard,
-		unescapeHtml
-	} from '$lib/utils';
+	import { copyToClipboard, unescapeHtml } from '$lib/utils';
 
 	import 'highlight.js/styles/github-dark.min.css';
 	import equal from 'fast-deep-equal';
 
 	import CodeEditor from '$lib/components/common/CodeEditor.svelte';
-		import ChevronUp from '$lib/components/icons/ChevronUp.svelte';
+	import ChevronUp from '$lib/components/icons/ChevronUp.svelte';
 	import ChevronUpDown from '$lib/components/icons/ChevronUpDown.svelte';
 	import CommandLine from '$lib/components/icons/CommandLine.svelte';
 	import Cube from '$lib/components/icons/Cube.svelte';
@@ -385,7 +382,7 @@
 				<div
 					id="plt-canvas-{id}"
 					class="bg-gray-50 dark:bg-black dark:text-white max-w-full overflow-x-auto scrollbar-hidden"
-				/>
+				></div>
 
 				{#if executing || stdout || stderr || result || files}
 					<div
