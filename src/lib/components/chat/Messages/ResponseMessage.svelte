@@ -688,6 +688,7 @@
 			className="hidden @lg:flex assistant-message-mascot"
 		/>
 
+
 		<div class="ba-message-body flex-auto w-0 pl-1 relative">
 			<BaDialogPanel side="assistant" className="ba-response-dialog-panel">
 				<svelte:fragment slot="nameplate">
@@ -705,6 +706,7 @@
 				<div class="chat-{message.role} w-full min-w-full markdown-prose">
 					{#if model?.info?.meta?.capabilities?.status_updates ?? true}
 						<StatusHistory statusHistory={message?.statusHistory} />
+
 					{/if}
 
 					{#if message?.files && message.files?.filter( (f) => ['image', 'file'].includes(f.type) ).length > 0}
@@ -724,6 +726,7 @@
 											type={file.type}
 											size={file?.size}
 											small={true}
+
 										/>
 									{/if}
 								</div>
@@ -824,6 +827,7 @@
 									>
 										{$i18n.t('Save')}
 									</button>
+
 								</div>
 							</div>
 						</div>

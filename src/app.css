@@ -1214,4 +1214,100 @@ input[type='number'] {
 
 .ba-user-dialog-panel .ba-dialog-content :where(p, li, code, pre) {
 	color: inherit;
+
+}
+/* Merged from origin/main during conflict resolution */
+/* Blue Archive inspired chat surface */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(
+			circle at 18% 14%,
+			color-mix(in srgb, var(--ba-accent-secondary) 20%, transparent),
+			transparent 28rem
+		),
+		radial-gradient(
+			circle at 88% 12%,
+			color-mix(in srgb, var(--ba-accent-pink) 14%, transparent),
+			transparent 24rem
+		),
+		linear-gradient(
+			135deg,
+			color-mix(in srgb, var(--ba-bg-primary) 86%, white),
+			var(--ba-bg-primary)
+		);
+}
+
+#messages-container .message-listitem {
+	position: relative;
+}
+
+.assistant-message-mascot {
+	filter: drop-shadow(0 1.125rem 1.75rem rgba(0, 168, 232, 0.22));
+	transform-origin: bottom center;
+}
+
+.chat-assistant #response-content-container {
+	position: relative;
+	width: fit-content;
+	max-width: min(100%, 62rem);
+	margin-top: 0.25rem;
+	padding: 1rem 1.15rem 1.05rem;
+	border: 2px solid color-mix(in srgb, var(--ba-accent-primary) 48%, white);
+	border-radius: 1.35rem 1.35rem 1.35rem 0.45rem;
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.8)),
+		var(--ba-bg-chat-ai);
+	box-shadow:
+		0 1rem 2.25rem rgba(15, 23, 42, 0.11),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+}
+
+.dark .chat-assistant #response-content-container {
+	background:
+		linear-gradient(180deg, rgba(30, 41, 59, 0.94), rgba(15, 23, 42, 0.88)), var(--ba-bg-chat-ai);
+	box-shadow:
+		0 1rem 2.25rem rgba(0, 0, 0, 0.26),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.chat-assistant #response-content-container::before {
+	content: '';
+	position: absolute;
+	left: -0.7rem;
+	bottom: 1rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	background: inherit;
+	border-left: 2px solid color-mix(in srgb, var(--ba-accent-primary) 48%, white);
+	border-bottom: 2px solid color-mix(in srgb, var(--ba-accent-primary) 48%, white);
+	clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.chat-user > div > div[style*='--ba-bg-chat-user'] {
+	position: relative;
+	border: 2px solid color-mix(in srgb, var(--ba-accent-primary) 70%, white);
+	border-radius: 1.35rem 1.35rem 0.45rem 1.35rem;
+	box-shadow: 0 0.8rem 1.8rem rgba(0, 168, 232, 0.22);
+}
+
+.chat-user > div > div[style*='--ba-bg-chat-user']::after {
+	content: '';
+	position: absolute;
+	right: -0.55rem;
+	bottom: 0.8rem;
+	width: 1rem;
+	height: 1rem;
+	background: var(--ba-bg-chat-user);
+	border-right: 2px solid color-mix(in srgb, var(--ba-accent-primary) 70%, white);
+	border-bottom: 2px solid color-mix(in srgb, var(--ba-accent-primary) 70%, white);
+	clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+#chat-input-container {
+	border-radius: 1rem;
 }

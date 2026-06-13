@@ -1930,14 +1930,14 @@ export const getCodeBlockContents = (content: string): object => {
 
 	const codeBlockContents = content.match(/```[\s\S]*?```/g);
 
-	let codeBlocks = [];
+	const codeBlocks = [];
 
 	// Groups of related HTML/CSS/JS blocks. Each HTML block starts a new group;
 	// CSS and JS blocks attach to the current (most recent) group.
 	// This preserves the existing behaviour for "dumb" models that output
 	// separate html/css/js blocks meant to form a single page, while also
 	// allowing multiple distinct HTML blocks to produce separate artifacts.
-	let htmlGroups: Array<{ html: string; css: string; js: string }> = [];
+	const htmlGroups: Array<{ html: string; css: string; js: string }> = [];
 
 	const initDefaultGroup = () => {
 		if (htmlGroups.length === 0) {

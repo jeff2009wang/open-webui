@@ -241,6 +241,7 @@
 <div class="w-full h-screen max-h-[100dvh] text-white relative" id="auth-page">
 	<BaBackground dense={true} />
 
+
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region"></div>
 
 	{#if loaded}
