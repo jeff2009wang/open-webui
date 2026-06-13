@@ -534,9 +534,9 @@
 						{/each}
 					</ul>
 				</section>
-				<div class="pb-18"></div>
+				<div class="pb-18" />
 				{#if bottomPadding}
-					<div class="  pb-6"></div>
+					<div class="  pb-6" />
 				{/if}
 			{/key}
 		</div>

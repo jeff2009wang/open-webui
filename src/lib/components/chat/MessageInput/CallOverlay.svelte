@@ -55,7 +55,7 @@
 		const devices = await navigator.mediaDevices.enumerateDevices();
 		videoInputDevices = devices.filter((device) => device.kind === 'videoinput');
 
-		if (navigator.mediaDevices.getDisplayMedia) {
+		if (!!navigator.mediaDevices.getDisplayMedia) {
 			videoInputDevices = [
 				...videoInputDevices,
 				{
@@ -837,7 +837,7 @@
 									? 'size-14'
 									: 'size-12'}  transition-all rounded-full bg-cover bg-center bg-no-repeat"
 						style={`background-image: url('getMascotImagePath($theme, 'portrait')');`}
-					></div>
+					/>
 				{/if}
 				<!-- navbar -->
 			</button>
@@ -913,7 +913,7 @@
 										? 'size-44'
 										: 'size-40'} transition-all rounded-full bg-cover bg-center bg-no-repeat"
 							style={`background-image: url('getMascotImagePath($theme, 'portrait')');`}
-						></div>
+						/>
 					{/if}
 				</button>
 			{:else}
@@ -924,9 +924,9 @@
 						autoplay
 						class="rounded-2xl h-full min-w-full object-cover object-center"
 						playsinline
-					></video>
+					/>
 
-					<canvas id="camera-canvas" style="display:none;"></canvas>
+					<canvas id="camera-canvas" style="display:none;" />
 
 					<div class=" absolute top-4 md:top-8 left-4">
 						<button

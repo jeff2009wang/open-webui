@@ -750,7 +750,7 @@
 		on:mousedown={() => {
 			showSidebar.set(!$showSidebar);
 		}}
-	></div>
+	/>
 {/if}
 
 <SearchModal
@@ -765,12 +765,11 @@
 <button
 	id="sidebar-new-chat-button"
 	class="hidden"
-	aria-label="New Chat"
 	on:click={() => {
 		goto('/');
 		newChatHandler();
 	}}
-></button>
+/>
 
 <svelte:window
 	on:mousemove={(e) => {
@@ -1102,9 +1101,7 @@
 					src={getMascotImagePath($theme, 'icon')}
 					alt={getMascotForTheme($theme).name}
 					class="w-10 h-10 rounded-full object-cover ring-2 ring-[var(--ba-accent-primary)]"
-					on:error={(e) => {
-						e.currentTarget.src = '/assets/ba/mascots/arona-icon.png';
-					}}
+					on:error={(e) => { e.currentTarget.src = '/assets/ba/mascots/arona-icon.png'; }}
 				/>
 				<div class="flex flex-col">
 					<span class="text-sm font-medium text-[var(--ba-text-primary)]">
@@ -1715,7 +1712,7 @@
 		>
 			<div
 				class=" absolute -left-1.5 -right-1.5 -top-0 -bottom-0 z-20 cursor-col-resize bg-transparent"
-			></div>
+			/>
 		</div>
 	{/if}
 {/if}

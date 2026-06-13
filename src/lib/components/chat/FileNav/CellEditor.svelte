@@ -102,7 +102,7 @@
 	});
 </script>
 
-<div bind:this={container} class="nb-cm-editor"></div>
+<div bind:this={container} class="nb-cm-editor" />
 
 <style>
 	.nb-cm-editor {

@@ -186,7 +186,7 @@
 		{sandbox}
 		{allowFullscreen}
 		on:load={onLoad}
-	></iframe>
+	/>
 {:else if iframeSrc}
 	<iframe
 		bind:this={iframe}
@@ -200,5 +200,5 @@
 		referrerpolicy={referrerPolicy}
 		{allowFullscreen}
 		on:load={onLoad}
-	></iframe>
+	/>
 {/if}
