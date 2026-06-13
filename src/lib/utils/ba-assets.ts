@@ -30,6 +30,59 @@ const MASCOT_MAP: Record<string, MascotInfo> = {
 	}
 };
 
+export interface StudentAssetInfo {
+	id: string;
+	name: string;
+	devName: string;
+	icon: string;
+	portrait: string;
+	collection: string;
+}
+
+const STUDENT_DECORATIONS: Record<string, StudentAssetInfo[]> = {
+	light: [
+		{
+			id: '10010',
+			name: '白子',
+			devName: 'Shiroko',
+			icon: '/assets/ba/students/icon/10010.webp',
+			portrait: '/assets/ba/students/portrait/10010.webp',
+			collection: '/assets/ba/students/collection/10010.webp'
+		},
+		{
+			id: '10015',
+			name: '爱丽丝',
+			devName: 'Aris',
+			icon: '/assets/ba/students/icon/10015.webp',
+			portrait: '/assets/ba/students/portrait/10015.webp',
+			collection: '/assets/ba/students/collection/10015.webp'
+		}
+	],
+	dark: [
+		{
+			id: '10005',
+			name: '星野',
+			devName: 'Hoshino',
+			icon: '/assets/ba/students/icon/10005.webp',
+			portrait: '/assets/ba/students/portrait/10005.webp',
+			collection: '/assets/ba/students/collection/10005.webp'
+		},
+		{
+			id: '10059',
+			name: '未花',
+			devName: 'Mika',
+			icon: '/assets/ba/students/icon/10059.webp',
+			portrait: '/assets/ba/students/portrait/10059.webp',
+			collection: '/assets/ba/students/collection/10059.webp'
+		}
+	]
+};
+
+export function getStudentDecorations(theme: Theme): StudentAssetInfo[] {
+	const effective = resolveEffectiveTheme(theme);
+	return STUDENT_DECORATIONS[effective] ?? STUDENT_DECORATIONS.light;
+}
+
 export function getMascotForTheme(theme: Theme): MascotInfo {
 	const effective = resolveEffectiveTheme(theme);
 	return MASCOT_MAP[effective] ?? MASCOT_MAP['light'];
@@ -38,10 +91,7 @@ export function getMascotForTheme(theme: Theme): MascotInfo {
 /**
  * Get mascot image path for a theme and image type.
  */
-export function getMascotImagePath(
-	theme: Theme,
-	type: 'icon' | 'portrait' | 'collection'
-): string {
+export function getMascotImagePath(theme: Theme, type: 'icon' | 'portrait' | 'collection'): string {
 	const mascot = getMascotForTheme(theme);
 	return mascot[type];
 }

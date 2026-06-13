@@ -310,3 +310,11 @@ dist
 cypress/videos
 cypress/screenshots
 .vscode/settings.json
+
+# Local visual QA artifacts
+/test-results/
+/playwright-report/
+ba-ui-preview*.png
+screenshot-*.png
+chat-home.png
+login-dialog.png

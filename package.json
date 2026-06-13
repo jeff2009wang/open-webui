@@ -16,7 +16,8 @@
 		"lint:backend": "pylint backend/",
 		"format": "prettier --plugin-search-dir --write \"**/*.{js,ts,svelte,css,md,html,json}\"",
 		"format:backend": "ruff format . --exclude .venv --exclude venv",
-		"test:frontend": "vitest --passWithNoTests"
+		"test:frontend": "vitest --passWithNoTests",
+		"preview:ba-ui": "node scripts/preview-ba-ui.mjs"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.60.0",
