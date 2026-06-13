@@ -15,6 +15,8 @@
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import FileItem from '$lib/components/common/FileItem.svelte';
 	import Markdown from './Markdown.svelte';
+	import BaDialogPanel from '$lib/components/ba/BaDialogPanel.svelte';
+	import BaNameplate from '$lib/components/ba/BaNameplate.svelte';
 	import Image from '$lib/components/common/Image.svelte';
 	import DeleteConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
 
@@ -200,7 +202,7 @@
 			</div>
 		{/if}
 
-		<div class="chat-{message.role} w-full min-w-full markdown-prose">
+		<div class="chat-{message.role} w-full min-w-full markdown-prose ba-user-message-shell">
 			{#if edit !== true}
 				{#if message.files}
 					<div
@@ -327,7 +329,7 @@
 									document.getElementById('confirm-edit-message-button')?.click();
 								}
 							}}
-						/>
+						></textarea>
 					</div>
 
 					<div class=" mt-2 mb-1 flex justify-between text-sm font-medium">
@@ -367,32 +369,45 @@
 					</div>
 				</div>
 			{:else if message.content !== ''}
-				<div class="w-full">
-					<div class="flex {($settings?.chatBubble ?? true) ? 'justify-end pb-1' : 'w-full'}">
-							<div
-								class="rounded-3xl text-white {($settings?.chatBubble ?? true)
-									? `max-w-[90%] px-4 py-1.5 ${
-											message.files ? 'rounded-tr-lg' : ''
-										}`
-									: ' w-full'}"
-								style="background: var(--ba-bg-chat-user);"
-							>
-							{#if message.content}
-								{#if $settings?.renderMarkdownInUserMessages ?? true}
-									<Markdown
-										id={`${chatId}-${message.id}`}
-										content={message.content}
-										{editCodeBlock}
-										{topPadding}
-									/>
-								{:else}
-									<div class="whitespace-pre-wrap" dir={$settings?.chatDirection ?? 'auto'}>
-										{message.content}
-									</div>
-								{/if}
+				<div class="w-full flex {($settings?.chatBubble ?? true) ? 'justify-end pb-1' : 'w-full'}">
+					<BaDialogPanel
+						side="user"
+						className="ba-user-dialog-panel {($settings?.chatBubble ?? true)
+							? 'max-w-[90%]'
+							: 'w-full'}"
+						contentClassName="text-white"
+					>
+						<svelte:fragment slot="nameplate">
+							<BaNameplate
+								side="user"
+								title={message.user
+									? `${$i18n.t('You')} · ${message.user}`
+									: $settings.showUsername || $_user?.name !== user?.name
+										? (user?.name ?? $i18n.t('You'))
+										: $i18n.t('You')}
+								subtitle={message.timestamp
+									? $i18n.t(formatDate(message.timestamp * 1000), {
+											LOCALIZED_TIME: dayjs(message.timestamp * 1000).format('LT'),
+											LOCALIZED_DATE: dayjs(message.timestamp * 1000).format('L')
+										})
+									: 'Sensei'}
+							/>
+						</svelte:fragment>
+						{#if message.content}
+							{#if $settings?.renderMarkdownInUserMessages ?? true}
+								<Markdown
+									id={`${chatId}-${message.id}`}
+									content={message.content}
+									{editCodeBlock}
+									{topPadding}
+								/>
+							{:else}
+								<div class="whitespace-pre-wrap" dir={$settings?.chatDirection ?? 'auto'}>
+									{message.content}
+								</div>
 							{/if}
-						</div>
-					</div>
+						{/if}
+					</BaDialogPanel>
 				</div>
 			{/if}
 

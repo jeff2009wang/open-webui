@@ -1,6 +1,6 @@
-@reference "./tailwind.css";
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+
+@reference "./tailwind.css";
 
 @font-face {
 	font-family: 'Inter';
@@ -33,70 +33,70 @@
 }
 
 @layer base {
-  :root {
-    /* Blue Archive Light Mode (Arona) */
-    --ba-bg-primary: #F0F4F8;
-    --ba-bg-card: #FFFFFF;
-    --ba-bg-chat-user: linear-gradient(135deg, #00A8E8 0%, #4FC3F7 100%);
-    --ba-bg-chat-ai: #FFFFFF;
-    --ba-accent-primary: #00A8E8;
-    --ba-accent-secondary: #4FC3F7;
-    --ba-accent-pink: #FF6B9D;
-    --ba-success: #4ADE80;
-    --ba-warning: #FBBF24;
-    --ba-error: #F87171;
-    --ba-text-primary: #1E293B;
-    --ba-text-secondary: #64748B;
-    --ba-text-inverse: #FFFFFF;
-    --ba-border: #E2E8F0;
-    --ba-border-chat-ai: rgba(0, 168, 232, 0.2);
-    --ba-think-bg: rgba(100, 116, 139, 0.08);
-    --ba-tool-call-bg: rgba(0, 168, 232, 0.05);
-    --ba-tool-call-border: rgba(0, 168, 232, 0.3);
-    --ba-tool-response-bg: rgba(74, 222, 128, 0.05);
-    --ba-tool-response-border: rgba(74, 222, 128, 0.3);
-    --ba-mascot: 'arona';
+	:root {
+		/* Blue Archive Light Mode (Arona) */
+		--ba-bg-primary: #f0f4f8;
+		--ba-bg-card: #ffffff;
+		--ba-bg-chat-user: linear-gradient(135deg, #00a8e8 0%, #4fc3f7 100%);
+		--ba-bg-chat-ai: #ffffff;
+		--ba-accent-primary: #00a8e8;
+		--ba-accent-secondary: #4fc3f7;
+		--ba-accent-pink: #ff6b9d;
+		--ba-success: #4ade80;
+		--ba-warning: #fbbf24;
+		--ba-error: #f87171;
+		--ba-text-primary: #1e293b;
+		--ba-text-secondary: #64748b;
+		--ba-text-inverse: #ffffff;
+		--ba-border: #e2e8f0;
+		--ba-border-chat-ai: rgba(0, 168, 232, 0.2);
+		--ba-think-bg: rgba(100, 116, 139, 0.08);
+		--ba-tool-call-bg: rgba(0, 168, 232, 0.05);
+		--ba-tool-call-border: rgba(0, 168, 232, 0.3);
+		--ba-tool-response-bg: rgba(74, 222, 128, 0.05);
+		--ba-tool-response-border: rgba(74, 222, 128, 0.3);
+		--ba-mascot: 'arona';
 
-    /* --app-text-scale is updated via the UI Scale slider (Interface.svelte) */
-    --app-text-scale: 1;
-  }
+		/* --app-text-scale is updated via the UI Scale slider (Interface.svelte) */
+		--app-text-scale: 1;
+	}
 
-  [data-theme="dark"] {
-    /* Blue Archive Dark Mode (Plana) */
-    --ba-bg-primary: #0F172A;
-    --ba-bg-card: #1E293B;
-    --ba-bg-chat-user: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);
-    --ba-bg-chat-ai: #1E293B;
-    --ba-accent-primary: #38BDF8;
-    --ba-accent-secondary: #7DD3FC;
-    --ba-accent-pink: #F472B6;
-    --ba-success: #4ADE80;
-    --ba-warning: #FBBF24;
-    --ba-error: #F87171;
-    --ba-text-primary: #F1F5F9;
-    --ba-text-secondary: #94A3B8;
-    --ba-text-inverse: #FFFFFF;
-    --ba-border: #334155;
-    --ba-border-chat-ai: rgba(56, 189, 248, 0.2);
-    --ba-think-bg: rgba(148, 163, 184, 0.08);
-    --ba-tool-call-bg: rgba(56, 189, 248, 0.05);
-    --ba-tool-call-border: rgba(56, 189, 248, 0.3);
-    --ba-tool-response-bg: rgba(74, 222, 128, 0.05);
-    --ba-tool-response-border: rgba(74, 222, 128, 0.3);
-    --ba-mascot: 'plana';
-  }
+	[data-theme='dark'] {
+		/* Blue Archive Dark Mode (Plana) */
+		--ba-bg-primary: #0f172a;
+		--ba-bg-card: #1e293b;
+		--ba-bg-chat-user: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+		--ba-bg-chat-ai: #1e293b;
+		--ba-accent-primary: #38bdf8;
+		--ba-accent-secondary: #7dd3fc;
+		--ba-accent-pink: #f472b6;
+		--ba-success: #4ade80;
+		--ba-warning: #fbbf24;
+		--ba-error: #f87171;
+		--ba-text-primary: #f1f5f9;
+		--ba-text-secondary: #94a3b8;
+		--ba-text-inverse: #ffffff;
+		--ba-border: #334155;
+		--ba-border-chat-ai: rgba(56, 189, 248, 0.2);
+		--ba-think-bg: rgba(148, 163, 184, 0.08);
+		--ba-tool-call-bg: rgba(56, 189, 248, 0.05);
+		--ba-tool-call-border: rgba(56, 189, 248, 0.3);
+		--ba-tool-response-bg: rgba(74, 222, 128, 0.05);
+		--ba-tool-response-border: rgba(74, 222, 128, 0.3);
+		--ba-mascot: 'plana';
+	}
 
-  html {
-    word-break: break-word;
-    /* font-size scales the entire document via the same UI control */
-    font-size: calc(1rem * var(--app-text-scale, 1));
-    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
-  }
+	html {
+		word-break: break-word;
+		/* font-size scales the entire document via the same UI control */
+		font-size: calc(1rem * var(--app-text-scale, 1));
+		font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+	}
 
-  body {
-    background-color: var(--ba-bg-primary);
-    color: var(--ba-text-primary);
-  }
+	body {
+		background-color: var(--ba-bg-primary);
+		color: var(--ba-text-primary);
+	}
 }
 
 #sidebar-chat-item {
@@ -886,4 +886,332 @@ input[type='number'] {
 
 #note-content-container .ProseMirror {
 	padding-bottom: 2rem; /* space for the bottom toolbar */
+}
+
+/* Blue Archive component system */
+.ba-background {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	background:
+		linear-gradient(
+			125deg,
+			rgba(245, 251, 255, 0.96),
+			rgba(205, 235, 255, 0.78) 52%,
+			rgba(255, 255, 255, 0.92)
+		),
+		var(--ba-bg-primary);
+}
+
+.dark .ba-background {
+	background:
+		linear-gradient(
+			125deg,
+			rgba(8, 16, 32, 0.96),
+			rgba(15, 48, 76, 0.82) 52%,
+			rgba(11, 16, 32, 0.92)
+		),
+		var(--ba-bg-primary);
+}
+
+.ba-background-grid {
+	position: absolute;
+	inset: 0;
+	opacity: 0.26;
+	background-image:
+		linear-gradient(
+			color-mix(in srgb, var(--ba-accent-primary) 22%, transparent) 1px,
+			transparent 1px
+		),
+		linear-gradient(
+			90deg,
+			color-mix(in srgb, var(--ba-accent-primary) 22%, transparent) 1px,
+			transparent 1px
+		);
+	background-size: 3rem 3rem;
+	mask-image: radial-gradient(circle at 50% 28%, black, transparent 78%);
+}
+
+.ba-background-glow {
+	position: absolute;
+	border-radius: 9999px;
+	filter: blur(0.25rem);
+}
+
+.ba-background-glow-a {
+	left: -8rem;
+	top: 8%;
+	width: 32rem;
+	height: 32rem;
+	background: color-mix(in srgb, var(--ba-accent-secondary) 28%, transparent);
+}
+
+.ba-background-glow-b {
+	right: -10rem;
+	bottom: -8rem;
+	width: 36rem;
+	height: 36rem;
+	background: color-mix(in srgb, var(--ba-accent-pink) 22%, transparent);
+}
+
+.ba-background-mascot {
+	position: absolute;
+	right: max(2rem, 7vw);
+	bottom: -3rem;
+	max-height: min(84vh, 48rem);
+	max-width: min(48vw, 36rem);
+	object-fit: contain;
+	opacity: 0.34;
+	filter: drop-shadow(0 2rem 3rem rgba(0, 168, 232, 0.22));
+}
+
+.ba-background-student {
+	position: absolute;
+	object-fit: contain;
+	opacity: 0.2;
+	filter: drop-shadow(0 1.5rem 2rem rgba(15, 23, 42, 0.12));
+}
+
+.ba-background-student-0 {
+	left: 2vw;
+	bottom: -6rem;
+	height: min(50vh, 30rem);
+}
+
+.ba-background-student-1 {
+	right: 2vw;
+	top: 5rem;
+	height: min(42vh, 24rem);
+	transform: rotate(3deg);
+}
+
+.ba-message-row {
+	position: relative;
+	isolation: isolate;
+	gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.ba-message-body {
+	max-width: min(100%, 64rem);
+}
+
+.ba-character-portrait {
+	position: relative;
+	align-items: flex-end;
+	justify-content: center;
+	width: clamp(6rem, 12vw, 10rem);
+	min-width: clamp(6rem, 12vw, 10rem);
+	padding-top: 1rem;
+}
+
+.ba-character-portrait img {
+	position: relative;
+	z-index: 1;
+	max-height: 12rem;
+	width: auto;
+	object-fit: contain;
+	filter: drop-shadow(0 1.25rem 1.6rem rgba(0, 168, 232, 0.24));
+}
+
+.ba-character-halo {
+	position: absolute;
+	top: 0.4rem;
+	left: 50%;
+	width: 4.8rem;
+	height: 1.4rem;
+	border: 0.25rem solid color-mix(in srgb, var(--ba-accent-primary) 70%, white);
+	border-radius: 9999px;
+	transform: translateX(-50%) rotate(-8deg);
+	opacity: 0.72;
+	box-shadow: 0 0 1.25rem color-mix(in srgb, var(--ba-accent-primary) 36%, transparent);
+}
+
+.ba-dialog-panel {
+	position: relative;
+	width: 100%;
+	border: 0.1875rem solid color-mix(in srgb, var(--ba-accent-primary) 52%, white);
+	border-radius: 1.5rem;
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 251, 255, 0.9)),
+		var(--ba-bg-chat-ai);
+	box-shadow:
+		0 1.25rem 2.75rem rgba(15, 23, 42, 0.13),
+		0 0.25rem 0 color-mix(in srgb, var(--ba-accent-primary) 16%, transparent),
+		inset 0 0 0 0.125rem rgba(255, 255, 255, 0.76);
+}
+
+.dark .ba-dialog-panel {
+	background:
+		linear-gradient(180deg, rgba(30, 41, 59, 0.96), rgba(14, 24, 42, 0.94)), var(--ba-bg-chat-ai);
+	box-shadow:
+		0 1.25rem 2.75rem rgba(0, 0, 0, 0.32),
+		0 0.25rem 0 rgba(56, 189, 248, 0.12),
+		inset 0 0 0 0.125rem rgba(255, 255, 255, 0.08);
+}
+
+.ba-dialog-panel::before {
+	content: '';
+	position: absolute;
+	inset: 0.45rem;
+	pointer-events: none;
+	border: 1px solid color-mix(in srgb, var(--ba-accent-primary) 18%, transparent);
+	border-radius: 1.08rem;
+}
+
+.ba-dialog-panel-assistant::after,
+.ba-dialog-panel-user::after {
+	content: '';
+	position: absolute;
+	bottom: 1.1rem;
+	width: 1.15rem;
+	height: 1.15rem;
+	background: inherit;
+	border-bottom: 0.1875rem solid color-mix(in srgb, var(--ba-accent-primary) 52%, white);
+}
+
+.ba-dialog-panel-assistant::after {
+	left: -0.7rem;
+	border-left: 0.1875rem solid color-mix(in srgb, var(--ba-accent-primary) 52%, white);
+	clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.ba-dialog-panel-user::after {
+	right: -0.7rem;
+	border-right: 0.1875rem solid color-mix(in srgb, var(--ba-accent-primary) 52%, white);
+	clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.ba-dialog-panel-header {
+	position: absolute;
+	left: 1.2rem;
+	top: -1.05rem;
+	z-index: 2;
+}
+
+.ba-dialog-panel-user .ba-dialog-panel-header {
+	left: auto;
+	right: 1.2rem;
+}
+
+.ba-dialog-content {
+	position: relative;
+	z-index: 1;
+	padding: 1.55rem 1.35rem 1.1rem;
+	color: var(--ba-text-primary);
+}
+
+.ba-nameplate {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	min-width: 8rem;
+	max-width: min(70vw, 28rem);
+	padding: 0.32rem 0.9rem 0.38rem;
+	border-radius: 9999px;
+	background: linear-gradient(90deg, var(--ba-accent-primary), var(--ba-accent-secondary));
+	color: white;
+	box-shadow: 0 0.5rem 1rem rgba(0, 168, 232, 0.26);
+	white-space: nowrap;
+}
+
+.ba-nameplate-user {
+	background: linear-gradient(90deg, var(--ba-accent-pink), var(--ba-accent-primary));
+}
+
+.ba-nameplate-kicker {
+	font-size: 0.625rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	opacity: 0.82;
+}
+
+.ba-nameplate-title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 0.92rem;
+	font-weight: 800;
+}
+
+.ba-nameplate-subtitle {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 0.68rem;
+	font-weight: 600;
+	opacity: 0.78;
+}
+
+.ba-card {
+	position: relative;
+	border: 0.125rem solid color-mix(in srgb, var(--ba-accent-primary) 36%, white);
+	border-radius: 1.5rem;
+	background: rgba(255, 255, 255, 0.78);
+	box-shadow: 0 1rem 2.5rem rgba(15, 23, 42, 0.14);
+	backdrop-filter: blur(1rem);
+}
+
+.dark .ba-card {
+	background: rgba(15, 23, 42, 0.76);
+}
+
+.ba-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
+	font-weight: 800;
+	transition:
+		transform 120ms ease,
+		box-shadow 120ms ease,
+		background 120ms ease;
+}
+
+.ba-button:hover {
+	transform: translateY(-1px);
+}
+
+.ba-button-primary {
+	background: linear-gradient(90deg, var(--ba-accent-primary), var(--ba-accent-secondary));
+	color: white;
+	box-shadow: 0 0.75rem 1.4rem rgba(0, 168, 232, 0.24);
+}
+
+.ba-button-ghost {
+	background: rgba(255, 255, 255, 0.54);
+	color: var(--ba-text-primary);
+}
+
+@media (max-width: 768px) {
+	.ba-dialog-content {
+		padding: 1.45rem 1rem 1rem;
+	}
+
+	.ba-dialog-panel-header {
+		left: 0.85rem;
+	}
+
+	.ba-dialog-panel-user .ba-dialog-panel-header {
+		right: 0.85rem;
+	}
+
+	.ba-background-mascot,
+	.ba-background-student {
+		opacity: 0.14;
+	}
+}
+
+.ba-user-dialog-panel {
+	border-color: color-mix(in srgb, var(--ba-accent-pink) 42%, var(--ba-accent-primary));
+	background: var(--ba-bg-chat-user);
+	box-shadow:
+		0 1.2rem 2.5rem rgba(0, 168, 232, 0.2),
+		inset 0 0 0 0.125rem rgba(255, 255, 255, 0.26);
+}
+
+.ba-user-dialog-panel .ba-dialog-content {
+	color: #fff;
+}
+
+.ba-user-dialog-panel .ba-dialog-content :where(p, li, code, pre) {
+	color: inherit;
 }

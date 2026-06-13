@@ -115,7 +115,7 @@
 								: 'py-1.5 bg-transparent'}"
 							rows="4"
 							placeholder={$i18n.t('Enter system prompt')}
-						/>
+						></textarea>
 					</div>
 				</Collapsible>
 

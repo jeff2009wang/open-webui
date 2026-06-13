@@ -25,6 +25,9 @@
 	import { LOGIN_WELCOME } from '$lib/constants/character-lines';
 	import { theme } from '$lib/stores/theme';
 	import { getMascotImagePath } from '$lib/utils/ba-assets';
+	import BaBackground from '$lib/components/ba/BaBackground.svelte';
+	import BaCharacterPortrait from '$lib/components/ba/BaCharacterPortrait.svelte';
+	import BaNameplate from '$lib/components/ba/BaNameplate.svelte';
 
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import OnBoarding from '$lib/components/OnBoarding.svelte';
@@ -236,16 +239,9 @@
 />
 
 <div class="w-full h-screen max-h-[100dvh] text-white relative" id="auth-page">
-	<div
-		class="w-full h-full absolute top-0 left-0 bg-gray-50 dark:bg-gray-950"
-		style="background-image: url({getMascotImagePath($theme, 'portrait')}); background-size: cover; background-position: top center;"
-	>
-		<div
-			class="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-white/85 via-white/50 to-white/20 dark:from-black/80 dark:via-black/50 dark:to-black/30"
-		></div>
-	</div>
+	<BaBackground dense={true} />
 
-	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
+	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region"></div>
 
 	{#if loaded}
 		<div
@@ -268,9 +264,18 @@
 						</div>
 					</div>
 				{:else}
-					<div class="my-auto flex flex-col justify-center items-center">
+					<div class="my-auto flex flex-col justify-center items-center gap-4">
+						<div class="flex items-end justify-center gap-2">
+							<BaCharacterPortrait
+								src={getMascotImagePath($theme, 'portrait')}
+								alt="Schale assistant"
+								compact={true}
+								className="!flex"
+							/>
+							<BaNameplate title={welcomeText} subtitle="Blue Archive UI" />
+						</div>
 						<div
-							class="sm:max-w-md my-auto pb-10 w-full px-8 pt-8 rounded-3xl bg-white/70 dark:bg-black/60 backdrop-blur-xl shadow-2xl border border-white/30 dark:border-white/10 text-gray-900 dark:text-gray-100"
+							class="ba-card sm:max-w-md my-auto pb-10 w-full px-8 pt-8 text-gray-900 dark:text-gray-100"
 						>
 							{#if $config?.metadata?.auth_logo_position === 'center'}
 								<div class="flex justify-center mb-6">
